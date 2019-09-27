@@ -1,0 +1,22 @@
+body {
+    background: lightblue;
+}
+
+#patio {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    bottom: 10%;
+    background-color: lightcyan;
+}
+
+#dibujito {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    right: 60%;
+    bottom: 75%;
+    border: solid 1px black;
+
+}
