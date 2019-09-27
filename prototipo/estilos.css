@@ -4,21 +4,64 @@
 }
 
 body {
-    background-color: #f8fff7;
+    background-color: #fff6ef;
     margin: auto;
 }
 
 /*CABECERA*/
-#nombre1 {
-    width: 25%;
-    min-width: 201px;
-    text-align: center;
-    background-color: #e2ffe1;
+#caja_cabecera {
+    clear: both;
+    width: 100%;
+    height: 110px;
+    border-bottom: solid 5px;
+    border-color: #44c767;
+    position: relative;
+    -webkit-box-shadow: inset 13px 200px 48px -183px #b5de91;
+    -moz-box-shadow: inset 13px 200px 48px -183px #b5de91;
+    box-shadow: inset 13px 200px 48px -183px #b5de91;
+}
+
+
+#caja1 {
+    min-width: 200px;
+    width: 40%;
     float: left;
-    background-image: url("imagenes/euskotram.png");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
+    box-sizing: border-box;
+}
+
+#icono1 {
+    width: 40%;
+}
+
+#icono1 img {
+    width: 80px;
+}
+
+#texto {
+    width: 60%;
+    float: right;
+}
+
+#texto span {
+    width: 100%;
+}
+
+#imagen {
+    width: 100%;
+    float: left;
+}
+
+#imagen img {
+    width: 200px;
+}
+
+#caja2 {
+    width: 55%;
+    float: left;
+}
+
+h3 {
+    text-align: center
 }
 
 #nombre2 {
@@ -37,11 +80,6 @@ body {
     -webkit-box-shadow: inset 13px 200px 48px -183px rgba(0, 0, 0, 0.58);
     -moz-box-shadow: inset 13px 200px 48px -183px rgba(0, 0, 0, 0.58);
     box-shadow: inset 13px 200px 48px -183px rgba(0, 0, 0, 0.58);
-}
-
-#caja_cabecera {
-    clear: both;
-    width: 100%;
 }
 
 #caja_contenido {
@@ -80,6 +118,7 @@ body {
     margin-bottom: 5px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
+    user-focus: none;
 }
 
 .boton:hover {
@@ -92,8 +131,10 @@ body {
 }
 
 .current input {
-    background-color: #dbffd7;
+    background: linear-gradient(-45deg, rgb(181, 220, 161) 0%, rgba(156, 217, 127, 0.88) 100%);
     border: none;
+    border-bottom: solid 3px;
+    border-color: #00de6f
 }
 
 /*Cuando la pantalla sea mayor que 800px ? */
@@ -112,7 +153,7 @@ body {
     }
 
     #administrador {
-      /*  border-left: solid 2px;*/
+        /*  border-left: solid 2px;*/
         background: linear-gradient(45deg, rgba(198, 223, 185, 1) 0%, rgba(87, 206, 18, 0.88) 100%);
 
     }
