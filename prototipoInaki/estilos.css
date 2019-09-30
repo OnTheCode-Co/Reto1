@@ -58,6 +58,7 @@ body {
 #caja2 {
     width: 55%;
     float: left;
+   /* border: solid;*/
 }
 
 h3 {
@@ -191,4 +192,92 @@ h3 {
         background: linear-gradient(180deg, rgba(198, 223, 185, 1) 0%, rgba(87, 206, 18, 0.88) 100%);
 
     }
+}
+
+
+
+
+
+
+
+#parteGrafica {
+  /*  background-color: lightsalmon;*/
+    position: absolute;
+    bottom: 1%;
+    left: 6%;
+    right: 6%;
+    top: 55%;
+ /*   border: black solid 3px;
+    border-radius: 15px;*/
+}
+
+#lineaRecta {
+    position: absolute;
+    top: 65%;
+    height: 7.5%;
+    left: 5%;
+    right: 5%;
+    background-color: darkgray;
+    border-radius: 10px;
+}
+
+#lineaVerde {
+    height: 100%;
+    background-color: darkgreen;
+    z-index: 10;
+    width: 0;
+    border-radius: 10px;
+    animation: completar 10s forwards;
+}
+
+@keyframes completar
+{
+    from {width: 0;}
+    to {width: 100%}
+}
+
+.circulito {
+    position: absolute;
+    border-radius: 50%;
+    width: 5%;
+    height: 200%;
+    top: -50%;
+    background-color: darkgray;
+    border: 3px black solid;
+    z-index: 20;
+}
+
+#parada1 {
+    left: -1%;
+}
+
+#parada2 {
+    left: 33%;
+}
+
+#parada3 {
+    left: 66%;
+}
+
+#parada4 {
+    right: -1%;
+}
+.palo{
+    position: absolute;
+    width: 1px;
+    background-color: black;
+    bottom: 30%;
+    border: 3px black solid;
+}
+#palo1{
+    left: 6.3%;
+}
+#palo2{
+    left: 36.9%;
+}
+#palo3{
+    left: 66.6%;
+}
+#palo4{
+    right: 6.3%;
 }
