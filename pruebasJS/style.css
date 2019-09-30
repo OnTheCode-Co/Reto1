@@ -1,0 +1,24 @@
+body {
+    background: lightblue;
+}
+
+#patio {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    bottom: 10%;
+    background-color: lightcyan;
+}
+#cont1{
+    margin: 5%;
+    float: left;
+    width: 90%;
+}
+.sliders{
+    width: 100%;
+
+}
+p{
+    display: inline;
+}
