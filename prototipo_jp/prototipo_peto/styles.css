@@ -14,7 +14,7 @@ h1, h2{
 	color:#F5F5F5;
 	text-align: center;
 	clear: both;
-	background: -moz-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(140,207,58,1) 56%, rgba(85,170,40,1) 100%);
+	background: rgba(85,170,40,1);
 	margin:0;
 	padding: 5px;
 }
