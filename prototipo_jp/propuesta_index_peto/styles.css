@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  margin:0;
+}
+h1, h2, h3{
+	text-align: center;
+	font-family: Simplifica;
+	font-size: 1.2em;
+}
+#tarjeta_izq h1,#tarjeta_izq h2,#tarjeta_izq h3{
+	color:#d5d9e4;
+}
+#left{
+	height: 937px;
+	width: 50%;
+	background-image: url("./img/left.jpg");
+	 background-position: center;
+	float: left;	
+}
+#right{
+	height: 937px;
+	width: 50%;
+	background-color: #1c1c1c;
+	background-image: url("./img/right.png");
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	float: left;
+}
+#tarjeta_izq {
+    height:200px;
+    width:400px;
+    margin:0px auto;
+    background-color:#1c1c1c;
+ 	position: absolute;
+    left: 10%;
+    top: 10%;
+    border-radius: 12px;
+
+}
+#tarjeta_derecha {
+    height:200px;
+    width:400px;
+    margin:0px auto;
+    background-color:#d5d9e4;
+ 	position: absolute;
+    right: 10%;
+    top: 10%;
+    border-radius: 12px;
+
+}
+#tarjeta_derecha img{
+	width: 15%;
+	display:block;
+	margin:auto;
+}
+#tarjeta_centro {
+    height:200px;
+    width:300px;
+    margin:0px auto;
+    background-color:green;
+ 	position: absolute;
+    left: 42%;
+    top: 45%;
+    border-radius: 12px;
+    background-color: #fff;
+}
+#tarjeta_centro input{
+	display:block;
+	margin:auto;
+	border-radius: 12px;
+	padding: 2%;
+	color: #d5d9e4;
+	background-color: #1c1c1c;
+}
+#tarjeta_centro input:hover{
+
+	padding: 2%;
+	color: #1c1c1c;
+	background-color: #d5d9e4;
+}
+
+/*
+
+*/
+#tarjeta_centro img{
+
+	max-width: 100%;
+}

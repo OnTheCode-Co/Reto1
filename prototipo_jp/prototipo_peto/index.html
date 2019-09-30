@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<title>Control de autómata</title>
+</head>
+<body>
+		<header>
+			<h1> GESTIÓN DE AUTÓMATA CON TIA PORTAL </h1>
+			<h2> GESTIÓN DEL AUTÓMATA</h2>
+		</header>
+		<article id="contenedor">
+			
+			<section id="contenido">
+				<div id="vista_botones">	
+					<form action="index.html" method="post">
+					
+						<input type="button" name="origen" id="origen" value="Origen">
+						<input type="button" name="reset" id="reset" value="Reset">
+						<br>
+
+						<input type="button" name="paradas_b" id="paradas_b" value="Paradas">
+						<input type="text" class="mitad" name="paradas_input" id="paradas_input" placeholder="1 - 4">
+						<input type="button" name="paradas_intro" id="paradas_intro" value=" &#187;">
+						<input type="range" min="1" max="4" value="0" class="slider" id="range_parada"> 
+						<br>
+
+						<input type="button" name="cotas_b" id="cotas_b" value="Cotas">
+						<input type="text" name="cotas_input" id="cotas_input" placeholder="1 - 100">
+						<input type="range" min="1" max="100" value="0" class="slider" id="range_cota">
+						<input type="button" name="cotas_intro" id="cotas_intro" value=" &#187;">
+
+					</form>
+				</div>
+
+				<div id="estado">
+						<p>ERROR</p>
+						<p>BUSSY</p>
+						<p>READY</p>
+						<p>IN POSITION</p>
+				</div>
+			</section>
+
+			<section id="verde"> 
+				<img class="tranvia" src="./img/tranvia.jpg" alt="tranvia">
+			</section>
+
+			<section id="vista_datos">
+				<h2> Información </h2>
+				<label for="dato_destino"> Destino del tranvía:</label> <input type="text" name="dato_destino" id="dato_destino"> <br>
+				<label for="dato_posicion">Posicion actual del tranvía:</label> <input type="text" name="dato_posicion" id="dato_posicion"> <br>
+				<label for="dato_velocidad">Velocidad actual:</label> <input type="text" name="dato_velociad" id="dato_velocidad"> <br>
+
+				
+			</section>		
+		</article>
+
+		<footer>
+			<p> @OnTheCode.Co 2019/2020 </p>
+			<p> Product designed for ARI <p>
+		</footer>
+
+</body>
+</html>
