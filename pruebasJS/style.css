@@ -10,13 +10,15 @@ body {
     bottom: 10%;
     background-color: lightcyan;
 }
+#cont1{
+    margin: 5%;
+    float: left;
+    width: 90%;
+}
+.sliders{
+    width: 100%;
 
-#dibujito {
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    right: 60%;
-    bottom: 75%;
-    border: solid 1px black;
-
+}
+p{
+    display: inline;
 }
