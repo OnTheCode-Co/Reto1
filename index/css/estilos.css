@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ body {
     z-index: -1;
     overflow-x: hidden;
     overflow-y: hidden;
+    font-family: Roboto;
 }
 
 .divisor {
@@ -16,6 +18,43 @@ body {
     height: 100%;
     position: absolute;
     left: 50%;
+}
+
+.tapador_uno,
+.tapador_dos,
+.tapador_tres {
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    z-index: 0;
+    position: absolute;
+    top: 20%;
+}
+
+.tapador_uno {
+    left: 5%;
+    width: 760px;
+    animation-name: tapador1;
+    animation-duration: 0.5s;
+    animation-delay: 4.7s;
+    animation-fill-mode: forwards;
+}
+
+.tapador_dos {
+    left: 50%;
+    width: 400px;
+    animation-name: tapador1;
+    animation-duration: 0.5s;
+    animation-delay: 4.7s;
+    animation-fill-mode: forwards;
+}
+
+.tapador_tres {
+    left: 75%;
+    animation-name: tapador1;
+    animation-duration: 0.5s;
+    animation-delay: 4.7s;
+    animation-fill-mode: forwards;
 }
 
 .imagen1 {
@@ -30,26 +69,29 @@ body {
     animation-fill-mode: forwards;
     top: 120vh;
     right: 50%;
+    z-index: 3;
 }
 
 .cortina-izquierda {
     width: 50%;
     position: absolute;
     height: 100%;
-    background-color: rgba(22, 22, 22, 0.68);
+    background-color: rgba(22, 22, 22, 0.753);
     animation-name: cortina-izquierda;
     animation-delay: 2s;
     animation-duration: 4s;
     animation-fill-mode: forwards;
+    z-index: 2;
 }
 
 .linea-izquierda {
     width: 1px;
     height: 50%;
-    background-color: red;
+    background-color: black;
     position: absolute;
+    top: 120vh;
     right: 50%;
-    z-index: 10;
+    z-index: 3;
     animation-name: linea-izquierda;
     animation-delay: 0.75s;
     animation-duration: 5s;
@@ -59,10 +101,11 @@ body {
 .linea-derecha {
     width: 1px;
     height: 50%;
-    background-color: red;
+    background-color: black;
     position: absolute;
+    top: -100vh;
     left: 50%;
-    z-index: 10;
+    z-index: 3;
     animation-name: linea-derecha;
     animation-delay: 0.75s;
     animation-duration: 5s;
@@ -73,17 +116,19 @@ body {
     width: 50%;
     position: absolute;
     height: 100%;
-    background-color: rgba(22, 22, 22, 0.68);
+    background-color: rgba(22, 22, 22, 0.753);
     left: 50%;
     animation-name: cortina-derecha;
     animation-delay: 2s;
     animation-duration: 4s;
     animation-fill-mode: forwards;
+    z-index: 2;
 }
 
 .imagen1 img {
     width: 102.5px;
     height: auto;
+    z-index: 3;
 }
 
 .imagen2 {
@@ -96,38 +141,58 @@ body {
     animation-fill-mode: forwards;
     top: -25vh;
     right: 50%;
+    z-index: 3;
 }
 
 .imagen2 img {
     width: 100px;
     height: auto;
+    z-index: 3;
 }
 
-h1, h2{
+.area-reset-origen {
+    display: flex;
+    width: 80%;
+}
+
+h1,
+h2 {
     text-align: center;
 }
 
 .contenedor {
+    margin: 0 auto;
     height: 100vh;
     width: 100vw;
-    background-color: aquamarine;
-    z-index: 0;
+    z-index: -2;
     display: flex;
     flex-direction: column;
+    background-color: #FFF;
+    color: #555555;
 }
 
 header {
-    width: 100vw;
-    height: 20%;
-    background-color: pink;
+    margin: 0 auto;
+    width: 90vw;
+    height: 15%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    animation-name: aparicion-titulo;
+    animation-delay: 5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    margin-bottom: 5px;
 }
 
 section {
     width: 100vw;
-    height: 45%;
-    background-color: blueviolet;
+    height: 40%;
 }
 
 .seccion_parametros {
@@ -135,58 +200,87 @@ section {
 }
 
 .contenedor_parametros {
-    width: 45%;
+    width: 50%;
     height: 100%;
-    background-color: red;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
 
-.parametro_uno, .parametro_dos, .parametro_tres, .parametro_cuatro{
+.parametro_uno,
+.parametro_dos,
+.parametro_tres {
     height: 20%;
     width: 100%;
-    background-color: lightblue;
     display: flex;
     align-items: center;
-
-
 }
 
 .contenedor_informacion {
-    width: 35%;
+    width: 20%;
     height: 100%;
-    background-color: yellow;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+}
+
+.contenedor_informacion input {
+    height: 40%;
+    font-size: 100%;
+    width: 45%;
+    margin: 1% 0 1% 0;
+    border: 0;
+    border-bottom: 1px solid black;
+    background-color: white;
+    outline: none;
+}
+
+.informacion_uno,
+.informacion_dos,
+.informacion_tres {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .contenedor_informacion div {
     height: 20%;
     width: 100%;
-    background-color: green;
 }
 
 .contenedor_botones {
-    width: 20%;
+    width: 15%;
     height: 100%;
-    background-color: red;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    margin-left: 100px;
 }
 
 .contenedor_botones div {
     height: 20%;
     width: 100%;
-    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input {
+    background-color: rgb(237, 234, 234);
+    outline: none;
+}
+
+button:hover {
+    text-shadow: 0px 0px 0px;
 }
 
 
-
 /* Sliders */
-#propiedad1, #propiedad2, #propiedad3, #propiedad4 {
+
+#propiedad1,
+#propiedad2,
+#propiedad3,
+#propiedad4 {
     height: 40%;
     font-size: 100%;
     width: 40%;
@@ -196,15 +290,50 @@ section {
 .sliders {
     width: 80%;
 }
-.botones{
-    width: 80%;
+
+.alarm_icon {
+    width: 40px;
+    height: auto;
+}
+
+.botones {
+    width: 50%;
     height: 80%;
     font-size: 100%;
     border-radius: 3px;
     color: black;
     background-color: white;
+    outline: none;
+    box-shadow: 6px 6px 0px #999;
+    transition: all 0.2s ease 0s;
 }
-.div_pr{
+
+.area-reset-origen .botones {
+    width: 30%;
+    height: 50px;
+    margin: 0 10px;
+    box-shadow: 6px 6px 0px #999;
+    transition: all 0.2s ease 0s;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.area-reset-origen .botones:active {
+    box-shadow: 2px 2px 2px #777, 0px 0px 2px 0px;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff;
+    transform: translateY(4px);
+    transition: all 0.1s ease 0s;
+}
+
+.botones:active {
+    box-shadow: 2px 2px 2px #777, 0px 0px 2px 0px;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff;
+    transform: translateY(4px);
+    transition: all 0.1s ease 0s;
+}
+
+.div_pr {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -212,7 +341,7 @@ section {
     padding-left: 10%;
 }
 
-.div_btn{
+.div_btn {
     display: flex;
     height: 50%;
     width: 20%;
@@ -296,34 +425,15 @@ footer {
 @keyframes linea-izquierda {
     from {
         top: 120vh;
-        left: 50%;
-    }
-    35% {
-        top: 40vh;
-        left: 50%;
-    }
-    65% {
-        top: 40vh;
-        left: 50%;
-    }
-    to {
-        top: 40vh;
-        left: 100vw;
-    }
-}
-
-@keyframes linea-derecha {
-    from {
-        top: -25vh;
-        right: 50%;
+        right: 50vw;
     }
     35% {
         top: 25vh;
-        right: 50%;
+        right: 50vw;
     }
     65% {
         top: 25vh;
-        right: 50%;
+        right: 50vw;
     }
     to {
         top: 25vh;
@@ -331,5 +441,45 @@ footer {
     }
 }
 
+@keyframes linea-derecha {
+    from {
+        top: -100vh;
+        left: 50%;
+    }
+    35% {
+        top: 25vh;
+        left: 50%;
+    }
+    65% {
+        top: 25vh;
+        left: 50%;
+    }
+    to {
+        top: 25vh;
+        left: 100vw;
+    }
+}
 
+@keyframes aparicion-titulo {
+    from {
+        opacity: 0;
+        margin-bottom: 5px;
+        width: 17vw;
+        border-bottom: 0px solid #04a504;
+    }
+    to {
+        opacity: 1;
+        margin-bottom: 5px;
+        width: 90vw;
+        border-bottom: 3px solid #04a504;
+    }
+}
+
+@keyframes tapador1 {
+    from {
+        height: 400px;
+    }
+    to {
+        height: 0px;
+    }
 }
