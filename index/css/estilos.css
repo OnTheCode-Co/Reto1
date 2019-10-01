@@ -14,7 +14,6 @@ body {
 .divisor {
     width: 2px;
     height: 100%;
-    background-color: blue;
     position: absolute;
     left: 50%;
 }
@@ -41,6 +40,32 @@ body {
     animation-name: cortina-izquierda;
     animation-delay: 2s;
     animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+.linea-izquierda {
+    width: 1px;
+    height: 50%;
+    background-color: red;
+    position: absolute;
+    right: 50%;
+    z-index: 10;
+    animation-name: linea-izquierda;
+    animation-delay: 0.75s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.linea-derecha {
+    width: 1px;
+    height: 50%;
+    background-color: red;
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    animation-name: linea-derecha;
+    animation-delay: 0.75s;
+    animation-duration: 5s;
     animation-fill-mode: forwards;
 }
 
@@ -159,6 +184,10 @@ footer {
         top: 0%;
         left: 0vw;
     }
+    50% {
+        top: 0%;
+        left: 0vw;
+    }
     to {
         left: -100vw;
     }
@@ -166,6 +195,10 @@ footer {
 
 @keyframes cortina-derecha {
     from {
+        top: 0%;
+        left: 50vw;
+    }
+    50% {
         top: 0%;
         left: 50vw;
     }
@@ -179,7 +212,11 @@ footer {
         top: -25vh;
         right: 50%;
     }
-    25% {
+    35% {
+        top: 40vh;
+        right: 50%;
+    }
+    65% {
         top: 40vh;
         right: 50%;
     }
@@ -194,7 +231,11 @@ footer {
         top: 120vh;
         left: 50%;
     }
-    25% {
+    35% {
+        top: 40vh;
+        left: 50%;
+    }
+    65% {
         top: 40vh;
         left: 50%;
     }
@@ -202,4 +243,45 @@ footer {
         top: 40vh;
         left: 100vw;
     }
+}
+
+@keyframes linea-izquierda {
+    from {
+        top: 120vh;
+        left: 50%;
+    }
+    35% {
+        top: 40vh;
+        left: 50%;
+    }
+    65% {
+        top: 40vh;
+        left: 50%;
+    }
+    to {
+        top: 40vh;
+        left: 100vw;
+    }
+}
+
+@keyframes linea-derecha {
+    from {
+        top: -25vh;
+        right: 50%;
+    }
+    35% {
+        top: 25vh;
+        right: 50%;
+    }
+    65% {
+        top: 25vh;
+        right: 50%;
+    }
+    to {
+        top: 25vh;
+        right: 100vw;
+    }
+}
+
+
 }
