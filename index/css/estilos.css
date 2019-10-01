@@ -351,9 +351,18 @@ button:hover {
 
 footer {
     width: 100vw;
-    height: 10%;
-    color: #a1a1a1;
-    background-color: #303030;
+    height: 6%;
+    color: #A6A6A6;
+    background-color: #333333;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+.twitter: visited{
+    color:#A6A6A6;
 }
 
 @keyframes cortina-izquierda {
