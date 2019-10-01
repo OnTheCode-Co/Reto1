@@ -30,6 +30,7 @@ body {
     animation-fill-mode: forwards;
     top: 120vh;
     right: 50%;
+    z-index: 2;
 }
 
 .cortina-izquierda {
@@ -46,10 +47,11 @@ body {
 .linea-izquierda {
     width: 1px;
     height: 50%;
-    background-color: red;
+    background-color: black;
     position: absolute;
+    top: 120vh;
     right: 50%;
-    z-index: 10;
+    z-index: 1;
     animation-name: linea-izquierda;
     animation-delay: 0.75s;
     animation-duration: 5s;
@@ -59,10 +61,11 @@ body {
 .linea-derecha {
     width: 1px;
     height: 50%;
-    background-color: red;
+    background-color: black;
     position: absolute;
+    top: -100vh;
     left: 50%;
-    z-index: 10;
+    z-index: 1;
     animation-name: linea-derecha;
     animation-delay: 0.75s;
     animation-duration: 5s;
@@ -84,6 +87,7 @@ body {
 .imagen1 img {
     width: 102.5px;
     height: auto;
+    z-index: 2;
 }
 
 .imagen2 {
@@ -96,14 +100,17 @@ body {
     animation-fill-mode: forwards;
     top: -25vh;
     right: 50%;
+    z-index: 2;
 }
 
 .imagen2 img {
     width: 100px;
     height: auto;
+    z-index: 2;
 }
 
-h1, h2{
+h1,
+h2 {
     text-align: center;
 }
 
@@ -143,14 +150,15 @@ section {
     flex-direction: column;
 }
 
-.parametro_uno, .parametro_dos, .parametro_tres, .parametro_cuatro{
+.parametro_uno,
+.parametro_dos,
+.parametro_tres,
+.parametro_cuatro {
     height: 20%;
     width: 100%;
     background-color: lightblue;
     display: flex;
     align-items: center;
-
-
 }
 
 .contenedor_informacion {
@@ -184,9 +192,12 @@ section {
 }
 
 
-
 /* Sliders */
-#propiedad1, #propiedad2, #propiedad3, #propiedad4 {
+
+#propiedad1,
+#propiedad2,
+#propiedad3,
+#propiedad4 {
     height: 40%;
     font-size: 100%;
     width: 40%;
@@ -196,7 +207,8 @@ section {
 .sliders {
     width: 80%;
 }
-.botones{
+
+.botones {
     width: 80%;
     height: 80%;
     font-size: 100%;
@@ -204,7 +216,8 @@ section {
     color: black;
     background-color: white;
 }
-.div_pr{
+
+.div_pr {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -212,7 +225,7 @@ section {
     padding-left: 10%;
 }
 
-.div_btn{
+.div_btn {
     display: flex;
     height: 50%;
     width: 20%;
@@ -296,34 +309,15 @@ footer {
 @keyframes linea-izquierda {
     from {
         top: 120vh;
-        left: 50%;
-    }
-    35% {
-        top: 40vh;
-        left: 50%;
-    }
-    65% {
-        top: 40vh;
-        left: 50%;
-    }
-    to {
-        top: 40vh;
-        left: 100vw;
-    }
-}
-
-@keyframes linea-derecha {
-    from {
-        top: -25vh;
-        right: 50%;
+        right: 50vw;
     }
     35% {
         top: 25vh;
-        right: 50%;
+        right: 50vw;
     }
     65% {
         top: 25vh;
-        right: 50%;
+        right: 50vw;
     }
     to {
         top: 25vh;
@@ -331,5 +325,21 @@ footer {
     }
 }
 
-
+@keyframes linea-derecha {
+    from {
+        top: -100vh;
+        left: 50%;
+    }
+    35% {
+        top: 25vh;
+        left: 50%;
+    }
+    65% {
+        top: 25vh;
+        left: 50%;
+    }
+    to {
+        top: 25vh;
+        left: 100vw;
+    }
 }
