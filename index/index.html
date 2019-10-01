@@ -2,101 +2,98 @@
 
 <head>
     <title>On The Code</title>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d422b55c9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/javaScript.js"></script>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
 
 <body>
+
     <div class="contenedor">
         <div class="linea-izquierda"></div>
-        <div class="cortina-izquierda">
-
-        </div>
+        <div class="cortina-izquierda"></div>
         <div class="linea-derecha"></div>
-        <div class="cortina-derecha">
-
-        </div>
-
+        <div class="cortina-derecha"></div>
         <div class="divisor">
-
             <div class="imagen1"><img src="multimedia/onthecode-face-one.png"></div>
             <div class="imagen2"><img src="multimedia/onthecode-face-two.png"></div>
-
         </div>
+
         <header>
-      <h1>Gestión del automata</h1>
-      </header>
+            <h1>GESTION DEL AUTOMATA</h1>
+        </header>
         <section class="seccion_parametros">
+            <span class="tapador_uno"></span>
             <div class="contenedor_parametros">
                 <div class="parametro_uno">
-              <div class="div_pr">
+                    <div class="div_pr">
 
-                    <label for="propiedad1">Cotas: </label>
-                    <input type="text" name="propiedad1" id="propiedad1" placeholder="1-100mm">
-                    <input class="sliders" id="slider1" type="range" value="0"/>
+                        <label for="propiedad1">Cotas: </label>
+                        <input type="text" name="propiedad1" id="propiedad1" placeholder="1-100mm" maxlength="3">
+                        <input class="sliders" id="slider1" type="range" value="0" />
+                    </div>
+                    <div class="div_btn">
+                        <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
+                        <button class="botones" id="boton1"><i class="far fa-check-circle"></i></button>
+                    </div>
                 </div>
-                <div class="div_btn">
-                    <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                    <button class="botones" id="boton1">GO!</button>
-                </div>
-              </div>
-                <div class="parametro_dos"></div>
-                <div class="parametro_tres"></div>
-                <div class="parametro_cuatro"></div>
-            </div>
-            <div class="parametro_dos">
-                <div class="div_pr">
 
-                    <label for="propiedad2">Paradas:</label>
-                    <input type="text" name="propiedad2" id="propiedad2">
-                    <input class="sliders" id="slider2" type="range" value="0"/>
-                </div>
-                <div class="div_btn">
-                    <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                    <button class="botones" id="boton2">GO!</button>
-                </div>
-            </div>
-            <div class="parametro_tres">
-                <div class="div_pr">
-                    <label for="propiedad3">Cotas: </label>
-                    <input type="text" name="propiedad3" id="propiedad3">
-                    <input class="sliders" id="slider3" type="range" value="0"/>
-                </div>
-                <div class="div_btn">
-                    <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                    <button class="botones" id="boton3">GO!</button>
-                </div>
-            </div>
-            <div class="parametro_cuatro">
-                <div class="div_pr">
 
-                    <label for="propiedad4">Cotas: </label>
-                    <input type="text" name="propiedad4" id="propiedad4">
-                    <input class="sliders" id="slider4" type="range" value="0"/>
+                <div class="parametro_dos">
+                    <div class="div_pr">
+
+                        <label for="propiedad2">Paradas:</label>
+                        <input type="text" name="propiedad2" id="propiedad2" maxlength="1" placeholder="0-4">
+                        <input class="sliders" id="slider2" type="range" value="0" max="4" />
+                    </div>
+                    <div class="div_btn">
+                        <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
+                        <button class="botones" id="boton2"><i class="far fa-check-circle"></i></button>
+                    </div>
                 </div>
-                <div class="div_btn">
-                    <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                    <button class="botones" id="boton4">GO!</button>
+                <div class="parametro_tres">
+                    <div class="div_pr">
+                        <div class="area-reset-origen">
+                            <button class="botones" id="boton3">ORIGEN</button>
+                            <button class="botones" id="boton4">RESET</button>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
-        </div>
-        <div class="contenedor_informacion">
-            <div class="informacion_uno"></div>
-            <div class="informacion_dos"></div>
-            <div class="informacion_tres"></div>
-            <div class="informacion_cuatro"></div>
-        </div>
-        <div class="contenedor_botones">
-            <div class="contenedor_botones_uno"></div>
-            <div class="contenedor_botones_dos"></div>
-            <div class="contenedor_botones_tres"></div>
-            <div class="contenedor_botones_cuatro"></div>
-        </div>
+            <span class="tapador_dos"></span>
+            <div class="contenedor_informacion">
+                <div class="informacion_uno"><label for="infor1"> TARGET POSITION: </label> <input type="text" name="infor1" id="infor1" readonly> </div>
+                <div class="informacion_dos"><label for="infor2"> CURRENT POSITION:  </label> <input type="text" name="infor2" id="infor2" readonly></div>
+                <div class="informacion_tres"><label for="infor3"> CURRENT SPEED:</label> <input type="text" name="infor3" id="infor3" readonly></div>
+
+            </div>
+            <span class="tapador_tres"></span>
+            <div class="contenedor_botones">
+                <div class="contenedor_botones_uno">
+                    <p>READY:</p><img class="alarm_icon" src="multimedia/alarma-grey.png"></div>
+                <div class="contenedor_botones_dos">
+                    <p>BUSY:</p><img class="alarm_icon" src="multimedia/alarma-grey.png"></div>
+
+                <div class="contenedor_botones_tres">
+                    <p>INPOS:</p><img class="alarm_icon" src="multimedia/alarma-grey.png"></div>
+
+                <div class="contenedor_botones_cuatro">
+                    <p>ERROR:</p><img class="alarm_icon" src="multimedia/alarma-grey.png"></div>
+            </div>
+    </div>
+    </div>
     </section>
-    <section class="seccion-animacion"></section>
+    <section class="seccion-animacion">
+
+    </section>
     <footer></footer>
-</div>
+    </div>
 </body>
 
 </html>
