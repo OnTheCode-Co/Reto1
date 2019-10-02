@@ -5,9 +5,16 @@
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    
     <script src="https://kit.fontawesome.com/5d422b55c9.js" crossorigin="anonymous"></script>
+
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/jquery-ui-slider-pips.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/javaScript.js"></script>
+
+
+
+    
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
 
@@ -24,17 +31,31 @@
         </div>
 
         <header>
-            <h1>GESTION DEL AUTOMATA</h1>
+            <h1>GESTIÓN DEL AUTÓMATA</h1>
         </header>
+
+
+
         <section class="seccion_parametros">
+
+
+            
+
+
             <span class="tapador_uno"></span>
             <div class="contenedor_parametros">
                 <div class="parametro_uno">
                     <div class="div_pr">
 
-                        <label for="propiedad1">Cotas: </label>
+
+                        <!-- <div class="slider"></div> -->
+
+                        <label for="propiedad1">Cota: </label>
                         <input type="text" name="propiedad1" id="propiedad1" placeholder="1-100mm" maxlength="3">
-                        <input class="sliders" id="slider1" type="range" value="0" />
+                        <div id="slider_cota" class="slider_nuevo"></div>
+
+                        <!-- <input class="sliders" id="slider1" type="range" value="0" /> -->
+
                     </div>
                     <div class="div_btn">
                         <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
@@ -46,9 +67,13 @@
                 <div class="parametro_dos">
                     <div class="div_pr">
 
-                        <label for="propiedad2">Paradas:</label>
+                        <label for="propiedad2">Parada:</label>
                         <input type="text" name="propiedad2" id="propiedad2" maxlength="1" placeholder="0-4">
-                        <input class="sliders" id="slider2" type="range" value="0" max="4" />
+
+                        <!-- <input class="sliders" id="slider2" type="range" value="0" max="4" /> -->
+
+                        <div id="slider_parada" class="slider_nuevo"></div>
+
                     </div>
                     <div class="div_btn">
                         <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
@@ -68,32 +93,46 @@
             </div>
             <span class="tapador_dos"></span>
             <div class="contenedor_informacion">
-                <div class="informacion_uno"><label for="infor1"> TARGET POSITION: </label> <input type="text" name="infor1" id="infor1"> </div>
-                <div class="informacion_dos"><label for="infor2"> CURRENT POSITION:  </label> <input type="text" name="infor2" id="infor2"></div>
-                <div class="informacion_tres"><label for="infor3"> CURRENT SPEED:</label> <input type="text" name="infor3" id="infor3"></div>
-
+                <div class="informacion_uno"><label for="infor1"> TARGET POSITION: </label> <input type="text" name="infor1" id="infor1" readonly> </div>
+                <div class="informacion_dos"><label for="infor2"> CURRENT POSITION:  </label> <input type="text" name="infor2" id="infor2" readonly></div>
+                <div class="informacion_tres"><label for="infor3"> CURRENT SPEED:</label> <input type="text" name="infor3" id="infor3" readonly></div>
             </div>
             <span class="tapador_tres"></span>
             <div class="contenedor_botones">
                 <div class="contenedor_botones_uno">
-                    <p>READY:</p><img class="alarm_icon" src="../alarma-grey.png"></div>
+                    <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
                 <div class="contenedor_botones_dos">
-                    <p>BUSY:</p><img class="alarm_icon" src="../alarma-grey.png"></div>
+                    <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
 
                 <div class="contenedor_botones_tres">
-                    <p>INPOS:</p><img class="alarm_icon" src="../alarma-grey.png"></div>
+                    <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
 
                 <div class="contenedor_botones_cuatro">
-                    <p>ERROR:</p><img class="alarm_icon" src="../alarma-grey.png"></div>
+                    <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
             </div>
     </div>
     </div>
+
     </section>
     <section class="seccion-animacion">
 
     </section>
-    <footer></footer>
+    <footer>
+        <p> @OnTheCode.Co 2019/2020 
+            <a href="https://github.com/OnTheCode-Co" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/OnTheCode1" class="twitter"> <i class="fab fa-twitter"></i></a>
+            <a href="https://google.com" class="instagram"> <i class="fab fa-instagram"></i></a>  
+        </p>
+        <p> Product designed for ARI <p>
+    </footer>
     </div>
+
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-ui-slider-pips.js"></script>
+    <script src="js/javaScript.js"></script>
+
 </body>
 
 </html>

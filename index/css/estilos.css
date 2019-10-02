@@ -210,7 +210,6 @@ section {
 .parametro_uno,
 .parametro_dos,
 .parametro_tres {
-    height: 20%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -230,17 +229,17 @@ section {
     width: 45%;
     margin: 1% 0 1% 0;
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #04a504;
     background-color: white;
     outline: none;
 }
-
 .informacion_uno,
 .informacion_dos,
 .informacion_tres {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .contenedor_informacion div {
@@ -351,9 +350,21 @@ button:hover {
 
 footer {
     width: 100vw;
-    height: 10%;
-    color: #a1a1a1;
-    background-color: #303030;
+    height: 6%;
+    color: #A6A6A6;
+    background-color: #333333;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+footer a {
+    color: #A6A6A6;
+}
+.twitter:visited, .instagram:visited, .github:visited{
+    color:#A6A6A6;
 }
 
 @keyframes cortina-izquierda {
@@ -482,4 +493,107 @@ footer {
     to {
         height: 0px;
     }
+}
+
+/* SLIDER */
+.slider_nuevo.ui-slider {
+    background: #d5cebc;
+    border: none;
+    border-radius: 0; 
+}
+                      
+.slider_nuevo.ui-slider .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50% 50% 0;
+    border-color: transparent;
+    transition: border 0.4s ease; 
+}
+                
+.slider_nuevo.ui-slider .ui-slider-handle.ui-state-hover, 
+.slider_nuevo.ui-slider .ui-slider-handle.ui-state-focus, 
+.slider_nuevo.ui-slider .ui-slider-handle.ui-state-active {
+    /*border-color: #172f38; */
+}
+                
+.slider_nuevo.ui-slider .ui-slider-pip .ui-slider-line {
+background: #d5cebc;
+transition: all 0.4s ease; 
+}
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal {
+height: 6px; }
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-handle {
+-webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+top: -25px;
+margin-left: -10px; }
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip {
+top: 10px; }
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip .ui-slider-line {
+    width: 2px;
+    height: 10px;
+    margin-left: -1px; }
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
+    height: 20px; }
+                
+.slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+    height: 12px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical {
+width: 6px;
+height: 125px;
+display: inline-block;
+margin: 0 15%; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle {
+-webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg);
+left: -25px;
+margin-bottom: -10px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip {
+left: 10px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip .ui-slider-line {
+    height: 2px;
+    width: 10px;
+    margin-top: -1px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
+    width: 20px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+    width: 12px; }
+                
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip,
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip {
+    visibility: visible;
+    opacity: 1;
+    border: none;
+    background: transparent;
+    left: 50%;
+    width: 30px;
+    margin-left: -15px;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    top: 10px;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg); }
+                
+    .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip:before,
+    .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip:before {
+    display: none; }
+                      
+  .slider_nuevo .ui-slider-handle,
+  .slider_nuevo .ui-slider-range,
+  .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+  .slider_nuevo .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+    background-color: #25daa5; 
+    border-color:  #25daa5; 
 }
