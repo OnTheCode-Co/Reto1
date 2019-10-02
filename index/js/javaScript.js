@@ -86,9 +86,9 @@ window.onload = function() {
 $(document).ready(function(event) {
     //alert("hola");
     $("#slider_cota").slider({
-        max: 100,
+        max: 500,
         min: 0,
-        range: false,
+        range: "min",
         value: 0
     }).slider("pips", {
         rest: "pip"
@@ -104,7 +104,7 @@ $(document).ready(function(event) {
     $("#slider_parada").slider({
         max: 4,
         min: 0,
-        range: false,
+        range: "min",
         value: 0
     }).slider("pips", {
         rest: "pip"
