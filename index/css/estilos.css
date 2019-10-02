@@ -360,18 +360,16 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
+
+
 /* Estilos footer*/
+
 footer {
     width: 100vw;
     height: 4%;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
 }
 
 footer a {
@@ -383,19 +381,38 @@ footer a {
 .github:visited {
     color: #A6A6A6;
 }
-.twitter:hover{
+
+.twitter:hover {
     background-color: #1da1f2;
-    color:#fff;
+    color: #fff;
 }
-.github:hover{
+
+.github:hover {
     background-color: #000000;
-    color:#fff;
+    color: #fff;
 }
-.instagram:hover{
-    background-color:#9938bd;
-    color:#fff;
+
+.instagram:hover {
+    background-color: #9938bd;
+    color: #fff;
 }
+
+
 /*Fin estilos footer*/
+
+.github:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.instagram:hover {
+    background-color: #9938bd;
+    color: #fff;
+}
+
+
+/*Fin estilos footer*/
+
 @keyframes cortina-izquierda {
     from {
         top: 0%;
@@ -682,39 +699,42 @@ footer a {
     border-color: #da211b;
 }
 
+
 /*COOKIES*/
+
 #barraaceptacion {
-    display:none;
-    position:fixed;
-    left:0px;
-    right:0px;
-    top:0px;
-    padding-bottom:20px;
-    width:100%;
-    text-align:center;
-    min-height:40px;
-    background-color: #333333;    ;
-    color:#A6A6A6;
-    z-index:99999;
+    display: none;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    min-height: 40px;
+    background-color: #333333;
+    ;
+    color: #A6A6A6;
+    z-index: 99999;
 }
- 
+
 .cookies {
-    width:100%;
-    position:absolute;
-    padding-left:5px;
-    font-family:verdana;
-    font-size:12px;
-    top:30%;
+    width: 100%;
+    position: absolute;
+    padding-left: 5px;
+    font-family: verdana;
+    font-size: 12px;
+    top: 30%;
 }
- 
+
 .cookies a.ok {
-    padding:4px;
-    color:#25daa5;
-    text-decoration:none;
+    padding: 4px;
+    color: #25daa5;
+    text-decoration: none;
 }
- 
+
 .cookies a.info {
-    padding-left:5px;
-    text-decoration:none;
-    color:#ffffff;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #ffffff;
 }
