@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -233,6 +234,7 @@ section {
     background-color: white;
     outline: none;
 }
+
 .informacion_uno,
 .informacion_dos,
 .informacion_tres {
@@ -274,6 +276,7 @@ button:hover {
 }
 
 
+
 /* Sliders */
 
 #propiedad1,
@@ -283,6 +286,7 @@ button:hover {
     height: 40%;
     font-size: 100%;
     width: 40%;
+    min-width: 100px;
     margin: 1% 0 1% 0;
 }
 
@@ -305,6 +309,7 @@ button:hover {
     outline: none;
     box-shadow: 6px 6px 0px #999;
     transition: all 0.2s ease 0s;
+    min-width: 80px;
 }
 
 .area-reset-origen .botones {
@@ -335,9 +340,10 @@ button:hover {
 .div_pr {
     display: flex;
     flex-direction: column;
-    height: 100%;
+   /* height: 100%; */
     width: 50%;
     padding-left: 10%;
+    margin-top: 1.2em;
 }
 
 .div_btn {
@@ -360,11 +366,13 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+
 footer a {
     color: #A6A6A6;
 }
-.twitter:visited, .instagram:visited, .github:visited{
-    color:#A6A6A6;
+
+.twitter:visited, .instagram:visited, .github:visited {
+    color: #A6A6A6;
 }
 
 @keyframes cortina-izquierda {
@@ -499,77 +507,90 @@ footer a {
 .slider_nuevo.ui-slider {
     background: #d5cebc;
     border: none;
-    border-radius: 0; 
+    border-radius: 0;
 }
-                      
+
 .slider_nuevo.ui-slider .ui-slider-handle {
     width: 20px;
     height: 20px;
     border-radius: 50% 50% 0;
     border-color: transparent;
-    transition: border 0.4s ease; 
+    transition: border 0.4s ease;
 }
-                
-.slider_nuevo.ui-slider .ui-slider-handle.ui-state-hover, 
-.slider_nuevo.ui-slider .ui-slider-handle.ui-state-focus, 
+
+.slider_nuevo.ui-slider .ui-slider-handle.ui-state-hover,
+.slider_nuevo.ui-slider .ui-slider-handle.ui-state-focus,
 .slider_nuevo.ui-slider .ui-slider-handle.ui-state-active {
     /*border-color: #172f38; */
 }
-                
+
 .slider_nuevo.ui-slider .ui-slider-pip .ui-slider-line {
-background: #d5cebc;
-transition: all 0.4s ease; 
+    background: #d5cebc;
+    transition: all 0.4s ease;
 }
-                
+
 .slider_nuevo.ui-slider.ui-slider-horizontal {
-height: 6px; }
-                
+    margin-top: 1.4em;
+    height: 6px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-handle {
--webkit-transform: rotateZ(45deg);
-        transform: rotateZ(45deg);
-top: -25px;
-margin-left: -10px; }
-                
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    top: -25px;
+    margin-left: -10px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip {
-top: 10px; }
-                
+    top: 10px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip .ui-slider-line {
     width: 2px;
     height: 10px;
-    margin-left: -1px; }
-                
+    margin-left: -1px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
-    height: 20px; }
-                
+    height: 20px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
-    height: 12px; }
-                
+    height: 12px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical {
-width: 6px;
-height: 125px;
-display: inline-block;
-margin: 0 15%; }
-                
+    width: 6px;
+    height: 125px;
+    display: inline-block;
+    margin: 0 15%;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle {
--webkit-transform: rotateZ(-45deg);
-        transform: rotateZ(-45deg);
-left: -25px;
-margin-bottom: -10px; }
-                
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    left: -25px;
+    margin-bottom: -10px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip {
-left: 10px; }
-                
+    left: 10px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip .ui-slider-line {
     height: 2px;
     width: 10px;
-    margin-top: -1px; }
-                
+    margin-top: -1px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
-    width: 20px; }
-                
+    width: 20px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
-    width: 12px; }
-                
+    width: 12px;
+}
+
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip,
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip {
     visibility: visible;
@@ -584,16 +605,28 @@ left: 10px; }
     font-weight: normal;
     top: 10px;
     -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg); }
-                
-    .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip:before,
-    .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip:before {
-    display: none; }
-                      
-  .slider_nuevo .ui-slider-handle,
-  .slider_nuevo .ui-slider-range,
-  .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
-  .slider_nuevo .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
-    background-color: #25daa5; 
-    border-color:  #25daa5; 
+    transform: rotateZ(45deg);
+}
+
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip:before,
+.slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip:before {
+    display: none;
+}
+
+.slider_nuevo .ui-slider-handle,
+.slider_nuevo .ui-slider-range,
+.slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+.slider_nuevo .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+    background-color: #25daa5;
+    border-color: #25daa5;
+    /*QUITAR EL BORDE AZUL CUANDO SE SELECCIONA*/
+    outline: none;
+}
+
+/*CUANDO SE LE HACE FOCUS BRILLA EL BORDE PARA MAYOR CLARIDAD (EL COLOR PUEDE CAMBIAR)*/
+.slider_nuevo .ui-slider-handle:focus,
+.slider_nuevo .ui-slider-range:focus,
+.slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line:focus,
+.slider_nuevo .ui-slider-pip.ui-slider-pip-inrange:focus .ui-slider-line:focus {
+    border-color: #da211b;
 }
