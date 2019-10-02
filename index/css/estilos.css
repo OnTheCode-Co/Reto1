@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +25,7 @@ body {
 .tapador_tres {
     height: 400px;
     width: 300px;
-    background-color: white;
+    background-color: #e7e6e6;
     z-index: 0;
     position: absolute;
     top: 20%;
@@ -168,7 +167,7 @@ h2 {
     z-index: -2;
     display: flex;
     flex-direction: column;
-    background: #d3d3d361;
+    background: #e7e6e6;
     color: #555555;
 }
 
@@ -193,7 +192,6 @@ header h1 {
 
 section {
     width: 100vw;
-    height: 40%;
 }
 
 .seccion_parametros {
@@ -235,7 +233,9 @@ section {
     outline: none;
 }
 
-#infor1, #infor2, #infor3 {
+#infor1,
+#infor2,
+#infor3 {
     background: rgba(211, 211, 211, 0);
 }
 
@@ -281,7 +281,8 @@ button:hover {
 
 /* Sliders */
 
-#propiedad1, #propiedad2 {
+#propiedad1,
+#propiedad2 {
     background: white;
 }
 
@@ -377,7 +378,9 @@ footer a {
     color: #A6A6A6;
 }
 
-.twitter:visited, .instagram:visited, .github:visited {
+.twitter:visited,
+.instagram:visited,
+.github:visited {
     color: #A6A6A6;
 }
 .twitter:hover{
@@ -521,7 +524,35 @@ footer a {
     }
 }
 
+.seccion-animacion {
+    width: 100vw;
+    height: 40%;
+    display: flex;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra_progreso {
+    width: 90vw;
+    height: 10px;
+    z-index: 0;
+    border: 1px solid #25daa5;
+    background-color: #25daa40f;
+    border-radius: 3px;
+}
+
+.relleno {
+    width: 0%;
+    height: 10px;
+    border-radius: 3px;
+    background-color: #25daa5;
+    transition: all 1s ease-in-out;
+}
+
+
 /* SLIDER */
+
 .slider_nuevo.ui-slider {
     background: #d5cebc;
     border: none;
@@ -548,6 +579,7 @@ footer a {
 }
 
 .slider_nuevo.ui-slider.ui-slider-horizontal {
+    margin-top: 25px;
     margin-top: 1.4em;
     height: 6px;
 }
@@ -640,7 +672,9 @@ footer a {
     outline: none;
 }
 
+
 /*CUANDO SE LE HACE FOCUS BRILLA EL BORDE PARA MAYOR CLARIDAD (EL COLOR PUEDE CAMBIAR)*/
+
 .slider_nuevo .ui-slider-handle:focus,
 .slider_nuevo .ui-slider-range:focus,
 .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line:focus,
