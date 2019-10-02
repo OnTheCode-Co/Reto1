@@ -2,12 +2,21 @@ window.onload = function () {
     //let sliderCotas = document.getElementById("slider1");
     //let sliderParadas = document.getElementById("slider2");
 
+    /* Variables de clase ------------------------------------------------------------------------------------------- */
+
     //let inputParada = document.getElementById("propiedad2");
     //let inputCota = document.getElementById("propiedad1");
 
-    /*sliderCotas.addEventListener("input", function () {
+
+    /*
+    sliderCotas.addEventListener("input", function () {
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+    /* Eventos ------------------------------------------------------------------------------------------------------ */
+
         deSlideraInput(sliderCotas, inputCota);
-    }); */
+    });
+    */
 
     /*sliderParadas.addEventListener("input", function () {
         deSlideraInput(sliderParadas, inputParada);
@@ -19,7 +28,7 @@ window.onload = function () {
 
     /*inputParada.addEventListener("input", function () {
         deInputaSlider(sliderParadas, inputParada);
-    })
+    });
 
     function deSlideraInput(slider, input) {
         console.log(slider.value);
@@ -28,12 +37,18 @@ window.onload = function () {
 
     function deInputaSlider(slider, input) {
         console.log(input.value);
-        if (input.value>100){
+        if (input === inputCota && input.value > 100) {
             input.value = 100;
         }
-        if (!Number.isNaN(parseInt(input.value))){
-            slider.value = input.value;
+        if (input === inputParada && input.value > 4) {
+            input.value = 4;
         }
+        if (!Number.isNaN(parseInt(input.value))) {
+            slider.value = input.value;
+        } else {
+            slider.value = 0;
+        }
+
     }*/
 //SLIDERS
 //Cogemos el valor del input y lo transladamos al slider cuando se pulsa una tecla
