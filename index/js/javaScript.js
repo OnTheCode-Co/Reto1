@@ -1,4 +1,23 @@
-window.onload = function () {
+window.onload = function() {
+
+    //Definicion de variables //
+
+    var cotas = document.getElementById("propiedad1");
+    var barraProgreso = document.getElementById("relleno_barra")
+
+    //////////////////////////
+    document.getElementById("boton1").addEventListener("click", function() {
+
+        barraProgreso.style.width = (cotas.value + "%")
+
+
+
+    })
+
+
+
+
+
     //let sliderCotas = document.getElementById("slider1");
     //let sliderParadas = document.getElementById("slider2");
 
@@ -14,7 +33,7 @@ window.onload = function () {
 
     /* Eventos ------------------------------------------------------------------------------------------------------ */
 
-       // deSlideraInput(sliderCotas, inputCota);    
+    // deSlideraInput(sliderCotas, inputCota);    
 
 
     /*sliderParadas.addEventListener("input", function () {
@@ -50,19 +69,22 @@ window.onload = function () {
 
     }*/
 
-    document.getElementById("propiedad1").addEventListener("keyup", function(){
+
+
+    document.getElementById("propiedad1").addEventListener("keyup", function() {
         var cota = document.getElementById("propiedad1").value;
         $("#slider_cota").slider('value', cota);
     });
 
-    document.getElementById("propiedad2").addEventListener("keyup", function(){
+    document.getElementById("propiedad2").addEventListener("keyup", function() {
         var parada = document.getElementById("propiedad2").value;
         $("#slider_parada").slider('value', parada);
     });
 
 };
 
-$(document).ready(function(event){
+$(document).ready(function(event) {
+
     //alert("hola");
     $("#slider_cota").slider({
         max: 100,
@@ -92,6 +114,8 @@ $(document).ready(function(event){
         var val = ui.value;
         document.getElementById("propiedad2").value = val;
     });
-    
-    
+
+
+
+
 })
