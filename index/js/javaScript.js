@@ -8,7 +8,7 @@ window.onload = function() {
     //////////////////////////
     document.getElementById("boton1").addEventListener("click", function() {
 
-        barraProgreso.style.width = (cotas.value + "%")
+        barraProgreso.style.width = ((cotas.value/5) + "%")
 
 
 
@@ -36,17 +36,18 @@ window.onload = function() {
     // deSlideraInput(sliderCotas, inputCota);    
 
 
-    /*sliderParadas.addEventListener("input", function () {
-        deSlideraInput(sliderParadas, inputParada);
+  /*  $("#slider_parada").bind("input", function () {
+        deSlideraInput($("#slider_parada"), $("#paradas_input"));
+    });
+*/
+    $("#slider_cota").bind("onchange", function () {
+        deInputaSlider($("#slider_cota"), $("#slider_cota").val());
     });
 
-    inputCota.addEventListener("input", function () {
-        deInputaSlider(sliderCotas, inputCota);
-    });*/
-
-    /*inputParada.addEventListener("input", function () {
-        deInputaSlider(sliderParadas, inputParada);
+   /* $("#paradas_input").bind("input", function () {
+        deInputaSlider($("#slider_parada"), $("#paradas_input"));
     });
+*/
 
     function deSlideraInput(slider, input) {
         console.log(slider.value);
@@ -55,8 +56,8 @@ window.onload = function() {
 
     function deInputaSlider(slider, input) {
         console.log(input.value);
-        if (input === inputCota && input.value > 100) {
-            input.value = 100;
+        if (input === inputCota && input.value > 500) {
+            input.value = 500;
         }
         if (input === inputParada && input.value > 4) {
             input.value = 4;
@@ -67,7 +68,7 @@ window.onload = function() {
             slider.value = 0;
         }
 
-    }*/
+    }
     //SLIDERS
     //Cogemos el valor del input y lo transladamos al slider cuando se pulsa una tecla
     document.getElementById("propiedad1").addEventListener("keyup", function() {
