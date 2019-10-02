@@ -370,11 +370,6 @@ footer {
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
 }
 
 footer a {
@@ -391,6 +386,19 @@ footer a {
     background-color: #1da1f2;
     color: #fff;
 }
+
+.github:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.instagram:hover {
+    background-color: #9938bd;
+    color: #fff;
+}
+
+
+/*Fin estilos footer*/
 
 .github:hover {
     background-color: #000000;
