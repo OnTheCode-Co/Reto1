@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -167,7 +168,7 @@ h2 {
     z-index: -2;
     display: flex;
     flex-direction: column;
-    background-color: #FFF;
+    background: #d3d3d361;
     color: #555555;
 }
 
@@ -233,6 +234,10 @@ section {
     outline: none;
 }
 
+#infor1, #infor2, #infor3 {
+    background: rgba(211, 211, 211, 0);
+}
+
 .informacion_uno,
 .informacion_dos,
 .informacion_tres {
@@ -275,6 +280,10 @@ button:hover {
 
 /* Sliders */
 
+#propiedad1, #propiedad2 {
+    background: white;
+}
+
 #propiedad1,
 #propiedad2,
 #propiedad3,
@@ -282,6 +291,7 @@ button:hover {
     height: 40%;
     font-size: 100%;
     width: 40%;
+    min-width: 100px;
     margin: 1% 0 1% 0;
 }
 
@@ -304,6 +314,7 @@ button:hover {
     outline: none;
     box-shadow: 6px 6px 0px #999;
     transition: all 0.2s ease 0s;
+    min-width: 80px;
 }
 
 .area-reset-origen .botones {
@@ -334,9 +345,10 @@ button:hover {
 .div_pr {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
     width: 50%;
     padding-left: 10%;
+    margin-top: 1.2em;
 }
 
 .div_btn {
@@ -364,9 +376,7 @@ footer a {
     color: #A6A6A6;
 }
 
-.twitter:visited,
-.instagram:visited,
-.github:visited {
+.twitter:visited, .instagram:visited, .github:visited {
     color: #A6A6A6;
 }
 
@@ -546,8 +556,9 @@ footer a {
 }
 
 .slider_nuevo.ui-slider.ui-slider-horizontal {
-    height: 6px;
     margin-top: 25px;
+    margin-top: 1.4em;
+    height: 6px;
 }
 
 .slider_nuevo.ui-slider.ui-slider-horizontal .ui-slider-handle {
@@ -623,6 +634,7 @@ footer a {
     -webkit-transform: rotateZ(45deg);
     transform: rotateZ(45deg);
 }
+    display: none;
 
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip:before,
 .slider_nuevo.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip:before {
@@ -634,5 +646,14 @@ footer a {
 .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
 .slider_nuevo .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
     background-color: #25daa5;
-    border-color: #25daa5;
+    /*QUITAR EL BORDE AZUL CUANDO SE SELECCIONA*/
+    outline: none;
+}
+
+/*CUANDO SE LE HACE FOCUS BRILLA EL BORDE PARA MAYOR CLARIDAD (EL COLOR PUEDE CAMBIAR)*/
+.slider_nuevo .ui-slider-handle:focus,
+.slider_nuevo .ui-slider-range:focus,
+.slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line:focus,
+.slider_nuevo .ui-slider-pip.ui-slider-pip-inrange:focus .ui-slider-line:focus {
+    border-color: #da211b;
 }
