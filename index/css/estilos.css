@@ -365,7 +365,18 @@ footer a {
 .twitter:visited, .instagram:visited, .github:visited{
     color:#A6A6A6;
 }
-
+.twitter:hover{
+    background-color: #1da1f2;
+    color:#fff;
+}
+.github:hover{
+    background-color: #000000;
+    color:#fff;
+}
+.instagram:hover{
+    background-color:#9938bd;
+    color:#fff;
+}
 @keyframes cortina-izquierda {
     from {
         top: 0%;
