@@ -14,9 +14,8 @@ window.onload = function () {
 
     /* Eventos ------------------------------------------------------------------------------------------------------ */
 
-        deSlideraInput(sliderCotas, inputCota);
-    });
-    */
+       // deSlideraInput(sliderCotas, inputCota);    
+
 
     /*sliderParadas.addEventListener("input", function () {
         deSlideraInput(sliderParadas, inputParada);
