@@ -49,7 +49,8 @@ window.onload = function () {
         }
 
     }*/
-
+//SLIDERS
+//Cogemos el valor del input y lo transladamos al slider cuando se pulsa una tecla
     document.getElementById("propiedad1").addEventListener("keyup", function(){
         var cota = document.getElementById("propiedad1").value;
         $("#slider_cota").slider('value', cota);
@@ -61,7 +62,8 @@ window.onload = function () {
     });
 
 };
-
+//SLIDERS
+//Creación y valores por defecto de los sliders
 $(document).ready(function(event){
     //alert("hola");
     $("#slider_cota").slider({
@@ -72,13 +74,14 @@ $(document).ready(function(event){
     }).slider("pips", {
         rest: "pip"
     });
-
+//SLIDERS
+//Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
     $("#slider_cota").on("slidestop", function(event, ui) {
         var val = ui.value;
         document.getElementById("propiedad1").value = val;
     });
-
-
+//SLIDERS
+//Creación y valores por defecto de los sliders
     $("#slider_parada").slider({
         max: 4,
         min: 0,
@@ -87,7 +90,8 @@ $(document).ready(function(event){
     }).slider("pips", {
         rest: "pip"
     });
-
+//SLIDERS
+//Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
     $("#slider_parada").on("slidestop", function(event, ui) {
         var val = ui.value;
         document.getElementById("propiedad2").value = val;
