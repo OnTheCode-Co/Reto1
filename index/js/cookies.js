@@ -1,4 +1,4 @@
-alert("cooooooooo");
+//alert("cooooooooo");
 
 //document.cookie = "nombrecookie=valorcookie; max-age=un dia; path=/";
 //document.cookie = "c_animacion=true; max-age=86400; path=/";
