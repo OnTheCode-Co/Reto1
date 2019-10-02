@@ -697,7 +697,7 @@ footer a {
 .slider_nuevo .ui-slider-range:focus,
 .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line:focus,
 .slider_nuevo .ui-slider-pip.ui-slider-pip-inrange:focus .ui-slider-line:focus {
-    border-color: #da211b;
+    border-color: #04a504;
 }
 
 
