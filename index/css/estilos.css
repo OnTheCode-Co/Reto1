@@ -10,7 +10,7 @@ body {
     z-index: -1;
     overflow-x: hidden;
     overflow-y: hidden;
-    font-family: Roboto;
+    font-family: Roboto sans-serif;
 }
 
 .divisor {
@@ -61,7 +61,7 @@ body {
     width: 100px;
     height: 200px;
     position: absolute;
-    top: 40vh;
+    /* top: 40vh; */
     left: 50%;
     animation-name: imagen-uno;
     animation-delay: 0.75s;
@@ -362,18 +362,18 @@ footer {
     padding: 1rem;
     text-align: center;
 }
-.twitter: visited{
+.twitter:visited{
     color:#A6A6A6;
 }
 
 @keyframes cortina-izquierda {
     from {
-        top: 0%;
+        top: 0;
         left: 0vw;
     }
     50% {
-        top: 0%;
-        left: 0vw;
+        top: 0;
+        left: 0;
     }
     to {
         left: -100vw;
@@ -382,11 +382,11 @@ footer {
 
 @keyframes cortina-derecha {
     from {
-        top: 0%;
+        top: 0;
         left: 50vw;
     }
     50% {
-        top: 0%;
+        top: 0;
         left: 50vw;
     }
     to {
@@ -490,6 +490,6 @@ footer {
         height: 400px;
     }
     to {
-        height: 0px;
+        height: 0;
     }
 }
