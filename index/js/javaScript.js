@@ -6,11 +6,10 @@ window.onload = function () {
     var barraProgreso = document.getElementById("relleno_barra")
 
     //////////////////////////
+    let sliderCota = document.getElementById("slider_cota");
     document.getElementById("boton1").addEventListener("click", function () {
-
-        barraProgreso.style.width = ((cotas.value / 5) + "%")
-
-
+        barraProgreso.style.width = ((cotas.value / 5) + "%");
+        console.log($("#slider_cota").ui.value);
     });
 
 
@@ -41,11 +40,6 @@ window.onload = function () {
      });
  */
 
-    function deSlideraInput(slider, input) {
-        console.log(slider.value);
-        input.value = slider.value;
-    }
-
     function deInputaSlider(slider, input) {
         console.log(input.value);
         if (input === inputCota && input.value > 500) {
@@ -68,46 +62,50 @@ window.onload = function () {
     let inputParada = document.getElementById("propiedad2");
     let inputCota = document.getElementById("propiedad1");
 
-    inputCota.addEventListener("input", function () {
-        console.log(document.getElementById("propiedad1").value);
-        var cota = inputCota.value;
-        if (cota > 500) {
-            inputCota.value = 500;
-        } else if (cota < 0) {
-            inputCota.value = 0;
-        }
-        $("#slider_cota").slider('value', cota);
-    });
-
-    inputParada.addEventListener("input", function () {
-        var parada = inputParada.value;
-        if (parada > 4) {
-            inputParada.value = 4;
-        } else if (parada < 0) {
-            inputParada.value = 0;
-        }
-        $("#slider_parada").slider('value', parada);
-    });
-
-};
-//SLIDERS
+    //SLIDERS
 //Creación y valores por defecto de los sliders
-$(document).ready(function (event) {
     //alert("hola");
     $("#slider_cota").slider({
         max: 500,
         min: 0,
         range: "min",
-        value: 0
+        value: 0,
+        step: 1
     }).slider("pips", {
         rest: "pip"
     });
     //SLIDERS
     //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
     $("#slider_cota").on("slide", function (event, ui) {
-        var val = ui.value;
-        document.getElementById("propiedad1").value = val;
+        let val = ui.value;
+        inputCota.value = val;
+        console.log(val);
+        calibrarSliderParada(val);
     });
+
+    function calibrarSliderParada(ui){
+        switch (ui) {
+            case 0:
+                calibrarSlider($("#slider_parada"), 0, inputParada);
+                break;
+            case 125:
+                calibrarSlider($("#slider_parada"), 1, inputParada);
+                break;
+
+            case 250:
+                calibrarSlider($("#slider_parada"), 2, inputParada);
+                break;
+
+            case 375:
+                calibrarSlider($("#slider_parada"), 3, inputParada);
+                break;
+
+            case 500:
+                calibrarSlider($("#slider_parada"), 4, inputParada);
+                break;
+        }
+    }
+
     //SLIDERS
     //Creación y valores por defecto de los sliders
     $("#slider_parada").slider({
@@ -121,7 +119,68 @@ $(document).ready(function (event) {
     //SLIDERS
     //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
     $("#slider_parada").on("slide", function (event, ui) {
-        var val = ui.value;
-        document.getElementById("propiedad2").value = val;
+
+        let val = ui.value;
+        inputParada.value = val;
+        calibrarSliderCota(val);
     });
-});
+    function calibrarSliderCota(ui) {
+        switch (ui) {
+            case 0:
+                calibrarSlider($("#slider_cota"), 0, inputCota);
+                break;
+            case 1:
+                calibrarSlider($("#slider_cota"), 125, inputCota);
+                break;
+
+            case 2:
+                calibrarSlider($("#slider_cota"), 250, inputCota);
+                break;
+
+            case 3:
+                calibrarSlider($("#slider_cota"), 375, inputCota);
+                break;
+
+            case 4:
+                calibrarSlider($("#slider_cota"), 500, inputCota);
+                break;
+        }
+    }
+
+
+    function calibrarSlider(slider, valor, input) {
+        input.value = valor;
+        slider.slider({
+            value: valor
+        });
+    }
+
+    inputCota.addEventListener("input", function () {
+        console.log(document.getElementById("propiedad1").value);
+        var cota = inputCota.value;
+        if (cota > 500) {
+            inputCota.value = 500;
+        } else if (cota < 0) {
+            inputCota.value = 0;
+        }
+
+
+        $("#slider_cota").slider('value', cota);
+        let valorDelSliderDeCotas = $("#slider_cota").slider("value");
+        calibrarSliderParada(valorDelSliderDeCotas);
+    });
+
+    inputParada.addEventListener("input", function () {
+        var parada = inputParada.value;
+        if (parada > 4) {
+            inputParada.value = 4;
+        } else if (parada < 0) {
+            inputParada.value = 0;
+        }
+        $("#slider_parada").slider('value', parada);
+
+        let valorDelSliderDeParadas = $("#slider_parada").slider("value");
+        calibrarSliderCota(valorDelSliderDeParadas);
+    });
+
+};
