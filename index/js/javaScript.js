@@ -48,7 +48,6 @@ $(document).ready(function (event) {
         }
 
         function deInputaSlider(slider, input) {
-            console.log(input.value);
             if (input === inputCota && input.value > 500) {
                 input.value = 500;
             }
@@ -70,12 +69,13 @@ $(document).ready(function (event) {
         let inputCota = document.getElementById("propiedad1");
 
         inputCota.addEventListener("input", function () {
-            console.log(document.getElementById("propiedad1").value);
             var cota = inputCota.value;
             if (cota > 500) {
                 inputCota.value = 500;
             } else if (cota < 0) {
                 inputCota.value = 0;
+            } else if(isNaN(cota)) {
+                inputCota.value = "";
             }
             $("#slider_cota").slider('value', cota);
         });
@@ -86,6 +86,8 @@ $(document).ready(function (event) {
                 inputParada.value = 4;
             } else if (parada < 0) {
                 inputParada.value = 0;
+            } else if(isNaN(parada)) {
+                inputParada.value = "";
             }
             $("#slider_parada").slider('value', parada);
         });
