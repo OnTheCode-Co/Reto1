@@ -366,7 +366,9 @@ button:hover {
 
 footer {
     width: 100vw;
-    height: 4%;
+    bottom:0;
+    text-align: center;
+    height: 6%;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
@@ -398,7 +400,6 @@ footer a {
 }
 
 
-/*Fin estilos footer*/
 
 .github:hover {
     background-color: #000000;
@@ -696,7 +697,7 @@ footer a {
 .slider_nuevo .ui-slider-range:focus,
 .slider_nuevo .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line:focus,
 .slider_nuevo .ui-slider-pip.ui-slider-pip-inrange:focus .ui-slider-line:focus {
-    border-color: #da211b;
+    border-color: #04a504;
 }
 
 

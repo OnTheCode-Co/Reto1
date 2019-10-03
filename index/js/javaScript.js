@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
 
     //Definicion de variables //
 
@@ -6,26 +6,18 @@ window.onload = function() {
     var barraProgreso = document.getElementById("relleno_barra")
 
     //////////////////////////
-    document.getElementById("boton1").addEventListener("click", function() {
+    document.getElementById("boton1").addEventListener("click", function () {
 
-        barraProgreso.style.width = (cotas.value + "%")
-
-
-
-    })
+        barraProgreso.style.width = ((cotas.value / 5) + "%")
 
 
-
+    });
 
 
     //let sliderCotas = document.getElementById("slider1");
     //let sliderParadas = document.getElementById("slider2");
 
     /* Variables de clase ------------------------------------------------------------------------------------------- */
-
-    //let inputParada = document.getElementById("propiedad2");
-    //let inputCota = document.getElementById("propiedad1");
-
 
     /*
     sliderCotas.addEventListener("input", function () {
@@ -36,17 +28,18 @@ window.onload = function() {
     // deSlideraInput(sliderCotas, inputCota);    
 
 
-    /*sliderParadas.addEventListener("input", function () {
-        deSlideraInput(sliderParadas, inputParada);
+    /*  $("#slider_parada").bind("input", function () {
+          deSlideraInput($("#slider_parada"), $("#paradas_input"));
+      });
+  */
+    $("#slider_cota").bind("onchange", function () {
+        deInputaSlider($("#slider_cota"), $("#slider_cota").val());
     });
 
-    inputCota.addEventListener("input", function () {
-        deInputaSlider(sliderCotas, inputCota);
-    });*/
-
-    /*inputParada.addEventListener("input", function () {
-        deInputaSlider(sliderParadas, inputParada);
-    });
+    /* $("#paradas_input").bind("input", function () {
+         deInputaSlider($("#slider_parada"), $("#paradas_input"));
+     });
+ */
 
     function deSlideraInput(slider, input) {
         console.log(slider.value);
@@ -55,8 +48,8 @@ window.onload = function() {
 
     function deInputaSlider(slider, input) {
         console.log(input.value);
-        if (input === inputCota && input.value > 100) {
-            input.value = 100;
+        if (input === inputCota && input.value > 500) {
+            input.value = 500;
         }
         if (input === inputParada && input.value > 4) {
             input.value = 4;
@@ -67,35 +60,51 @@ window.onload = function() {
             slider.value = 0;
         }
 
-    }*/
+    }
+
     //SLIDERS
     //Cogemos el valor del input y lo transladamos al slider cuando se pulsa una tecla
-    document.getElementById("propiedad1").addEventListener("keyup", function() {
-        var cota = document.getElementById("propiedad1").value;
+
+    let inputParada = document.getElementById("propiedad2");
+    let inputCota = document.getElementById("propiedad1");
+
+    inputCota.addEventListener("input", function () {
+        console.log(document.getElementById("propiedad1").value);
+        var cota = inputCota.value;
+        if (cota > 500) {
+            inputCota.value = 500;
+        } else if (cota < 0) {
+            inputCota.value = 0;
+        }
         $("#slider_cota").slider('value', cota);
     });
 
-    document.getElementById("propiedad2").addEventListener("keyup", function() {
-        var parada = document.getElementById("propiedad2").value;
+    inputParada.addEventListener("input", function () {
+        var parada = inputParada.value;
+        if (parada > 4) {
+            inputParada.value = 4;
+        } else if (parada < 0) {
+            inputParada.value = 0;
+        }
         $("#slider_parada").slider('value', parada);
     });
 
 };
 //SLIDERS
 //Creación y valores por defecto de los sliders
-$(document).ready(function(event) {
+$(document).ready(function (event) {
     //alert("hola");
     $("#slider_cota").slider({
-        max: 100,
+        max: 500,
         min: 0,
-        range: false,
+        range: "min",
         value: 0
     }).slider("pips", {
         rest: "pip"
     });
     //SLIDERS
     //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
-    $("#slider_cota").on("slidestop", function(event, ui) {
+    $("#slider_cota").on("slide", function (event, ui) {
         var val = ui.value;
         document.getElementById("propiedad1").value = val;
     });
@@ -104,19 +113,15 @@ $(document).ready(function(event) {
     $("#slider_parada").slider({
         max: 4,
         min: 0,
-        range: false,
+        range: "min",
         value: 0
     }).slider("pips", {
         rest: "pip"
     });
     //SLIDERS
     //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
-    $("#slider_parada").on("slidestop", function(event, ui) {
+    $("#slider_parada").on("slide", function (event, ui) {
         var val = ui.value;
         document.getElementById("propiedad2").value = val;
     });
-
-
-
-
-})
+});
