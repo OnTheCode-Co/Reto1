@@ -1,5 +1,7 @@
 $(document).ready(function (event) {
 
+    let retraso = 5000;
+
     // Funciones cookie
 
     /**
@@ -60,6 +62,10 @@ $(document).ready(function (event) {
      */
     if (getCookie('inicio') == "true") {
         document.getElementById("barraaceptacion").style.display = "none";
+    } else {
+        setTimeout(function () {
+            document.getElementById("barraaceptacion").style.display = "block";
+        }, retraso);
     }
 
     // Añadirle la funcion onClick al OK del bloque de cookies
