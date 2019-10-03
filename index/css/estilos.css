@@ -20,7 +20,7 @@ body {
     left: 50%;
 }
 
-.tapador_uno,
+/*.tapador_uno,
 .tapador_dos,
 .tapador_tres {
     height: 400px;
@@ -56,6 +56,7 @@ body {
     animation-delay: 4.7s;
     animation-fill-mode: forwards;
 }
+*/
 
 .imagen1 {
     width: 100px;
@@ -523,7 +524,7 @@ footer a {
     from {
         opacity: 0;
         margin-bottom: 5px;
-        width: 17vw;
+        width: 25vw;
         border-bottom: 0px solid #25daa5;
     }
     to {
@@ -576,6 +577,7 @@ footer a {
     background: #d5cebc;
     border: none;
     border-radius: 0;
+    z-index: 0;
 }
 
 .slider_nuevo.ui-slider .ui-slider-handle {
