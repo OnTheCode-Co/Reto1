@@ -20,7 +20,7 @@ body {
     left: 50%;
 }
 
-.tapador_uno,
+/*.tapador_uno,
 .tapador_dos,
 .tapador_tres {
     height: 400px;
@@ -56,6 +56,7 @@ body {
     animation-delay: 4.7s;
     animation-fill-mode: forwards;
 }
+*/
 
 .imagen1 {
     width: 100px;
@@ -228,7 +229,7 @@ section {
     width: 45%;
     margin: 1% 0 1% 0;
     border: 0;
-    border-bottom: 2px solid #04a504;
+    border-bottom: 2px solid #25daa5;
     background-color: white;
     outline: none;
 }
@@ -368,7 +369,8 @@ footer {
     width: 100vw;
     bottom:0;
     text-align: center;
-    height: 6%;
+    /*height: 6%;*/
+    padding:10px;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
@@ -522,14 +524,14 @@ footer a {
     from {
         opacity: 0;
         margin-bottom: 5px;
-        width: 17vw;
-        border-bottom: 0px solid #04a504;
+        width: 25vw;
+        border-bottom: 0px solid #25daa5;
     }
     to {
         opacity: 1;
         margin-bottom: 5px;
         width: 90vw;
-        border-bottom: 3px solid #04a504;
+        border-bottom: 3px solid #25daa5;
     }
 }
 
@@ -575,6 +577,7 @@ footer a {
     background: #d5cebc;
     border: none;
     border-radius: 0;
+    z-index: 0;
 }
 
 .slider_nuevo.ui-slider .ui-slider-handle {
