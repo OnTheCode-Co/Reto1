@@ -10,7 +10,7 @@ $(document).ready(function (event) {
         let sliderCota = document.getElementById("slider_cota");
         document.getElementById("boton1").addEventListener("click", function () {
             barraProgreso.style.width = ((cotas.value / 5) + "%");
-            console.log($("#slider_cota").ui.value);
+            //console.log($("#slider_cota").slider.value);
         });
 
 
