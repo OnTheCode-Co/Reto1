@@ -1,0 +1,74 @@
+.movil{
+    display: none;
+}
+@media screen and (max-width: 719px) and (min-width:360px){
+    .movil{
+        display: block;
+    }
+    footer{
+        display: none;
+    }
+
+    .seccion_parametros{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        overflow: auto;
+        
+    }
+ 
+
+    .contenedor_parametros {
+      
+        height: 30%;
+        margin: 50px;
+       
+    }
+    .contenedor_botones {
+        height: 30%;
+        margin: 50px;
+        flex-direction: row;
+        width: 90%;
+        order: -1;
+        margin-top: 200px;
+     
+        
+
+    }
+    #boton1, #boton2{
+        margin-left: 50px;
+    }
+    .contenedor_informacion {
+        height: 30%;
+        margin: 50px;
+        margin-top:100px;
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .contenedor_informacion div {
+        width: 20%;
+    }
+#infor1,
+#infor2,
+#infor3{
+    justify-content: flex-start;
+    min-width: 90px;
+    max-width: 100px;
+}
+
+#infor1 input,
+#infor2 input,
+#infor3 input{
+    justify-content: flex-start;
+    min-width: 100px;
+    max-width: 100px;
+}
+.parametro_uno, .parametro_dos, .parametro_tres{
+    width: 200%;
+    display: flex;
+    align-items: center;
+    margin-left: -50%;
+}
+}
