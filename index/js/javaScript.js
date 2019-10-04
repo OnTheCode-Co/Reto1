@@ -1,96 +1,53 @@
 window.onload = function () {
-    $(document).ready(function (event) {
-        //Definicion de variables //
-
-        var cotas = document.getElementById("propiedad1");
-        var barraProgreso = document.getElementById("relleno_barra")
-
-        //////////////////////////
-        let sliderCota = document.getElementById("slider_cota");
-        document.getElementById("boton1").addEventListener("click", function () {
-            barraProgreso.style.width = ((cotas.value / 5) + "%");
-            //console.log($("#slider_cota").slider.value);
-        });
-
-
-        //let sliderCotas = document.getElementById("slider1");
-        //let sliderParadas = document.getElementById("slider2");
-
-        /* Variables de clase ------------------------------------------------------------------------------------------- */
-
-        /*
-        sliderCotas.addEventListener("input", function () {
-        /* -------------------------------------------------------------------------------------------------------------- */
-
-        /* Eventos ------------------------------------------------------------------------------------------------------ */
-
-        // deSlideraInput(sliderCotas, inputCota);
-
-
-        /*  $("#slider_parada").bind("input", function () {
-              deSlideraInput($("#slider_parada"), $("#paradas_input"));
-          });
-      */
-        $("#slider_cota").bind("onchange", function () {
-            deInputaSlider($("#slider_cota"), $("#slider_cota").val());
-        });
-
-        /* $("#paradas_input").bind("input", function () {
-             deInputaSlider($("#slider_parada"), $("#paradas_input"));
-         });
-     */
-
-        function deInputaSlider(slider, input) {
-            console.log(input.value);
-            if (input === inputCota && input.value > 500) {
-                input.value = 500;
-            }
-            if (input === inputParada && input.value > 4) {
-                input.value = 4;
-            }
-            if (!Number.isNaN(parseInt(input.value))) {
-                slider.value = input.value;
-            } else {
-                slider.value = 0;
-
-            }
-        }
-
-        function deInputaSlider(slider, input) {
-            if (input === inputCota && input.value > 500) {
-                input.value = 500;
-            }
-            if (input === inputParada && input.value > 4) {
-                input.value = 4;
-            }
-            if (!Number.isNaN(parseInt(input.value))) {
-                slider.value = input.value;
-            } else {
-                slider.value = 0;
-            }
-
-        }
-
-        //SLIDERS
-        //Cogemos el valor del input y lo transladamos al slider cuando se pulsa una tecla
+    $(document).ready(function () {
+        let cotas = document.getElementById("propiedad1");
+        let barraProgreso = document.getElementById("relleno_barra");
+        let arrayCotas = Array(0);
+        arrayCotas.push(1);
+        arrayCotas.push(150);
+        arrayCotas.push(250);
+        arrayCotas.push(400);
+        arrayCotas.push(500);
+        //arrayCotas.forEach(value => console.log(value));
 
         let inputParada = document.getElementById("propiedad2");
         let inputCota = document.getElementById("propiedad1");
+
+        document.getElementById("boton1").addEventListener("click", function () {
+            //barraProgreso.style.width = ((cotas.value / 5) + "%");
+            let posicion = (cotas.value / 5);
+            avanzarBarraProgreso(posicion);
+        });
+
+        document.getElementById("boton2").addEventListener("click", function () {
+            console.log(inputParada.value);
+            let posicion;
+            posicion = arrayCotas[inputParada.value];
+            avanzarBarraProgreso(posicion * 0.2);
+        });
+
+        /**
+         * Con el parametro pasado mueve la barra verde hasta la cota o parada que inserta el usuario.
+         * @param posicion {int} - Valor entre 0 y 100 donde se situará el final de la barra verde.
+         */
+        function avanzarBarraProgreso(posicion) {
+            console.log("avanzarbarraprogreso funciona");
+            barraProgreso.style.width = posicion + "%";
+        }
 
         inputCota.addEventListener("input", function () {
             var cota = inputCota.value;
             if (cota > 500) {
                 inputCota.value = 500;
-            } else if (cota < 0) {
-                inputCota.value = 0;
+            } else if (cota < 1) {
+                inputCota.value ="";
             } else if (isNaN(cota)) {
-                inputCota.value = 0;
+                inputCota.value=1;
             }
             $("#slider_cota").slider('value', cota);
             let valorDelSliderDeCotas = $("#slider_cota").slider("value");
             calibrarSliderParada(valorDelSliderDeCotas);
         });
-
         inputParada.addEventListener("input", function () {
             var parada = inputParada.value;
             if (parada > 4) {
@@ -110,49 +67,94 @@ window.onload = function () {
         $("#propiedad1").keypress(function (e) {
             hazClick(e, "#boton1");
         });
-        $("#propiedad2").keypress(function (e) {
-            hazClick(e, "#boton2");
-        });
         $("#slider_cota").keypress(function (e) {
             hazClick(e, "#boton1");
+        });
+        $("#propiedad2").keypress(function (e) {
+            hazClick(e, "#boton2");
         });
         $("#slider_parada").keypress(function (e) {
             hazClick(e, "#boton2");
         });
 
+        /**
+         * Dispara el evento 'click' del boton que se le pase como parametro cuando pulsas 'Enter'.
+         * @param enter - Código de la tecla "Enter"
+         * @param boton {string} - ID del botón.
+         */
         function hazClick(enter, boton) {
             if (enter.keyCode == 13) {
                 $(boton).trigger("click");
             }
         }
 
-//SLIDERS
-//Creación y valores por defecto de los sliders
-        //alert("hola");
+        //SLIDERS
+        //Creación y valores por defecto de los sliders
         $("#slider_cota").slider({
             max: 500,
-            min: 0,
+            min: 1,
             range: "min",
-            value: 0,
+            value: 1,
             step: 1
         }).slider("pips", {
             rest: "pip"
         });
-        //SLIDERS
-        //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
-        $("#slider_cota").on("slide", function (event, ui) {
-            let val = ui.value;
-            inputCota.value = val;
-            console.log(val);
-            calibrarSliderParada(val);
+        $("#slider_parada").slider({
+            max: 4,
+            min: 0,
+            range: "min",
+            value: 0
+        }).slider("pips", {
+            rest: "pip"
         });
 
-        function calibrarSliderParada(ui) {
-            switch (ui) {
-                case 0:
+        /* SLIDERS Cuando la bola del slider se para, recogemos el valor y lo pasamos al input */
+        $("#slider_cota").on("slide", function (event, ui) {
+            triggerSlider(ui, inputCota, "cota");
+        });
+        $("#slider_parada").on("slide", function (event, ui) {
+            triggerSlider(ui, inputParada,"cota");
+        });
+
+        /**
+         * Función que se dispara cuando se mueve el slider.
+         * @param ui - El slider del que se va a sacar el valor.
+         * @param input - el campo de texto que se va a actualizar cuando se mueva el slider.
+         */
+        function triggerSlider(ui, input) {
+            let val = ui.value;
+            input.value = val;
+
+            if(input.id === "propiedad1"){
+                calibrarSliderParada(val);
+            }else{
+                calibrarSliderCota(val);
+            }
+        }
+
+        /**
+         * Calibrar un slider cuando se hacen cambios en el otro.
+         * @param slider - El slider que queremos que cambie.
+         * @param valor {int} - El valor en el que lo vamos a poner, en este caso el valor determina la posición.
+         * @param input - el input relacionado con el slider donde se harán los cambio.
+         */
+        function calibrarSlider(slider, valor, input) {
+            input.value = valor;
+            slider.slider({
+                value: valor
+            });
+        }
+
+        /**
+         * Calibrar el slider de las paradas cuando el valor de las cotas coincida exactamente con el de una cota.
+         * @param val {int} - El valor con el que se comprobará si la cota seleccionada es una parada
+         */
+        function calibrarSliderParada(val) {
+            switch (val) {
+                case 1:
                     calibrarSlider($("#slider_parada"), 0, inputParada);
                     break;
-                case 125:
+                case 150:
                     calibrarSlider($("#slider_parada"), 1, inputParada);
                     break;
 
@@ -160,7 +162,7 @@ window.onload = function () {
                     calibrarSlider($("#slider_parada"), 2, inputParada);
                     break;
 
-                case 375:
+                case 400:
                     calibrarSlider($("#slider_parada"), 3, inputParada);
                     break;
 
@@ -170,32 +172,17 @@ window.onload = function () {
             }
         }
 
-        //SLIDERS
-        //Creación y valores por defecto de los sliders
-        $("#slider_parada").slider({
-            max: 4,
-            min: 0,
-            range: "min",
-            value: 0
-        }).slider("pips", {
-            rest: "pip"
-        });
-        //SLIDERS
-        //Cuando la bola del slider se para, recogemos el valor y lo pasamos al input
-        $("#slider_parada").on("slide", function (event, ui) {
-
-            let val = ui.value;
-            inputParada.value = val;
-            calibrarSliderCota(val);
-        });
-
-        function calibrarSliderCota(ui) {
-            switch (ui) {
+        /**
+         * Calibrar el slider de las cotas cuando se seleccione una de las paradas.
+         * @param val {int} - El valor que se comprobará para saber en qué cota está cada parada.
+         */
+        function calibrarSliderCota(val) {
+            switch (val) {
                 case 0:
-                    calibrarSlider($("#slider_cota"), 0, inputCota);
+                    calibrarSlider($("#slider_cota"), 1, inputCota);
                     break;
                 case 1:
-                    calibrarSlider($("#slider_cota"), 125, inputCota);
+                    calibrarSlider($("#slider_cota"), 150, inputCota);
                     break;
 
                 case 2:
@@ -203,21 +190,13 @@ window.onload = function () {
                     break;
 
                 case 3:
-                    calibrarSlider($("#slider_cota"), 375, inputCota);
+                    calibrarSlider($("#slider_cota"), 400, inputCota);
                     break;
 
                 case 4:
                     calibrarSlider($("#slider_cota"), 500, inputCota);
                     break;
             }
-        }
-
-
-        function calibrarSlider(slider, valor, input) {
-            input.value = valor;
-            slider.slider({
-                value: valor
-            });
         }
     });
 };
