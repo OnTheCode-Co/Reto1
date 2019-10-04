@@ -1,8 +1,41 @@
 $(document).ready(function (event) {
 
-    let retraso = 5000;
+    /**
+     * comprobar si esta la cookie creada
+     * si está, no poner el bloque de cookie
+     * si no existe poner el bloque de cookie
+     */
+    if (getCookie('inicio') == "true") {
+        document.getElementById("barraaceptacion").style.display = "none";
+        // desactivar animaciones
+        let c = document.getElementsByClassName("anim")
+        for (let i = 0; i < c.length; i++) {
+            c[i].style.display = "none";
+        }
+        $("#titulo").css({
+            "opacity": "1",
+            "border-bottom": "3px solid #25daa5",
+            "width": "90vw"
+        });
+    } else {
+        // cuando no exista la cookie aún
+        $("#titulo").css({
+            "animation-name": "aparicion-titulo",
+            "animation-delay": "5s",
+            "animation-duration": "1.5s",
+            "animation-fill-mode": "forwards"
+        });
+        setTimeout(function () {
+            document.getElementById("barraaceptacion").style.display = "block";
+        }, 5000);
+    }
 
-    // Funciones cookie
+    // Añadirle la funcion onClick al OK del bloque de cookies
+    $("#ok").bind("click", function () {
+        siCookie();
+    });
+
+    // Funciones cookies
 
     /**
      *  Funcion crear cookie
@@ -20,10 +53,10 @@ $(document).ready(function (event) {
     }
 
     /**
-     * Funcion crear cookie o no dependiendo de si esta creada
-     * o no.
+     * Funcion crear cookie o no dependiendo de si está ya creada
+     *
      */
-    function crearCK() {
+    function siCookie() {
         let galleta = getCookie('inicio');
         if (galleta == null && galleta != "true") {
             document.cookie = crearCookie("inicio", "true", 1);
@@ -54,22 +87,4 @@ $(document).ready(function (event) {
         }
         return c_value;
     }
-
-    /**
-     * comprobar si esta la cookie creada
-     * si está, no poner el bloque de cookie
-     * si no existe poner el bloque de cookie
-     */
-    if (getCookie('inicio') == "true") {
-        document.getElementById("barraaceptacion").style.display = "none";
-    } else {
-        setTimeout(function () {
-            document.getElementById("barraaceptacion").style.display = "block";
-        }, retraso);
-    }
-
-    // Añadirle la funcion onClick al OK del bloque de cookies
-    $("#ok").bind("click", function () {
-        crearCK();
-    });
 });

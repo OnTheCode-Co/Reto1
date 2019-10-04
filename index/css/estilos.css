@@ -183,12 +183,14 @@ header {
 }
 
 header h1 {
-    animation-name: aparicion-titulo;
+  /*  animation-name: aparicion-titulo;
     animation-delay: 5s;
     animation-duration: 1.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
     opacity: 0;
     margin-bottom: 5px;
+   /* border-bottom: 3px solid #25daa5;
+    width: 90vw;*/
 }
 
 section {
