@@ -5,6 +5,7 @@
 }
 
 body {
+  
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -68,7 +69,7 @@ body {
     animation-delay: 0.75s;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    top: 120vh;
+    top: 145vh;
     right: 50%;
     z-index: 3;
 }
@@ -140,7 +141,7 @@ body {
     animation-delay: 0.75s;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    top: -25vh;
+    top: -50vh;
     right: 50%;
     z-index: 3;
 }
@@ -183,12 +184,14 @@ header {
 }
 
 header h1 {
-    animation-name: aparicion-titulo;
+  /*  animation-name: aparicion-titulo;
     animation-delay: 5s;
     animation-duration: 1.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
     opacity: 0;
     margin-bottom: 5px;
+   /* border-bottom: 3px solid #25daa5;
+    width: 90vw;*/
 }
 
 section {
@@ -238,6 +241,7 @@ section {
 #infor2,
 #infor3 {
     background: rgba(211, 211, 211, 0);
+  
 }
 
 .informacion_uno,
@@ -254,12 +258,12 @@ section {
 }
 
 .contenedor_botones {
-    width: 15%;
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    margin-left: 100px;
+   
 }
 
 .contenedor_botones div {
@@ -742,3 +746,4 @@ footer a {
     text-decoration: none;
     color: #ffffff;
 }
+/*RWD */

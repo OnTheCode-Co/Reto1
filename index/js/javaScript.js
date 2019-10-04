@@ -198,6 +198,5 @@ window.onload = function () {
                     break;
             }
         }
-
     });
 };

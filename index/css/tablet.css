@@ -1,0 +1,38 @@
+.tablet{
+    display:none;
+}
+
+@media screen and (max-width: 1023px) and (min-width:720px){
+    .tablet{
+        display: block;
+        
+    }
+    footer{
+        display:none;
+    }
+    .boton1, .boton2{
+        margin-right: 10px;
+    }
+   .contenedor_parametros{
+       width: 45%;
+       
+   }
+
+   .contenedor_parametros div{
+       justify-content: space-around;
+   }
+   .contenedor_botones{
+       widows: 25%;
+   }
+
+   .contenedor_informacion{
+       width: 25%;
+   }
+
+   .div_pr{
+       padding:0
+   }
+}
+
+
+
