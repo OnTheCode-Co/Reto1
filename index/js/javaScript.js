@@ -1,29 +1,32 @@
 window.onload = function () {
     $(document).ready(function () {
-        let cotas = document.getElementById("propiedad1");
         let barraProgreso = document.getElementById("relleno_barra");
-        let arrayCotas = Array(0);
-        arrayCotas.push(1);
-        arrayCotas.push(150);
-        arrayCotas.push(250);
-        arrayCotas.push(400);
-        arrayCotas.push(500);
+        let inputParada = document.getElementById("propiedad_parada");
+        let inputCota = document.getElementById("propiedad_cota");
+        let arrayCotas = [1, 150, 250, 400, 500];
+
+        let btnCota = document.getElementById("boton_cota");
+        let btnParada = document.getElementById("boton_parada");
+        let btnOrigen = document.getElementById("boton_origen");
+        let btnReset = document.getElementById("boton_reset");
         //arrayCotas.forEach(value => console.log(value));
 
-        let inputParada = document.getElementById("propiedad2");
-        let inputCota = document.getElementById("propiedad1");
-
-        document.getElementById("boton1").addEventListener("click", function () {
-            //barraProgreso.style.width = ((cotas.value / 5) + "%");
-            let posicion = (cotas.value / 5);
+        btnCota.addEventListener("click", function () {
+            let posicion = (inputCota.value * 0.2);
             avanzarBarraProgreso(posicion);
         });
 
-        document.getElementById("boton2").addEventListener("click", function () {
-            console.log(inputParada.value);
-            let posicion;
-            posicion = arrayCotas[inputParada.value];
+        btnParada.addEventListener("click", function () {
+            let posicion = arrayCotas[inputParada.value];
             avanzarBarraProgreso(posicion * 0.2);
+        });
+
+        btnOrigen.addEventListener("click", function () {
+            aOrigen();
+        });
+
+        btnReset.addEventListener("click", function () {
+            aOrigen();
         });
 
         /**
@@ -31,25 +34,24 @@ window.onload = function () {
          * @param posicion {int} - Valor entre 0 y 100 donde se situará el final de la barra verde.
          */
         function avanzarBarraProgreso(posicion) {
-            console.log("avanzarbarraprogreso funciona");
             barraProgreso.style.width = posicion + "%";
         }
 
         inputCota.addEventListener("input", function () {
-            var cota = inputCota.value;
+            let cota = inputCota.value;
             if (cota > 500) {
                 inputCota.value = 500;
             } else if (cota < 1) {
-                inputCota.value ="";
+                inputCota.value = "";
             } else if (isNaN(cota)) {
-                inputCota.value=1;
+                inputCota.value = 1;
             }
             $("#slider_cota").slider('value', cota);
             let valorDelSliderDeCotas = $("#slider_cota").slider("value");
             calibrarSliderParada(valorDelSliderDeCotas);
         });
         inputParada.addEventListener("input", function () {
-            var parada = inputParada.value;
+            let parada = inputParada.value;
             if (parada > 4) {
                 inputParada.value = 4;
             } else if (parada < 0) {
@@ -64,26 +66,26 @@ window.onload = function () {
 
 
         // Foco en cota o parada y hacer click a Enter
-        $("#propiedad1").keypress(function (e) {
-            hazClick(e, "#boton1");
+        $("#propiedad_cota").keypress(function (e) {
+            hazClick(e, "#boton_cota");
         });
         $("#slider_cota").keypress(function (e) {
-            hazClick(e, "#boton1");
+            hazClick(e, "#boton_cota");
         });
-        $("#propiedad2").keypress(function (e) {
-            hazClick(e, "#boton2");
+        $("#propiedad_parada").keypress(function (e) {
+            hazClick(e, "#boton_parada");
         });
         $("#slider_parada").keypress(function (e) {
-            hazClick(e, "#boton2");
+            hazClick(e, "#boton_parada");
         });
 
         /**
          * Dispara el evento 'click' del boton que se le pase como parametro cuando pulsas 'Enter'.
-         * @param enter - Código de la tecla "Enter"
+         * @param tecla - Código de la tecla "Enter"
          * @param boton {string} - ID del botón.
          */
-        function hazClick(enter, boton) {
-            if (enter.keyCode == 13) {
+        function hazClick(tecla, boton) {
+            if (tecla.keyCode == 13) {
                 $(boton).trigger("click");
             }
         }
@@ -113,21 +115,21 @@ window.onload = function () {
             triggerSlider(ui, inputCota, "cota");
         });
         $("#slider_parada").on("slide", function (event, ui) {
-            triggerSlider(ui, inputParada,"cota");
+            triggerSlider(ui, inputParada, "cota");
         });
 
         /**
          * Función que se dispara cuando se mueve el slider.
-         * @param ui - El slider del que se va a sacar el valor.
+         * @param slider - El slider del que se va a sacar el valor.
          * @param input - el campo de texto que se va a actualizar cuando se mueva el slider.
          */
-        function triggerSlider(ui, input) {
-            let val = ui.value;
+        function triggerSlider(slider, input) {
+            let val = slider.value;
             input.value = val;
 
-            if(input.id === "propiedad1"){
+            if (input.id === "propiedad_cota") {
                 calibrarSliderParada(val);
-            }else{
+            } else {
                 calibrarSliderCota(val);
             }
         }
@@ -197,6 +199,21 @@ window.onload = function () {
                     calibrarSlider($("#slider_cota"), 500, inputCota);
                     break;
             }
+        }
+
+        /**
+         * Reinicia todos los valores que puede cambiar el usuario y pone la barra de progreso en su posición inicial
+         */
+        function aOrigen() {
+            inputCota.value = "";
+            inputParada.value = "";
+            $("#slider_cota").slider({
+                value: 1
+            });
+            $("#slider_parada").slider({
+                value: 0
+            });
+            avanzarBarraProgreso(0);
         }
     });
 };
