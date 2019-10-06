@@ -2,153 +2,136 @@
 
 <head>
     <title>On The Code</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Esto no se muy bien qué es, pero si lo comentas sigue funcionando todito, un saludo.
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    -->
+    <!-- -------------------------------------------------------------------------------------------------------------->
     <script src="https://kit.fontawesome.com/5d422b55c9.js" crossorigin="anonymous"></script>
-
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/jquery-ui-slider-pips.js"></script>
     <script src="js/cookies.js"></script>
     <script src="js/javaScript.js"></script>
-
-
+    <!-- -------------------------------------------------------------------------------------------------------------->
     <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/jquery-ui-slider-pips.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/tablet.css">
     <link rel="stylesheet" href="css/movil.css">
-
-
-
-
-
+    <!-- -------------------------------------------------------------------------------------------------------------->
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
-
 <body>
-
-    <div class="contenedor">
-        <div class="linea-izquierda anim"></div>
-        <div class="cortina-izquierda anim"></div>
-        <div class="linea-derecha anim"></div>
-        <div class="cortina-derecha anim"></div>
-        <div class="divisor anim">
-            <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
-            <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
+<div class="contenedor">
+    <div class="linea-izquierda anim"></div>
+    <div class="cortina-izquierda anim"></div>
+    <div class="linea-derecha anim"></div>
+    <div class="cortina-derecha anim"></div>
+    <div class="divisor anim">
+        <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
+        <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
+    </div>
+    <header>
+        <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span>
+        </h1>
+    </header>
+    <section class="seccion_parametros">
+        <span class="tapador_uno"></span>
+        <div class="contenedor_parametros">
+            <div class="parametro_uno">
+                <div class="div_pr">
+                    <label for="propiedad_cota">Cota: </label>
+                    <input type="text" name="propiedad_cota" id="propiedad_cota" placeholder="1-500mm" maxlength="3"/>
+                    <div id="slider_cota" class="slider_nuevo"></div>
+                </div>
+                <div class="div_btn">
+                    <button class="botones" id="boton_cota"><i class="far fa-check-circle"></i></button>
+                </div>
+            </div>
+            <div class="parametro_dos">
+                <div class="div_pr">
+                    <label for="propiedad_parada">Parada:</label>
+                    <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
+                    <div id="slider_parada" class="slider_nuevo"></div>
+                </div>
+                <div class="div_btn">
+                    <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
+                </div>
+            </div>
+            <div class="parametro_tres">
+                <div class="div_pr">
+                    <div class="area-reset-origen">
+                        <button class="botones" id="boton_origen">ORIGEN</button>
+                        <button class="botones" id="boton_reset">RESET</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="tapador_dos"></span>
+        <div class="contenedor_informacion">
+            <div class="informacion_uno">
+                <label for="infor1"> TARGET POSITION: </label>
+                <input type="text" name="infor1" id="infor1" readonly>
+            </div>
+            <div class="informacion_dos">
+                <label for="infor2"> CURRENT POSITION: </label>
+                <input type="text" name="infor2" id="infor2" readonly>
+            </div>
+            <div class="informacion_tres">
+                <label for="infor3"> CURRENT SPEED:</label>
+                <input type="text" name="infor3" id="infor3" readonly>
+            </div>
+        </div>
+        <span class="tapador_tres"></span>
+        <div class="contenedor_botones">
+            <div class="contenedor_botones_uno">
+                <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_dos">
+                <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_tres">
+                <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_cuatro">
+                <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
         </div>
 
-        <header>
-            <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span></h1>
-        </header>
 
-
-
-        <section class="seccion_parametros">
-
-
-
-
-            <span class="tapador_uno"></span>
-            <div class="contenedor_parametros">
-                <div class="parametro_uno">
-                    <div class="div_pr">
-
-
-                        <!-- <div class="slider"></div> -->
-
-                        <label for="propiedad1">Cota: </label>
-                        <input type="text" name="propiedad1" id="propiedad1" placeholder="1-500mm" maxlength="3">
-                        <div id="slider_cota" class="slider_nuevo"></div>
-
-                        <!-- <input class="sliders" id="slider1" type="range" value="0" /> -->
-
-                    </div>
-                    <div class="div_btn">
-                        <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                        <button class="botones" id="boton1"><i class="far fa-check-circle"></i></button>
-                    </div>
-                </div>
-
-
-                <div class="parametro_dos">
-                    <div class="div_pr">
-
-                        <label for="propiedad2">Parada:</label>
-                        <input type="text" name="propiedad2" id="propiedad2" maxlength="1" placeholder="0-4">
-
-                        <!-- <input class="sliders" id="slider2" type="range" value="0" max="4" /> -->
-
-                        <div id="slider_parada" class="slider_nuevo"></div>
-
-                    </div>
-                    <div class="div_btn">
-                        <!-- <input type="button" value="GO!" class="botones" id="boton1"/> -->
-                        <button class="botones" id="boton2"><i class="far fa-check-circle"></i></button>
-                    </div>
-                </div>
-                <div class="parametro_tres">
-                    <div class="div_pr">
-                        <div class="area-reset-origen">
-                            <button class="botones" id="boton3">ORIGEN</button>
-                            <button class="botones" id="boton4">RESET</button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <span class="tapador_dos"></span>
-            <div class="contenedor_informacion">
-                <div class="informacion_uno"><label for="infor1"> TARGET POSITION: </label> <input type="text" name="infor1" id="infor1" readonly> </div>
-                <div class="informacion_dos"><label for="infor2"> CURRENT POSITION:  </label> <input type="text" name="infor2" id="infor2" readonly></div>
-                <div class="informacion_tres"><label for="infor3"> CURRENT SPEED:</label> <input type="text" name="infor3" id="infor3" readonly></div>
-            </div>
-            <span class="tapador_tres"></span>
-            <div class="contenedor_botones">
-                <div class="contenedor_botones_uno">
-                    <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
-                <div class="contenedor_botones_dos">
-                    <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
-
-                <div class="contenedor_botones_tres">
-                    <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
-
-                <div class="contenedor_botones_cuatro">
-                    <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png"></div>
-            </div>
-
-
-
-        </section>
-        <section class="seccion-animacion">
-
-            <div class="barra_progreso">
-                <div class="relleno" id="relleno_barra"></div>
-            </div>
-        </section>
-        <footer>
-            <p> @OnTheCode.Co 2019/2020
-                <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i class="fab fa-instagram"></i></a>
-            </p>
-            <p> Product designed for SEVRON
-                <p>
-        </footer>
-    </div>
-    <!--BLOQUE COOKIES -->
-    <div id="barraaceptacion" style="display: none; position:absolute;">
-        <div class="cookies">
-            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-            <a href="javascript:void(0);" id="ok" class="ok" ><b>OK</b></a> |
-            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+    </section>
+    <section class="seccion-animacion">
+        <div class="barra_progreso">
+            <div class="relleno" id="relleno_barra"></div>
         </div>
+    </section>
+    <footer>
+        <p> @OnTheCode.Co 2019/2020
+            <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"> <i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i
+                    class="fab fa-instagram"></i></a>
+        </p>
+        <p>
+            Product designed by OnTheCode with the collaboration of Sevrom
+        <p>
+    </footer>
+</div>
+<!--BLOQUE COOKIES -->
+<div id="barraaceptacion" style="display: none; position:absolute;">
+    <div class="cookies">
+        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
+        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+        <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
+        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
     </div>
+</div>
 
-    <!--FIN BLOQUE COOKIES-->
+<!--FIN BLOQUE COOKIES-->
 
 </body>
 

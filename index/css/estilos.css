@@ -286,13 +286,13 @@ button:hover {
 
 /* Sliders */
 
-#propiedad1,
-#propiedad2 {
+#propiedad_cota,
+#propiedad_parada {
     background: white;
 }
 
-#propiedad1,
-#propiedad2,
+#propiedad_cota,
+#propiedad_parada,
 #propiedad3,
 #propiedad4 {
     height: 40%;
