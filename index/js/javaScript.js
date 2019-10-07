@@ -22,9 +22,8 @@ window.onload = function() {
         let titulo3 = document.getElementById("titulo3");
         let titulo4 = document.getElementById("titulo4");
 
-
-
-
+        let radioCotas = document.getElementById("r-cotas");
+        let radioParadas = document.getElementById("r-paradas");
 
         /* ---------------------------------------------------------------------------------------------------------- */
 
@@ -45,6 +44,26 @@ window.onload = function() {
             value: 0
         }).slider("pips", {
             rest: "pip"
+        });
+        /* ---------------------------------------------------------------------------------------------------------- */
+
+        /* Eventos 'change' RadioButton de cotas y paradas ---------------------------------------------------------- */
+        radioCotas.addEventListener("change", function () {
+            console.log("Radio cotas cambia de valor");
+            deshabilitar($("#slider_parada"), btnParada, inputParada);
+            habilitar($("#slider_cota"), btnCota, inputCota,radioParadas);
+            //todo
+            $("#form_r_cotas").submit();
+        });
+        // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
+        radioCotas.dispatchEvent(new Event("change"));
+
+        radioParadas.addEventListener("change", function () {
+            console.log("Radio paradas cambia de valor");
+            deshabilitar($("#slider_cota"), btnCota, inputCota);
+            habilitar($("#slider_parada"), btnParada, inputParada,radioCotas);
+            //todo
+            $("#form_r_paradas").submit();
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
@@ -354,6 +373,34 @@ window.onload = function() {
                 $(boton).trigger("click");
             }
         }
+
+        /**
+         * Habilita el slider, boton e input que se le pasen como parámetro. Cambia de color el botón a 'white'
+         * @param slider
+         * @param boton
+         * @param input
+         */
+        function habilitar(slider, boton, input,rButtonElOtro) {
+            input.readOnly = false;
+            boton.disabled = false;
+            boton.style.backgroundColor = "white";
+            slider.slider('enable');
+            rButtonElOtro.checked = false;
+        }
+
+        /**
+         * Deshabilita el slider, boton e input que se le pasen como parámetro. Cambia de color el botón a 'E7E6E6'
+         * @param slider
+         * @param boton
+         * @param input
+         */
+        function deshabilitar(slider, boton, input,rButton) {
+            input.readOnly = true;
+            boton.disabled = true;
+            boton.style.backgroundColor = "E7E6E6";
+            slider.slider('disable');
+        }
+
         /* ---------------------------------------------------------------------------------------------------------- */
     });
 };
