@@ -44,10 +44,12 @@
             <form method="post">
                 <div class="parametro_uno">
                     <div class="div_pr">
-                    <span class="radios">
-                        <input type="radio" id="r-cotas" name="type" value="COTAS" checked>
-                        <label for="r-cotas">Cotas:</label>
-                    </span>
+                        <form method="post" id="form_r_cotas">
+                            <span class="radios">
+                                <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="COTAS" checked>
+                                <label for="r-cotas">Cotas:</label>
+                            </span>
+                        </form>
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
                                maxlength="3" required/>
@@ -64,10 +66,12 @@
             <form method="post">
                 <div class="parametro_dos">
                     <div class="div_pr">
-                        <span class="radios">
-                        <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
-                        <label for="r-paradas">Paradas:</label>
-                    </span>
+                        <form method="post" id="form_r_paradas">
+                            <span class="radios">
+                                <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
+                                <label for="r-paradas">Paradas:</label>
+                            </span>
+                        </form>
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
                                placeholder="0-4" required>
@@ -83,16 +87,15 @@
             <div class="parametro_tres">
                 <div class="div_pr">
                     <div class="area-reset-origen">
-                        <!-- TODO botones origen form, y reset for; tambien los sono cotas o paradas-->
-                        <button class="botones" id="boton_origen">ORIGEN</button>
-                        <button class="botones" id="boton_reset">RESET</button>
+                        <form method="post">
+                            <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
+                            <button class="botones" id="boton_origen">ORIGEN</button>
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
+                            <button class="botones" id="boton_reset">RESET</button>
+                        </form>
 
-                        <!-- <input type="radio" id="r-cotas" name="type" value="COTAS">-->
-                        <!--<span class="texto-radio"> COTAS</span> -->
-                        <!--<label for="r-cotas">COTAS</label> -->
-                        <!--<input type="radio" id="r-paradas" name="type" value="PARADAS">-->
-                        <!--<span class="texto-radio"> PARADAS</span> -->
-                        <!--<label for="r-paradas">PARADAS</label> -->
                     </div>
                 </div>
             </div>
