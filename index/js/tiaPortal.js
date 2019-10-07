@@ -109,7 +109,7 @@ setInterval(function () {
     });
     $.get("./variables/error.html", function (result) {
         if (result.substring(1, (result.length - 2)) == 1) {
-            $('#error').attr("src", "./multimedia/alarma-roja.png");
+            $('#luz_error').attr("src", "./multimedia/alarma-roja.png");
         }
     });
 
