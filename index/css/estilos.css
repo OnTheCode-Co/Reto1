@@ -13,6 +13,10 @@ body {
     font-family: Roboto;
 }
 
+label{
+    user-select: none;
+}
+
 .divisor {
     width: 2px;
     height: 100%;
@@ -279,6 +283,9 @@ section {
     align-items: center;
 }
 
+.contenedor_botones *{
+    user-select: none;
+}
 input {
     background-color: rgb(237, 234, 234);
     outline: none;
@@ -330,7 +337,7 @@ button:hover {
     height: 80%;
     font-size: 100%;
     border-radius: 3px;
-    color: black;
+    color: #555555;
     background-color: white;
     outline: none;
     box-shadow: 6px 6px 0px #999;
