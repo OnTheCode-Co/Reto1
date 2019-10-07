@@ -150,9 +150,17 @@ body {
     z-index: 3;
 }
 
+
 .area-reset-origen {
     display: flex;
     width: 80%;
+    align-items: center;
+}
+
+.area-reset-origen input {
+    margin: 0 10px;
+    padding: 5px;
+    background-color: black;
 }
 
 h1,
