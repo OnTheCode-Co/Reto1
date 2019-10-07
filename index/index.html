@@ -58,6 +58,13 @@
                     <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
                     <div id="slider_parada" class="slider_nuevo"></div>
                 </div>
+                <div class="parametro_tres">
+                    <div class="div_pr">
+                        <div class="area-reset-origen">
+                            <button class="botones" id="boton3">ORIGEN</button>
+                            <button class="botones" id="boton4">RESET</button>
+                               
+                        </div>
                 <div class="div_btn">
                     <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
                 </div>
@@ -67,6 +74,8 @@
                     <div class="area-reset-origen">
                         <button class="botones" id="boton_origen">ORIGEN</button>
                         <button class="botones" id="boton_reset">RESET</button>
+                      <input type="radio" id="r-cotas" name="type" value="COTAS"> <span class="texto-radio"> COTAS</span>
+                            <input type="radio" id="r-paradas" name="type" value="PARADAS"> <span class="texto-radio"> PARADAS</span>
                     </div>
                 </div>
             </div>
@@ -98,7 +107,7 @@
                 <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
             </div>
             <div class="contenedor_botones_cuatro">
-                <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+                <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
             </div>
         </div>
 
