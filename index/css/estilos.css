@@ -322,6 +322,8 @@ button:hover {
     box-shadow: 6px 6px 0px #999;
     transition: all 0.2s ease 0s;
     min-width: 80px;
+    /* Añadido por poner el boton dentro de form*/
+    min-height: 50px;
 }
 
 .area-reset-origen .botones {

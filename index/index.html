@@ -1,3 +1,7 @@
+<!-- AWP_In_Variable Name='"mis_datos".parada_in' -->
+<!-- AWP_In_Variable Name='"mis_datos".cotas_in' -->
+<!-- AWP_In_Variable Name='"mis_datos".intro_cotas' -->
+<!-- AWP_In_Variable Name='"mis_datos".intro_paradas' -->
 <html>
 
 <head>
@@ -16,12 +20,25 @@
     <script src="js/jquery-ui-slider-pips.js"></script>
     <script src="js/cookies.js"></script>
     <script src="js/javaScript.js"></script>
+    <script src="js/tiaPortal.js"></script>
     <!-- -------------------------------------------------------------------------------------------------------------->
     <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/jquery-ui-slider-pips.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/tablet.css">
     <link rel="stylesheet" href="css/movil.css">
+    <!-- ---------TODO MEJORAR LOS IMPORTS----------------------------------------------------------------------------->
+    <link rel="import" href="variables/busy.html">
+    <link rel="import" href="variables/ready.html">
+    <link rel="import" href="variables/in_pos.html">
+    <link rel="import" href="variables/error.html">
+    <link rel="import" href="variables/target_pos.html">
+    <link rel="import" href="variables/current_pos.html">
+    <link rel="import" href="variables/current_speed.html">
+    <link rel="import" href="variables/cotas_in.html">
+    <link rel="import" href="variables/parada_in.html">
+    <link rel="import" href="variables/intro_cotas.html">
+
     <!-- -------------------------------------------------------------------------------------------------------------->
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
@@ -42,29 +59,43 @@
     <section class="seccion_parametros">
         <span class="tapador_uno"></span>
         <div class="contenedor_parametros">
-            <div class="parametro_uno">
-                <div class="div_pr">
-                    <label for="propiedad_cota">Cota: </label>
-                    <input type="text" name="propiedad_cota" id="propiedad_cota" placeholder="1-500mm" maxlength="3"/>
-                    <div id="slider_cota" class="slider_nuevo"></div>
+            <form method="post">
+                <div class="parametro_uno">
+                    <div class="div_pr">
+                        <label for="propiedad_cota">Cota: </label>
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
+                               maxlength="3" required/>
+                        <div id="slider_cota" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_cotas' value="1" id="boton_intro_cotas">
+                        <button type="submit" class="botones" id="boton_cota"><i class="far fa-check-circle"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="div_btn">
-                    <button class="botones" id="boton_cota"><i class="far fa-check-circle"></i></button>
+            </form>
+            <form method="post">
+                <div class="parametro_dos">
+                    <div class="div_pr">
+                        <label for="propiedad_parada">Parada:</label>
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
+                               placeholder="0-4" required>
+                        <div id="slider_parada" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_paradas' value="1" id="boton_intro_paradas">
+                        <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="parametro_dos">
-                <div class="div_pr">
-                    <label for="propiedad_parada">Parada:</label>
-                    <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
-                    <div id="slider_parada" class="slider_nuevo"></div>
-                </div>
-                <div class="div_btn">
-                    <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
-                </div>
-            </div>
+            </form>
             <div class="parametro_tres">
                 <div class="div_pr">
                     <div class="area-reset-origen">
+                        <!-- TODO botones origen form, y reset for; tambien los sono cotas o paradas-->
                         <button class="botones" id="boton_origen">ORIGEN</button>
                         <button class="botones" id="boton_reset">RESET</button>
                     </div>
