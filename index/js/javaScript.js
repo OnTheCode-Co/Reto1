@@ -40,7 +40,9 @@ window.onload = function () {
         radioCotas.addEventListener("change", function () {
             console.log("Radio cotas cambia de valor");
             deshabilitar($("#slider_parada"), btnParada, inputParada);
-            habilitar($("#slider_cota"), btnCota, inputCota);
+            habilitar($("#slider_cota"), btnCota, inputCota,radioParadas);
+            //todo
+            $("#form_r_cotas").submit();
         });
         // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
         radioCotas.dispatchEvent(new Event("change"));
@@ -48,7 +50,9 @@ window.onload = function () {
         radioParadas.addEventListener("change", function () {
             console.log("Radio paradas cambia de valor");
             deshabilitar($("#slider_cota"), btnCota, inputCota);
-            habilitar($("#slider_parada"), btnParada, inputParada);
+            habilitar($("#slider_parada"), btnParada, inputParada,radioCotas);
+            //todo
+            $("#form_r_paradas").submit();
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
@@ -253,11 +257,12 @@ window.onload = function () {
          * @param boton
          * @param input
          */
-        function habilitar(slider, boton, input) {
+        function habilitar(slider, boton, input,rButtonElOtro) {
             input.readOnly = false;
             boton.disabled = false;
             boton.style.backgroundColor = "white";
             slider.slider('enable');
+            rButtonElOtro.checked = false;
         }
 
         /**
@@ -266,7 +271,7 @@ window.onload = function () {
          * @param boton
          * @param input
          */
-        function deshabilitar(slider, boton, input) {
+        function deshabilitar(slider, boton, input,rButton) {
             input.readOnly = true;
             boton.disabled = true;
             boton.style.backgroundColor = "E7E6E6";

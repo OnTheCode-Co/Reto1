@@ -1,3 +1,7 @@
+<!-- AWP_In_Variable Name='"mis_datos".parada_in' -->
+<!-- AWP_In_Variable Name='"mis_datos".cotas_in' -->
+<!-- AWP_In_Variable Name='"mis_datos".intro_cotas' -->
+<!-- AWP_In_Variable Name='"mis_datos".intro_paradas' -->
 <html>
 
 <head>
@@ -10,6 +14,7 @@
     <script src="js/jquery-ui-slider-pips.js"></script>
     <script src="js/cookies.js"></script>
     <script src="js/javaScript.js"></script>
+    <script src="js/tiaPortal.js"></script>
     <!-- -------------------------------------------------------------------------------------------------------------->
     <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/jquery-ui-slider-pips.min.css" rel="stylesheet">
@@ -36,46 +41,61 @@
     <section class="seccion_parametros">
         <span class="tapador_uno"></span>
         <div class="contenedor_parametros">
-            <div class="parametro_uno">
-                <div class="div_pr">
-                    <span class="radios">
-                        <input type="radio" id="r-cotas" name="type" value="COTAS" checked>
-                        <label for="r-cotas">Cotas:</label>
-                    </span>
-                    <!--<label for="propiedad_cota">Cota: </label>-->
-                    <input type="text" name="propiedad_cota" id="propiedad_cota" placeholder="1-500mm" maxlength="3"/>
-                    <div id="slider_cota" class="slider_nuevo"></div>
+            <form method="post">
+                <div class="parametro_uno">
+                    <div class="div_pr">
+                        <form method="post" id="form_r_cotas">
+                            <span class="radios">
+                                <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="COTAS" checked>
+                                <label for="r-cotas">Cotas:</label>
+                            </span>
+                        </form>
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
+                               maxlength="3" required/>
+                        <div id="slider_cota" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_cotas' value="1" id="boton_intro_cotas">
+                        <button type="submit" class="botones" id="boton_cota"><i class="far fa-check-circle"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="div_btn">
-                    <button class="botones" id="boton_cota"><i class="far fa-check-circle"></i></button>
+            </form>
+            <form method="post">
+                <div class="parametro_dos">
+                    <div class="div_pr">
+                        <form method="post" id="form_r_paradas">
+                            <span class="radios">
+                                <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
+                                <label for="r-paradas">Paradas:</label>
+                            </span>
+                        </form>
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
+                               placeholder="0-4" required>
+                        <div id="slider_parada" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_paradas' value="1" id="boton_intro_paradas">
+                        <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="parametro_dos">
-                <div class="div_pr">
-                    <span class="radios">
-                        <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
-                        <label for="r-paradas">Paradas:</label>
-                    </span>
-                    <!-- <label for="propiedad_parada">Parada:</label> -->
-                    <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
-                    <div id="slider_parada" class="slider_nuevo"></div>
-                </div>
-                <div class="div_btn">
-                    <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
-                </div>
-            </div>
+            </form>
             <div class="parametro_tres">
                 <div class="div_pr">
                     <div class="area-reset-origen">
-                        <button class="botones" id="boton_origen">ORIGEN</button>
-                        <button class="botones" id="boton_reset">RESET</button>
+                        <form method="post">
+                            <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
+                            <button class="botones" id="boton_origen">ORIGEN</button>
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
+                            <button class="botones" id="boton_reset">RESET</button>
+                        </form>
 
-                        <!-- <input type="radio" id="r-cotas" name="type" value="COTAS">-->
-                        <!--<span class="texto-radio"> COTAS</span> -->
-                        <!--<label for="r-cotas">COTAS</label> -->
-                        <!--<input type="radio" id="r-paradas" name="type" value="PARADAS">-->
-                        <!--<span class="texto-radio"> PARADAS</span> -->
-                        <!--<label for="r-paradas">PARADAS</label> -->
                     </div>
                 </div>
             </div>
