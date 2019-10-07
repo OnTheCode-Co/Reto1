@@ -8,12 +8,6 @@
     <title>On The Code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- -------------------------------------------------------------------------------------------------------------->
-    <!-- Esto no se muy bien qué es, pero si lo comentas sigue funcionando todito, un saludo.
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    -->
-    <!-- -------------------------------------------------------------------------------------------------------------->
     <script src="https://kit.fontawesome.com/5d422b55c9.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -50,7 +44,10 @@
             <form method="post">
                 <div class="parametro_uno">
                     <div class="div_pr">
-                        <label for="propiedad_cota">Cota: </label>
+                    <span class="radios">
+                        <input type="radio" id="r-cotas" name="type" value="COTAS" checked>
+                        <label for="r-cotas">Cotas:</label>
+                    </span>
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
                                maxlength="3" required/>
@@ -67,6 +64,10 @@
             <form method="post">
                 <div class="parametro_dos">
                     <div class="div_pr">
+                                            <span class="radios">
+                        <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
+                        <label for="r-paradas">Paradas:</label>
+                    </span>
                         <label for="propiedad_parada">Parada:</label>
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
@@ -86,6 +87,13 @@
                         <!-- TODO botones origen form, y reset for; tambien los sono cotas o paradas-->
                         <button class="botones" id="boton_origen">ORIGEN</button>
                         <button class="botones" id="boton_reset">RESET</button>
+
+                        <!-- <input type="radio" id="r-cotas" name="type" value="COTAS">-->
+                        <!--<span class="texto-radio"> COTAS</span> -->
+                        <!--<label for="r-cotas">COTAS</label> -->
+                        <!--<input type="radio" id="r-paradas" name="type" value="PARADAS">-->
+                        <!--<span class="texto-radio"> PARADAS</span> -->
+                        <!--<label for="r-paradas">PARADAS</label> -->
                     </div>
                 </div>
             </div>
@@ -117,11 +125,9 @@
                 <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
             </div>
             <div class="contenedor_botones_cuatro">
-                <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+                <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
             </div>
         </div>
-
-
     </section>
     <section class="seccion-animacion">
         <div class="barra_progreso">
@@ -139,19 +145,20 @@
             Product designed by OnTheCode with the collaboration of Sevrom
         <p>
     </footer>
-</div>
-<!--BLOQUE COOKIES -->
-<div id="barraaceptacion" style="display: none; position:absolute;">
-    <div class="cookies">
-        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
-        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-        <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
-        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+    <!--BLOQUE COOKIES -->
+    <div id="barraaceptacion" style="display: none; position:absolute;">
+        <div class="cookies">
+            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del
+            Real
+            Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+            <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
+            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+        </div>
     </div>
+
+    <!--FIN BLOQUE COOKIES-->
+
 </div>
-
-<!--FIN BLOQUE COOKIES-->
-
 </body>
 
 </html>

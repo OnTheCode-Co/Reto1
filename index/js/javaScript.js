@@ -1,5 +1,6 @@
 window.onload = function () {
     $(document).ready(function () {
+        /* Declaración de variables globales ------------------------------------------------------------------------ */
         let barraProgreso = document.getElementById("relleno_barra");
         let inputParada = document.getElementById("propiedad_parada");
         let inputCota = document.getElementById("propiedad_cota");
@@ -9,8 +10,49 @@ window.onload = function () {
         let btnParada = document.getElementById("boton_parada");
         let btnOrigen = document.getElementById("boton_origen");
         let btnReset = document.getElementById("boton_reset");
-        //arrayCotas.forEach(value => console.log(value));
 
+        let radioCotas = document.getElementById("r-cotas");
+        let radioParadas = document.getElementById("r-paradas");
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+
+        /* Creación y valores por defecto de los sliders ------------------------------------------------------------ */
+        $("#slider_cota").slider({
+            max: 500,
+            min: 1,
+            range: "min",
+            value: 1,
+            step: 1
+        }).slider("pips", {
+            rest: "pip"
+        });
+        $("#slider_parada").slider({
+            max: 4,
+            min: 0,
+            range: "min",
+            value: 0
+        }).slider("pips", {
+            rest: "pip"
+        });
+        /* ---------------------------------------------------------------------------------------------------------- */
+
+        /* Eventos 'change' RadioButton de cotas y paradas ---------------------------------------------------------- */
+        radioCotas.addEventListener("change", function () {
+            console.log("Radio cotas cambia de valor");
+            deshabilitar($("#slider_parada"), btnParada, inputParada);
+            habilitar($("#slider_cota"), btnCota, inputCota);
+        });
+        // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
+        radioCotas.dispatchEvent(new Event("change"));
+
+        radioParadas.addEventListener("change", function () {
+            console.log("Radio paradas cambia de valor");
+            deshabilitar($("#slider_cota"), btnCota, inputCota);
+            habilitar($("#slider_parada"), btnParada, inputParada);
+        });
+        /* ---------------------------------------------------------------------------------------------------------- */
+
+        /* Eventos 'onclick' botones -------------------------------------------------------------------------------- */
         btnCota.addEventListener("click", function () {
             let posicion = (inputCota.value * 0.2);
             avanzarBarraProgreso(posicion);
@@ -27,16 +69,12 @@ window.onload = function () {
 
         btnReset.addEventListener("click", function () {
             aOrigen();
+            let luz_error = document.getElementById("luz_error");
+            luz_error.src = "multimedia/alarma-grey.png";
         });
+        /* ---------------------------------------------------------------------------------------------------------- */
 
-        /**
-         * Con el parametro pasado mueve la barra verde hasta la cota o parada que inserta el usuario.
-         * @param posicion {int} - Valor entre 0 y 100 donde se situará el final de la barra verde.
-         */
-        function avanzarBarraProgreso(posicion) {
-            barraProgreso.style.width = posicion + "%";
-        }
-
+        /* Eventos 'input' en los input de tipo texto --------------------------------------------------------------- */
         inputCota.addEventListener("input", function () {
             let cota = inputCota.value;
             if (cota > 500) {
@@ -63,8 +101,9 @@ window.onload = function () {
             let valorDelSliderDeParadas = $("#slider_parada").slider("value");
             calibrarSliderCota(valorDelSliderDeParadas);
         });
+        /* ---------------------------------------------------------------------------------------------------------- */
 
-
+        /* Eventos 'keypress' en los input y slider de cotas y paradas ---------------------------------------------- */
         // Foco en cota o parada y hacer click a Enter
         $("#propiedad_cota").keypress(function (e) {
             hazClick(e, "#boton_cota");
@@ -78,38 +117,9 @@ window.onload = function () {
         $("#slider_parada").keypress(function (e) {
             hazClick(e, "#boton_parada");
         });
+        /* ---------------------------------------------------------------------------------------------------------- */
 
-        /**
-         * Dispara el evento 'click' del boton que se le pase como parametro cuando pulsas 'Enter'.
-         * @param tecla - Código de la tecla "Enter"
-         * @param boton {string} - ID del botón.
-         */
-        function hazClick(tecla, boton) {
-            if (tecla.keyCode == 13) {
-                $(boton).trigger("click");
-            }
-        }
-
-        //SLIDERS
-        //Creación y valores por defecto de los sliders
-        $("#slider_cota").slider({
-            max: 500,
-            min: 1,
-            range: "min",
-            value: 1,
-            step: 1
-        }).slider("pips", {
-            rest: "pip"
-        });
-        $("#slider_parada").slider({
-            max: 4,
-            min: 0,
-            range: "min",
-            value: 0
-        }).slider("pips", {
-            rest: "pip"
-        });
-
+        /* Eventos 'slide' cuando se mueve el slider para cambiar de valor ------------------------------------------ */
         /* SLIDERS Cuando la bola del slider se para, recogemos el valor y lo pasamos al input */
         $("#slider_cota").on("slide", function (event, ui) {
             triggerSlider(ui, inputCota, "cota");
@@ -117,7 +127,9 @@ window.onload = function () {
         $("#slider_parada").on("slide", function (event, ui) {
             triggerSlider(ui, inputParada, "cota");
         });
+        /* ---------------------------------------------------------------------------------------------------------- */
 
+        /* FUNCIONES ------------------------------------------------------------------------------------------------ */
         /**
          * Función que se dispara cuando se mueve el slider.
          * @param slider - El slider del que se va a sacar el valor.
@@ -215,5 +227,52 @@ window.onload = function () {
             });
             avanzarBarraProgreso(0);
         }
+
+        /**
+         * Con el parametro pasado mueve la barra verde hasta la cota o parada que inserta el usuario.
+         * @param posicion {int} - Valor entre 0 y 100 donde se situará el final de la barra verde.
+         */
+        function avanzarBarraProgreso(posicion) {
+            barraProgreso.style.width = posicion + "%";
+        }
+
+        /**
+         * Dispara el evento 'click' del boton que se le pase como parametro cuando pulsas 'Enter'.
+         * @param tecla - Código de la tecla "Enter"
+         * @param boton {string} - ID del botón.
+         */
+        function hazClick(tecla, boton) {
+            if (tecla.keyCode == 13) {
+                $(boton).trigger("click");
+            }
+        }
+
+        /**
+         * Habilita el slider, boton e input que se le pasen como parámetro. Cambia de color el botón a 'white'
+         * @param slider
+         * @param boton
+         * @param input
+         */
+        function habilitar(slider, boton, input) {
+            input.readOnly = false;
+            boton.disabled = false;
+            boton.style.backgroundColor = "white";
+            slider.slider('enable');
+        }
+
+        /**
+         * Deshabilita el slider, boton e input que se le pasen como parámetro. Cambia de color el botón a 'E7E6E6'
+         * @param slider
+         * @param boton
+         * @param input
+         */
+        function deshabilitar(slider, boton, input) {
+            input.readOnly = true;
+            boton.disabled = true;
+            boton.style.backgroundColor = "E7E6E6";
+            slider.slider('disable');
+        }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
     });
 };

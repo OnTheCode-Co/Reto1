@@ -5,7 +5,6 @@
 }
 
 body {
-  
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -14,12 +13,17 @@ body {
     font-family: Roboto;
 }
 
+label{
+    user-select: none;
+}
+
 .divisor {
     width: 2px;
     height: 100%;
     position: absolute;
     left: 50%;
 }
+
 
 /*.tapador_uno,
 .tapador_dos,
@@ -155,6 +159,13 @@ body {
 .area-reset-origen {
     display: flex;
     width: 80%;
+    align-items: center;
+}
+
+.area-reset-origen input {
+    margin: 0 10px;
+    padding: 5px;
+    background-color: black;
 }
 
 h1,
@@ -184,13 +195,13 @@ header {
 }
 
 header h1 {
-  /*  animation-name: aparicion-titulo;
+    /*  animation-name: aparicion-titulo;
     animation-delay: 5s;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;*/
     opacity: 0;
     margin-bottom: 5px;
-   /* border-bottom: 3px solid #25daa5;
+    /* border-bottom: 3px solid #25daa5;
     width: 90vw;*/
 }
 
@@ -241,7 +252,6 @@ section {
 #infor2,
 #infor3 {
     background: rgba(211, 211, 211, 0);
-  
 }
 
 .informacion_uno,
@@ -263,7 +273,6 @@ section {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-   
 }
 
 .contenedor_botones div {
@@ -274,6 +283,9 @@ section {
     align-items: center;
 }
 
+.contenedor_botones *{
+    user-select: none;
+}
 input {
     background-color: rgb(237, 234, 234);
     outline: none;
@@ -302,6 +314,15 @@ button:hover {
     margin: 1% 0 1% 0;
 }
 
+.parada-uno,
+.parada-dos,
+.parada-tres,
+.parada-cuatro {
+    background-color: blue;
+    width: 5px;
+    height: 30px;
+}
+
 .sliders {
     width: 80%;
 }
@@ -316,7 +337,7 @@ button:hover {
     height: 80%;
     font-size: 100%;
     border-radius: 3px;
-    color: black;
+    color: #555555;
     background-color: white;
     outline: none;
     box-shadow: 6px 6px 0px #999;
@@ -373,10 +394,10 @@ button:hover {
 
 footer {
     width: 100vw;
-    bottom:0;
+    bottom: 0;
     text-align: center;
     /*height: 6%;*/
-    padding:10px;
+    padding: 10px;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
@@ -406,8 +427,6 @@ footer a {
     background-color: #9938bd;
     color: #fff;
 }
-
-
 
 .github:hover {
     background-color: #000000;
@@ -748,4 +767,6 @@ footer a {
     text-decoration: none;
     color: #ffffff;
 }
+
+
 /*RWD */
