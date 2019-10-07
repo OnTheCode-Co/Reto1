@@ -1,5 +1,5 @@
-window.onload = function () {
-    $(document).ready(function () {
+window.onload = function() {
+    $(document).ready(function() {
         /* Declaración de variables globales ------------------------------------------------------------------------ */
         let barraProgreso = document.getElementById("relleno_barra");
         let inputParada = document.getElementById("propiedad_parada");
@@ -10,6 +10,22 @@ window.onload = function () {
         let btnParada = document.getElementById("boton_parada");
         let btnOrigen = document.getElementById("boton_origen");
         let btnReset = document.getElementById("boton_reset");
+
+        let paradaUno = document.getElementById("parada_uno");
+        let paradaDos = document.getElementById("parada_dos");
+        let paradaTres = document.getElementById("parada_tres");
+        let paradaCuatro = document.getElementById("parada_cuatro");
+
+
+        let titulo1 = document.getElementById("titulo1");
+        let titulo2 = document.getElementById("titulo2");
+        let titulo3 = document.getElementById("titulo3");
+        let titulo4 = document.getElementById("titulo4");
+
+
+
+
+
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Creación y valores por defecto de los sliders ------------------------------------------------------------ */
@@ -33,29 +49,30 @@ window.onload = function () {
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Eventos 'onclick' botones -------------------------------------------------------------------------------- */
-        btnCota.addEventListener("click", function () {
+        btnCota.addEventListener("click", function() {
             let posicion = (inputCota.value * 0.2);
             avanzarBarraProgreso(posicion);
         });
 
-        btnParada.addEventListener("click", function () {
+        btnParada.addEventListener("click", function() {
             let posicion = arrayCotas[inputParada.value];
             avanzarBarraProgreso(posicion * 0.2);
+
         });
 
-        btnOrigen.addEventListener("click", function () {
+        btnOrigen.addEventListener("click", function() {
             aOrigen();
         });
 
-        btnReset.addEventListener("click", function () {
+        btnReset.addEventListener("click", function() {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
-            luz_error.src="multimedia/alarma-grey.png";
+            luz_error.src = "multimedia/alarma-grey.png";
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Eventos 'input' en los input de tipo texto --------------------------------------------------------------- */
-        inputCota.addEventListener("input", function () {
+        inputCota.addEventListener("input", function() {
             let cota = inputCota.value;
             if (cota > 500) {
                 inputCota.value = 500;
@@ -68,7 +85,7 @@ window.onload = function () {
             let valorDelSliderDeCotas = $("#slider_cota").slider("value");
             calibrarSliderParada(valorDelSliderDeCotas);
         });
-        inputParada.addEventListener("input", function () {
+        inputParada.addEventListener("input", function() {
             let parada = inputParada.value;
             if (parada > 4) {
                 inputParada.value = 4;
@@ -85,26 +102,26 @@ window.onload = function () {
 
         /* Eventos 'keypress' en los input y slider de cotas y paradas ---------------------------------------------- */
         // Foco en cota o parada y hacer click a Enter
-        $("#propiedad_cota").keypress(function (e) {
+        $("#propiedad_cota").keypress(function(e) {
             hazClick(e, "#boton_cota");
         });
-        $("#slider_cota").keypress(function (e) {
+        $("#slider_cota").keypress(function(e) {
             hazClick(e, "#boton_cota");
         });
-        $("#propiedad_parada").keypress(function (e) {
+        $("#propiedad_parada").keypress(function(e) {
             hazClick(e, "#boton_parada");
         });
-        $("#slider_parada").keypress(function (e) {
+        $("#slider_parada").keypress(function(e) {
             hazClick(e, "#boton_parada");
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Eventos 'slide' cuando se mueve el slider para cambiar de valor ------------------------------------------ */
         /* SLIDERS Cuando la bola del slider se para, recogemos el valor y lo pasamos al input */
-        $("#slider_cota").on("slide", function (event, ui) {
+        $("#slider_cota").on("slide", function(event, ui) {
             triggerSlider(ui, inputCota, "cota");
         });
-        $("#slider_parada").on("slide", function (event, ui) {
+        $("#slider_parada").on("slide", function(event, ui) {
             triggerSlider(ui, inputParada, "cota");
         });
         /* ---------------------------------------------------------------------------------------------------------- */
@@ -213,8 +230,119 @@ window.onload = function () {
          * @param posicion {int} - Valor entre 0 y 100 donde se situará el final de la barra verde.
          */
         function avanzarBarraProgreso(posicion) {
+
             barraProgreso.style.width = posicion + "%";
+
+            if (posicion < 30) {
+                paradaUno.style.height = "0px";
+                paradaDos.style.height = "0px";
+                paradaDos.style.top = "-70";
+                paradaTres.style.height = "0px";
+                paradaCuatro.style.height = "0px";
+                titulo1.style.color = "transparent";
+                titulo2.style.color = "transparent";
+                titulo3.style.color = "transparent";
+                titulo4.style.color = "transparent";
+            }
+
+            if (posicion >= 30 && posicion < 50) {
+                paradaUno.style.height = "70px";
+                paradaDos.style.height = "0px";
+                paradaDos.style.top = "-70";
+                paradaTres.style.height = "0px";
+                paradaCuatro.style.height = "0px";
+                titulo1.style.transition = "all 0.2s ease-in-out";
+                titulo1.style.color = "#333333";
+                titulo2.style.color = "transparent";
+                titulo3.style.color = "transparent";
+                titulo4.style.color = "transparent";
+
+
+            }
+
+            if (posicion >= 50 && posicion < 80) {
+                paradaUno.style.height = "70px";
+                paradaDos.style.height = "70px";
+                paradaTres.style.height = "0px";
+                paradaCuatro.style.height = "0px";
+                paradaDos.style.top = "-70";
+                titulo2.style.color = "#333333";
+                titulo1.style.color = "#333333";
+                titulo3.style.color = "transparent";
+                titulo4.style.color = "transparent";
+
+            }
+
+            if (posicion >= 80 && posicion < 100) {
+                paradaUno.style.height = "70px";
+                paradaDos.style.height = "70px";
+                paradaTres.style.height = "70px";
+                paradaCuatro.style.height = "0px";
+                titulo3.style.color = "#333333";
+                titulo1.style.color = "#333333";
+                titulo2.style.color = "#333333";
+                titulo4.style.color = "transparent";
+
+            }
+
+            if (posicion == 100) {
+                paradaUno.style.height = "70px";
+                paradaDos.style.height = "70px";
+                paradaTres.style.height = "70px";
+                paradaCuatro.style.height = "70px";
+                titulo1.style.color = "#333333";
+                titulo2.style.color = "#333333";
+                titulo3.style.color = "#333333";
+                titulo4.style.color = "#333333";
+
+
+            }
+
+
+
+
+            switch (barraProgreso.style.width) {
+                case "30%":
+                    paradaUno.style.height = "70px";
+                    paradaDos.style.height = "0px";
+                    paradaDos.style.top = "-70";
+                    paradaTres.style.height = "0px";
+                    paradaCuatro.style.height = "0px";
+                    break;
+
+                case "50%":
+                    paradaUno.style.height = "70px";
+                    paradaDos.style.height = "70px";
+                    paradaTres.style.height = "0px";
+                    paradaCuatro.style.height = "0px";
+                    paradaDos.style.top = "-70";
+                    break;
+
+                case "80%":
+                    paradaUno.style.height = "70px";
+                    paradaDos.style.height = "70px";
+                    paradaDos.style.top = "-70";
+                    paradaTres.style.height = "70px";
+                    paradaCuatro.style.height = "0px";
+                    break;
+
+                case "100%":
+                    paradaUno.style.height = "70px";
+                    paradaDos.style.height = "70px";
+
+                    paradaTres.style.height = "70px";
+                    paradaCuatro.style.height = "70px";
+                    break;
+
+                default:
+
+                    break;
+
+
+            }
         }
+
+
 
         /**
          * Dispara el evento 'click' del boton que se le pase como parametro cuando pulsas 'Enter'.
