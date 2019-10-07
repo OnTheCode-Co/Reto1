@@ -5,6 +5,7 @@
 }
 
 body {
+  
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -20,7 +21,7 @@ body {
     left: 50%;
 }
 
-.tapador_uno,
+/*.tapador_uno,
 .tapador_dos,
 .tapador_tres {
     height: 400px;
@@ -56,6 +57,7 @@ body {
     animation-delay: 4.7s;
     animation-fill-mode: forwards;
 }
+*/
 
 .imagen1 {
     width: 100px;
@@ -67,7 +69,7 @@ body {
     animation-delay: 0.75s;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    top: 120vh;
+    top: 145vh;
     right: 50%;
     z-index: 3;
 }
@@ -139,7 +141,7 @@ body {
     animation-delay: 0.75s;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-    top: -25vh;
+    top: -50vh;
     right: 50%;
     z-index: 3;
 }
@@ -190,12 +192,14 @@ header {
 }
 
 header h1 {
-    animation-name: aparicion-titulo;
+  /*  animation-name: aparicion-titulo;
     animation-delay: 5s;
     animation-duration: 1.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
     opacity: 0;
     margin-bottom: 5px;
+   /* border-bottom: 3px solid #25daa5;
+    width: 90vw;*/
 }
 
 section {
@@ -236,7 +240,7 @@ section {
     width: 45%;
     margin: 1% 0 1% 0;
     border: 0;
-    border-bottom: 2px solid #04a504;
+    border-bottom: 2px solid #25daa5;
     background-color: white;
     outline: none;
 }
@@ -245,6 +249,7 @@ section {
 #infor2,
 #infor3 {
     background: rgba(211, 211, 211, 0);
+  
 }
 
 .informacion_uno,
@@ -261,12 +266,12 @@ section {
 }
 
 .contenedor_botones {
-    width: 15%;
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    margin-left: 100px;
+   
 }
 
 .contenedor_botones div {
@@ -289,13 +294,13 @@ button:hover {
 
 /* Sliders */
 
-#propiedad1,
-#propiedad2 {
+#propiedad_cota,
+#propiedad_parada {
     background: white;
 }
 
-#propiedad1,
-#propiedad2,
+#propiedad_cota,
+#propiedad_parada,
 #propiedad3,
 #propiedad4 {
     height: 40%;
@@ -376,7 +381,8 @@ footer {
     width: 100vw;
     bottom:0;
     text-align: center;
-    height: 6%;
+    /*height: 6%;*/
+    padding:10px;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
@@ -530,14 +536,14 @@ footer a {
     from {
         opacity: 0;
         margin-bottom: 5px;
-        width: 17vw;
-        border-bottom: 0px solid #04a504;
+        width: 25vw;
+        border-bottom: 0px solid #25daa5;
     }
     to {
         opacity: 1;
         margin-bottom: 5px;
         width: 90vw;
-        border-bottom: 3px solid #04a504;
+        border-bottom: 3px solid #25daa5;
     }
 }
 
@@ -583,6 +589,7 @@ footer a {
     background: #d5cebc;
     border: none;
     border-radius: 0;
+    z-index: 0;
 }
 
 .slider_nuevo.ui-slider .ui-slider-handle {
@@ -747,3 +754,4 @@ footer a {
     text-decoration: none;
     color: #ffffff;
 }
+/*RWD */
