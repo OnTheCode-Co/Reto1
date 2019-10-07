@@ -4,12 +4,6 @@
     <title>On The Code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- -------------------------------------------------------------------------------------------------------------->
-    <!-- Esto no se muy bien qué es, pero si lo comentas sigue funcionando todito, un saludo.
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    -->
-    <!-- -------------------------------------------------------------------------------------------------------------->
     <script src="https://kit.fontawesome.com/5d422b55c9.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -44,7 +38,11 @@
         <div class="contenedor_parametros">
             <div class="parametro_uno">
                 <div class="div_pr">
-                    <label for="propiedad_cota">Cota: </label>
+                    <span class="radios">
+                        <input type="radio" id="r-cotas" name="type" value="COTAS" checked>
+                        <label for="r-cotas">Cotas:</label>
+                    </span>
+                    <!--<label for="propiedad_cota">Cota: </label>-->
                     <input type="text" name="propiedad_cota" id="propiedad_cota" placeholder="1-500mm" maxlength="3"/>
                     <div id="slider_cota" class="slider_nuevo"></div>
                 </div>
@@ -54,7 +52,11 @@
             </div>
             <div class="parametro_dos">
                 <div class="div_pr">
-                    <label for="propiedad_parada">Parada:</label>
+                    <span class="radios">
+                        <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
+                        <label for="r-paradas">Paradas:</label>
+                    </span>
+                    <!-- <label for="propiedad_parada">Parada:</label> -->
                     <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
                     <div id="slider_parada" class="slider_nuevo"></div>
                 </div>
@@ -62,49 +64,52 @@
                     <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
                 </div>
             </div>
-                <div class="parametro_tres">
-                    <div class="div_pr">
-                        <div class="area-reset-origen">
-                            <button class="botones" id="boton_origen">ORIGEN</button>
-                            <button class="botones" id="boton_reset">RESET</button>
-                            <input type="radio" id="r-cotas" name="type" value="COTAS"> <span
-                                class="texto-radio"> COTAS</span>
-                            <input type="radio" id="r-paradas" name="type" value="PARADAS"> <span
-                                class="texto-radio"> PARADAS</span>
-                        </div>
+            <div class="parametro_tres">
+                <div class="div_pr">
+                    <div class="area-reset-origen">
+                        <button class="botones" id="boton_origen">ORIGEN</button>
+                        <button class="botones" id="boton_reset">RESET</button>
+
+                        <!-- <input type="radio" id="r-cotas" name="type" value="COTAS">-->
+                        <!--<span class="texto-radio"> COTAS</span> -->
+                        <!--<label for="r-cotas">COTAS</label> -->
+                        <!--<input type="radio" id="r-paradas" name="type" value="PARADAS">-->
+                        <!--<span class="texto-radio"> PARADAS</span> -->
+                        <!--<label for="r-paradas">PARADAS</label> -->
                     </div>
                 </div>
+            </div>
         </div>
-                <span class="tapador_dos"></span>
-                <div class="contenedor_informacion">
-                    <div class="informacion_uno">
-                        <label for="infor1"> TARGET POSITION: </label>
-                        <input type="text" name="infor1" id="infor1" readonly>
-                    </div>
-                    <div class="informacion_dos">
-                        <label for="infor2"> CURRENT POSITION: </label>
-                        <input type="text" name="infor2" id="infor2" readonly>
-                    </div>
-                    <div class="informacion_tres">
-                        <label for="infor3"> CURRENT SPEED:</label>
-                        <input type="text" name="infor3" id="infor3" readonly>
-                    </div>
-                </div>
-                <span class="tapador_tres"></span>
-                <div class="contenedor_botones">
-                    <div class="contenedor_botones_uno">
-                        <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                    </div>
-                    <div class="contenedor_botones_dos">
-                        <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                    </div>
-                    <div class="contenedor_botones_tres">
-                        <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                    </div>
-                    <div class="contenedor_botones_cuatro">
-                        <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
-                    </div>
-                </div>
+        <span class="tapador_dos"></span>
+        <div class="contenedor_informacion">
+            <div class="informacion_uno">
+                <label for="infor1"> TARGET POSITION: </label>
+                <input type="text" name="infor1" id="infor1" readonly>
+            </div>
+            <div class="informacion_dos">
+                <label for="infor2"> CURRENT POSITION: </label>
+                <input type="text" name="infor2" id="infor2" readonly>
+            </div>
+            <div class="informacion_tres">
+                <label for="infor3"> CURRENT SPEED:</label>
+                <input type="text" name="infor3" id="infor3" readonly>
+            </div>
+        </div>
+        <span class="tapador_tres"></span>
+        <div class="contenedor_botones">
+            <div class="contenedor_botones_uno">
+                <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_dos">
+                <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_tres">
+                <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_cuatro">
+                <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
+            </div>
+        </div>
     </section>
     <section class="seccion-animacion">
         <div class="barra_progreso">
@@ -122,17 +127,18 @@
             Product designed by OnTheCode with the collaboration of Sevrom
         <p>
     </footer>
-<!--BLOQUE COOKIES -->
-<div id="barraaceptacion" style="display: none; position:absolute;">
-    <div class="cookies">
-        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
-        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-        <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
-        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+    <!--BLOQUE COOKIES -->
+    <div id="barraaceptacion" style="display: none; position:absolute;">
+        <div class="cookies">
+            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del
+            Real
+            Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+            <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
+            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+        </div>
     </div>
-</div>
 
-<!--FIN BLOQUE COOKIES-->
+    <!--FIN BLOQUE COOKIES-->
 
 </div>
 </body>
