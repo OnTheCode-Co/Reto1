@@ -53,98 +53,93 @@
                         <button class="botones" id="boton_cota"><i class="far fa-check-circle"></i></button>
                     </div>
                 </div>
-                <div class="parametro_dos">
+                <div class="div_btn">
+                    <button class="botones" id="boton_cota"><i class="far fa-check-circle"></i></button>
+                </div>
+            </div>
+            <div class="parametro_dos">
+                <div class="div_pr">
+                    <label for="propiedad_parada">Parada:</label>
+                    <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
+                    <div id="slider_parada" class="slider_nuevo"></div>
+                </div>
+                <div class="div_btn">
+                    <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
+                </div>
+            </div>
+                <div class="parametro_tres">
                     <div class="div_pr">
-                        <label for="propiedad_parada">Parada:</label>
-                        <input type="text" name="propiedad_parada" id="propiedad_parada" maxlength="1" placeholder="0-4">
-                        <div id="slider_parada" class="slider_nuevo"></div>
-                    </div>
-                    <div class="parametro_tres">
-                        <div class="div_pr">
-                            <div class="area-reset-origen">
-                                <button class="botones" id="boton3">ORIGEN</button>
-                                <button class="botones" id="boton4">RESET</button>
-
-                            </div>
-                            <div class="div_btn">
-                                <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
-                            </div>
-                        </div>
-                        <div class="parametro_tres">
-                            <div class="div_pr">
-                                <div class="area-reset-origen">
-                                    <button class="botones" id="boton_origen">ORIGEN</button>
-                                    <button class="botones" id="boton_reset">RESET</button>
-                                    <input type="radio" id="r-cotas" name="type" value="COTAS"> <span class="texto-radio"> COTAS</span>
-                                    <input type="radio" id="r-paradas" name="type" value="PARADAS"> <span class="texto-radio"> PARADAS</span>
-                                </div>
-                            </div>
+                        <div class="area-reset-origen">
+                            <button class="botones" id="boton_origen">ORIGEN</button>
+                            <button class="botones" id="boton_reset">RESET</button>
+                            <input type="radio" id="r-cotas" name="type" value="COTAS"> <span
+                                class="texto-radio"> COTAS</span>
+                            <input type="radio" id="r-paradas" name="type" value="PARADAS"> <span
+                                class="texto-radio"> PARADAS</span>
                         </div>
                     </div>
-                    <span class="tapador_dos"></span>
-                    <div class="contenedor_informacion">
-                        <div class="informacion_uno">
-                            <label for="infor1"> TARGET POSITION: </label>
-                            <input type="text" name="infor1" id="infor1" readonly>
-                        </div>
-                        <div class="informacion_dos">
-                            <label for="infor2"> CURRENT POSITION: </label>
-                            <input type="text" name="infor2" id="infor2" readonly>
-                        </div>
-                        <div class="informacion_tres">
-                            <label for="infor3"> CURRENT SPEED:</label>
-                            <input type="text" name="infor3" id="infor3" readonly>
-                        </div>
-                    </div>
-                    <span class="tapador_tres"></span>
-                    <div class="contenedor_botones">
-                        <div class="contenedor_botones_uno">
-                            <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                        </div>
-                        <div class="contenedor_botones_dos">
-                            <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                        </div>
-                        <div class="contenedor_botones_tres">
-                            <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                        </div>
-                        <div class="contenedor_botones_cuatro">
-                            <p>ERROR:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                        </div>
-                    </div>
-
-
-        </section>
-        <section class="seccion-animacion">
-            <div class="barra_progreso">
-                <div class="parada-uno"></div>
-                <div class="parada-dos"></div>
-                <div class="parada-tres"></div>
-                <div class="parada-cuatro"></div>
-                <div class="relleno" id="relleno_barra"></div>
-            </div>
-        </section>
-        <footer>
-            <p> @OnTheCode.Co 2019/2020
-                <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"> <i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i class="fab fa-instagram"></i></a>
-            </p>
-            <p>
-                Product designed by OnTheCode with the collaboration of Sevrom
-                <p>
-        </footer>
+                </div>
         </div>
-        <!--BLOQUE COOKIES -->
-        <div id="barraaceptacion" style="display: none; position:absolute;">
-            <div class="cookies">
-                Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-                <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
-                <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
-            </div>
+                <span class="tapador_dos"></span>
+                <div class="contenedor_informacion">
+                    <div class="informacion_uno">
+                        <label for="infor1"> TARGET POSITION: </label>
+                        <input type="text" name="infor1" id="infor1" readonly>
+                    </div>
+                    <div class="informacion_dos">
+                        <label for="infor2"> CURRENT POSITION: </label>
+                        <input type="text" name="infor2" id="infor2" readonly>
+                    </div>
+                    <div class="informacion_tres">
+                        <label for="infor3"> CURRENT SPEED:</label>
+                        <input type="text" name="infor3" id="infor3" readonly>
+                    </div>
+                </div>
+                <span class="tapador_tres"></span>
+                <div class="contenedor_botones">
+                    <div class="contenedor_botones_uno">
+                        <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+                    </div>
+                    <div class="contenedor_botones_dos">
+                        <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+                    </div>
+                    <div class="contenedor_botones_tres">
+                        <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
+                    </div>
+                    <div class="contenedor_botones_cuatro">
+                        <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
+                    </div>
+                </div>
+    </section>
+    <section class="seccion-animacion">
+        <div class="barra_progreso">
+            <div class="relleno" id="relleno_barra"></div>
         </div>
+    </section>
+    <footer>
+        <p> @OnTheCode.Co 2019/2020
+            <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"> <i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i
+                    class="fab fa-instagram"></i></a>
+        </p>
+        <p>
+            Product designed by OnTheCode with the collaboration of Sevrom
+        <p>
+    </footer>
+<!--BLOQUE COOKIES -->
+<div id="barraaceptacion" style="display: none; position:absolute;">
+    <div class="cookies">
+        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
+        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+        <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
+        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
+    </div>
+</div>
 
-        <!--FIN BLOQUE COOKIES-->
+<!--FIN BLOQUE COOKIES-->
 
+</div>
 </body>
 
 </html>
