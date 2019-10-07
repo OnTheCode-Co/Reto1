@@ -5,7 +5,6 @@
 }
 
 body {
-  
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -24,6 +23,7 @@ label{
     position: absolute;
     left: 50%;
 }
+
 
 /*.tapador_uno,
 .tapador_dos,
@@ -122,7 +122,7 @@ label{
     width: 50%;
     position: absolute;
     height: 100%;
-    background-color: rgba(22, 22, 22, 0.753);
+    background-color: #161616c0;
     left: 50%;
     animation-name: cortina-derecha;
     animation-delay: 2s;
@@ -155,7 +155,6 @@ label{
     height: auto;
     z-index: 3;
 }
-
 
 .area-reset-origen {
     display: flex;
@@ -196,13 +195,13 @@ header {
 }
 
 header h1 {
-  /*  animation-name: aparicion-titulo;
+    /*  animation-name: aparicion-titulo;
     animation-delay: 5s;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;*/
     opacity: 0;
     margin-bottom: 5px;
-   /* border-bottom: 3px solid #25daa5;
+    /* border-bottom: 3px solid #25daa5;
     width: 90vw;*/
 }
 
@@ -253,7 +252,6 @@ section {
 #infor2,
 #infor3 {
     background: rgba(211, 211, 211, 0);
-  
 }
 
 .informacion_uno,
@@ -336,6 +334,8 @@ button:hover {
     box-shadow: 6px 6px 0px #999;
     transition: all 0.2s ease 0s;
     min-width: 80px;
+    /* Añadido por poner el boton dentro de form*/
+    min-height: 50px;
 }
 
 .area-reset-origen .botones {
@@ -385,10 +385,10 @@ button:hover {
 
 footer {
     width: 100vw;
-    bottom:0;
+    bottom: 0;
     text-align: center;
     /*height: 6%;*/
-    padding:10px;
+    padding: 10px;
     color: #A6A6A6;
     background-color: #333333;
     position: absolute;
@@ -418,8 +418,6 @@ footer a {
     background-color: #9938bd;
     color: #fff;
 }
-
-
 
 .github:hover {
     background-color: #000000;
@@ -578,6 +576,57 @@ footer a {
     border: 1px solid #25daa5;
     background-color: #25daa40f;
     border-radius: 3px;
+}
+
+.relleno-invisible {
+    position: absolute;
+    width: 90vw;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.parada-uno,
+.parada-dos,
+.parada-tres,
+.parada-cuatro {
+    background-color: #25daa5;
+    width: 2px;
+    height: 0px;
+    position: relative;
+}
+
+.parada-uno h3,
+.parada-dos h3,
+.parada-tres h3,
+.parada-cuatro h3 {
+    color: transparent;
+    transition: all 0s ease-in-out;
+    position: relative;
+    top: 25;
+}
+
+.parada-cuatro {
+    left: 99.5%;
+    top: -210;
+    transition: all 1s ease-in;
+}
+
+.parada-tres {
+    left: 79.6%;
+    top: -220;
+    transition: all 1s ease-in;
+}
+
+.parada-dos {
+    left: 49.6%;
+    top: -70;
+    transition: all 1s ease-in;
+}
+
+.parada-uno {
+    left: 29.6%;
+    top: -80;
+    transition: all 1s ease-in;
 }
 
 .relleno {
@@ -760,4 +809,6 @@ footer a {
     text-decoration: none;
     color: #ffffff;
 }
+
+
 /*RWD */
