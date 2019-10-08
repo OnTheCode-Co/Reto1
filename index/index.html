@@ -77,7 +77,7 @@
                             </span>
                         </form>
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                        <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
+                        <input type="text" name='"mis_datos".parada_in' id="propiedad_parada" maxlength="1"
                                placeholder="0-4" required>
                         <div id="slider_parada" class="slider_nuevo"></div>
                     </div>
@@ -92,11 +92,16 @@
                 <div class="div_pr">
                     <div class="area-reset-origen">
                         <form method="post">
+                            <!-- el origen resetea los modos segun ARI-->
                             <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
-                            <button class="botones" id="boton_origen">ORIGEN</button>
+                            <input type="hidden" name='"mis_datos".cotas' value="0" id="reset_cota">
+                            <input type="hidden" name='"mis_datos".paradas' value="0" id="reset_parada">
+                            <button class="botones" type="submit" id="boton_origen">ORIGEN</button>
                         </form>
                         <form method="post">
                             <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
+                            <input type="hidden" name='"mis_datos".error' value="0" id="quitar_error">
+                            <!-- TODO comprobar boton reset en JS-->
                             <button class="botones" id="boton_reset">RESET</button>
                         </form>
 
