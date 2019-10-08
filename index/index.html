@@ -30,132 +30,139 @@
 </head>
 
 <body>
-    <div class="contenedor">
-        <div class="linea-izquierda anim"></div>
-        <div class="cortina-izquierda anim"></div>
-        <div class="linea-derecha anim"></div>
-        <div class="cortina-derecha anim"></div>
-        <div class="divisor anim">
-            <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
-            <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
-        </div>
-        <header>
-            <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span>
-            </h1>
-        </header>
-        <section class="seccion_parametros">
-            <span class="tapador_uno"></span>
-            <div class="contenedor_parametros">
-                <form method="post" target="foo">
-                    <div class="parametro_uno">
-                        <div class="div_pr">
-                            <form method="post" id="form_r_cotas" target="foo">
-                                <span class="radios">
-                                <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="COTAS" checked>
-                                <label for="r-cotas">Cotas:</label>
-                            </span>
-                            </form>
-                            <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                            <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm" maxlength="3" required/>
-                            <div id="slider_cota" class="slider_nuevo"></div>
-                        </div>
-                        <div class="div_btn">
-                            <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
-                            <input type="hidden" name='"mis_datos".intro_cotas' value="1" id="boton_intro_cotas">
-                            <button type="submit" class="botones" id="boton_cota"><i class="far fa-check-circle"></i>
-                        </button>
-                        </div>
-                    </div>
-                </form>
-                <form method="post" target="foo">
-                    <div class="parametro_dos">
-                        <div class="div_pr">
-                            <form method="post" id="form_r_paradas" target="foo">
-                                <span class="radios">
-                                <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
-                                <label for="r-paradas">Paradas:</label>
-                            </span>
-                            </form>
-                            <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                            <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1" placeholder="0-4" required>
-                            <div id="slider_parada" class="slider_nuevo"></div>
-                        </div>
-                        <div class="div_btn">
-                            <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
-                            <input type="hidden" name='"mis_datos".intro_paradas' value="1" id="boton_intro_paradas">
-                            <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
-                        </div>
-                    </div>
-                </form>
-                <iframe name="foo" style="display: none"></iframe>
-                <div class="parametro_tres">
-                    <div class="div_pr">
-                        <div class="area-reset-origen">
-                            <form method="post" target="foo">
-                                <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
-                                <button class="botones" id="boton_origen">ORIGEN</button>
-                            </form>
-                            <form method="post" target="foo">
-                                <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
-                                <button class="botones" id="boton_reset">RESET</button>
-                            </form>
-                        </div>
-                        <!--Croata / Castillo-->
-                    </div>
-                </div>
+<div class="contenedor">
+    <div class="linea-izquierda anim"></div>
+    <div class="cortina-izquierda anim"></div>
+    <div class="linea-derecha anim"></div>
+    <div class="cortina-derecha anim"></div>
+    <div class="divisor anim">
+        <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
+        <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
+    </div>
+    <header>
+        <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span>
+        </h1>
+    </header>
+    <section class="seccion_parametros">
+        <span class="tapador_uno"></span>
+        <div class="contenedor_parametros">
 
+            <!-- TODO-->
+
+            <form method="post" id="form_r_cotas" target="foo">
+                <span class="radios">
+                <input type="hidden" name='"mis_datos".paradas' value="0"
+                       id="parada_cota">
+                    <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="0">
+                    <label for="r-cotas">Cotas:</label>
+                </span>
+            </form>
+
+
+            <form method="post" target="foo">
+                <div class="parametro_uno">
+                    <div class="div_pr">
+
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
+                               maxlength="3" required/>
+                        <div id="slider_cota" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_cotas' value="1" id="boton_intro_cotas">
+                        <button type="submit" class="botones" id="boton_cota"><i class="far fa-check-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- TODO-->
+            <form method="post" id="form_r_paradas" target="foo">
+                <span class="radios">
+                    <input type="hidden" name='"mis_datos".cotas' value="0"
+                           id="cota_parada">
+                    <input type="radio" id="r-paradas" name='"mis_datos".paradas' value="0"/>
+                    <label for="r-paradas">Paradas:</label>
+                </span>
+            </form>
+
+
+            <form method="post" target="foo">
+                <div class="parametro_dos">
+                    <div class="div_pr">
+
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
+                               placeholder="0-4" required>
+                        <div id="slider_parada" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"mis_datos".intro_paradas' value="1" id="boton_intro_paradas">
+                        <button class="botones" id="boton_parada"><i class="far fa-check-circle"></i></button>
+                    </div>
+                </div>
+            </form>
+            <iframe name="foo" style="display: none"></iframe>
+            <div class="parametro_tres">
+                <div class="div_pr">
+                    <div class="area-reset-origen">
+                        <form method="post">
+                            <!-- el origen resetea los modos segun ARI-->
+                            <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
+                            <input type="hidden" name='"mis_datos".cotas' value="0" id="reset_cota">
+                            <input type="hidden" name='"mis_datos".paradas' value="0" id="reset_parada">
+                            <button class="botones" type="submit" id="boton_origen">ORIGEN</button>
+                        </form>
+                        <form method="post" id="reset_form">
+                            <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
+                            <input type="hidden" name='"mis_datos".error' value="0" id="quitar_error">
+                            <!-- TODO comprobar boton reset en JS-->
+                            <button class="botones" id="boton_reset">RESET</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <span class="tapador_dos"></span>
-            <div class="contenedor_informacion">
-                <div class="informacion_uno">
-                    <label for="infor1"> TARGET POSITION: </label>
-                    <input type="text" name="infor1" id="infor1" readonly>
-                </div>
-                <div class="informacion_dos">
-                    <label for="infor2"> CURRENT POSITION: </label>
-                    <input type="text" name="infor2" id="infor2" readonly>
-                </div>
-                <div class="informacion_tres">
-                    <label for="infor3"> CURRENT SPEED:</label>
-                    <input type="text" name="infor3" id="infor3" readonly>
-                </div>
+
+        </div>
+        <span class="tapador_dos"></span>
+        <div class="contenedor_informacion">
+            <div class="informacion_uno">
+                <label for="infor1"> TARGET POSITION: </label>
+                <input type="text" name="infor1" id="infor1" readonly>
             </div>
-            <span class="tapador_tres"></span>
-            <div class="contenedor_botones">
-                <div class="contenedor_botones_uno">
-                    <p>READY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                </div>
-                <div class="contenedor_botones_dos">
-                    <p>BUSY:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                </div>
-                <div class="contenedor_botones_tres">
-                    <p>INPOS:</p><img class="alarm_icon" src="./multimedia/alarma-grey.png">
-                </div>
-                <div class="contenedor_botones_cuatro">
-                    <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
-                </div>
+            <div class="informacion_dos">
+                <label for="infor2"> CURRENT POSITION: </label>
+                <input type="text" name="infor2" id="infor2" readonly>
             </div>
-        </section>
-        <section class="seccion-animacion">
-            <div class="barra_progreso">
-                <div class="relleno" id="relleno_barra"></div>
-                <div class="relleno-invisible">
-                    <div class="parada-uno" id="parada_uno">
-                        <h3 id="titulo1">Seongdo</h3>
-                    </div>
-                    <!--Coreano / Santos-->
-                    <div class="parada-dos" id="parada_dos">
-                        <h3 id="titulo2">Kitsui</h3>
-                    </div>
-                    <!--Japones / Prieto-->
-                    <div class="parada-tres" id="parada_tres">
-                        <h3 id="titulo3">Rytier</h3>
-                    </div>
-                    <!--Eslovaco / Caballero-->
-                    <div class="parada-cuatro" id="parada_cuatro">
-                        <h3 id="titulo4">Dvorac</h3>
-                    </div>
-                    <!--Croata / Castillo-->
+            <div class="informacion_tres">
+                <label for="infor3"> CURRENT SPEED:</label>
+                <input type="text" name="infor3" id="infor3" readonly>
+            </div>
+        </div>
+        <span class="tapador_tres"></span>
+        <div class="contenedor_botones">
+            <div class="contenedor_botones_uno">
+                <p>READY:</p><img class="alarm_icon" id="ready" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_dos">
+                <p>BUSY:</p><img class="alarm_icon" id="busy" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_tres">
+                <p>INPOS:</p><img class="alarm_icon" id="in_pos" src="./multimedia/alarma-grey.png">
+            </div>
+            <div class="contenedor_botones_cuatro">
+                <p>ERROR:</p><img class="alarm_icon" id="luz_error" src="./multimedia/alarma-grey.png">
+            </div>
+        </div>
+    </section>
+    <section class="seccion-animacion">
+        <div class="barra_progreso">
+            <div class="relleno" id="relleno_barra"></div>
+            <div class="relleno-invisible">
+                <div class="parada-uno" id="parada_uno">
+                    <h3 id="titulo1">Seongdo</h3>
                 </div>
                 <!--Coreano / Santos-->
                 <div class="parada-dos" id="parada_dos">
@@ -171,26 +178,30 @@
                 </div>
                 <!--Croata / Castillo-->
             </div>
-    </div>
-    </section>
-    <footer>
-        <p> @OnTheCode.Co 2019/2020
-            <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"> <i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i class="fab fa-instagram"></i></a>
-        </p>
-        <p>
-            Product designed by OnTheCode with the collaboration of Sevrom
-            <p>
-    </footer>
-    <!--BLOQUE COOKIES -->
-    <div id="barraaceptacion" style="display: none; position:absolute;">
-        <div class="cookies">
-            Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
-            <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
-            <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
         </div>
+    </section>
+</div>
+
+<footer>
+    <p> @OnTheCode.Co 2019/2020
+        <a href="https://github.com/OnTheCode-Co" class="github" target="_blank"> <i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/OnTheCode1" class="twitter" target="_blank"> <i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/onthecode.co/" class="instagram" target="_blank"> <i
+                class="fab fa-instagram"></i></a>
+    </p>
+    <p>
+        Product designed by OnTheCode with the collaboration of Sevrom
+    <p>
+</footer>
+<!--BLOQUE COOKIES -->
+<div id="barraaceptacion" style="display: none; position:absolute;">
+    <div class="cookies">
+        Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real
+        Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
+        <a href="javascript:void(0);" id="ok" class="ok"><b>OK</b></a> |
+        <a href="http://politicadecookies.com" target="_blank" class="info">Más información</a>
     </div>
+</div>
 </div>
 
 <!--FIN BLOQUE COOKIES-->
