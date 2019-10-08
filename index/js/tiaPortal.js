@@ -15,6 +15,23 @@
  * Principalmente lectura de variables de la base de datos
  */
 
+/*
+* TODO listener del boton reset, que lea de la base de datos la variable de reset, si
+*  esta en false (0), ponerlo a true (1), y viceversa
+ */
+$("#boton_reset").click(function () {
+    // para leer de la bbdd usar funcion coger();
+    let reset = coger("./variables/reset.html").responseText;
+    // hacerle submit al form que engloba el boton reset cuando se compruebe
+    // habiendo cambiado los valores
+    if (reset == 0) {
+        $("#boton_intro_reset").val("1");
+    } else {
+        $("#boton_intro_reset").val("0");
+    }
+    $("#reset_form").submit();
+});
+
 function refrescoDeLecturas() {
     // if pa porsi no hay conexion con el server no haga llamadas toodo el rato
     if (coger("./variables/current_speed.html").responseText[2] != "=") {
