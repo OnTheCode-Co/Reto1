@@ -3,15 +3,16 @@
 }
 
 @media screen and (max-width: 719px) and (min-width:360px) {
+    h1{
+        font-size: 25px;
+    }
     .movil {
         display: block;
     }
+    /*
     footer {
         display: none;
-    }
-    .html {
-        overflow: none;
-    }
+    }*/
     .seccion_parametros {
         flex-direction: column;
         justify-content: center;
@@ -25,11 +26,11 @@
     }
     .contenedor_botones {
         height: 30%;
-        margin: 50px;
+        margin: 13px;
         flex-direction: row;
         width: 90%;
         order: -1;
-        margin-top: 20%;
+        margin-top: 28%;
     }
     #r-cotas {
         display: none;
@@ -37,9 +38,9 @@
     #r-paradas {
         display: none;
     }
-    #boton1,
-    #boton2 {
-        margin-left: 50px;
+    #boton_parada,
+    #boton_cota {
+        margin-left: 70px;
     }
     .contenedor_informacion {
         height: 30%;
@@ -72,5 +73,26 @@
         display: flex;
         align-items: center;
         margin-left: -50%;
+    }
+    .contenedor_informacion{
+        flex-direction: column;
+        width: 15%;
+        height: 20%;
+        padding: 15px;
+        justify-content: space-between;
+        margin-top: 10%;
+    }
+    .seccion-animacion{
+        height: 22%;
+    }
+    .barra_progreso {
+        margin-bottom: 23%;
+       
+    }
+    header{
+        margin-bottom: -5%;
+    }
+    .parada-uno, .parada-dos, .parada-tres, parada-cuatro{
+        display:none;
     }
 }
