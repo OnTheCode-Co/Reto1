@@ -3,10 +3,14 @@
 }
 
 @media screen and (max-width: 719px) and (min-width:360px) {
+    h1{
+        font-size: 25px;
+    }
     .movil {
         display: block;
     }
-    /*footer {
+    /*
+    footer {
         display: none;
     }*/
     .seccion_parametros {
@@ -22,7 +26,7 @@
     }
     .contenedor_botones {
         height: 30%;
-        margin: 50px;
+        margin: 13px;
         flex-direction: row;
         width: 90%;
         order: -1;
@@ -34,9 +38,9 @@
     #r-paradas {
         display: none;
     }
-    #boton1,
-    #boton2 {
-        margin-left: 50px;
+    #boton_parada,
+    #boton_cota {
+        margin-left: 70px;
     }
     .contenedor_informacion {
         height: 30%;
@@ -82,9 +86,13 @@
         height: 22%;
     }
     .barra_progreso {
-        margin-bottom: 20%;
+        margin-bottom: 23%;
+       
     }
     header{
         margin-bottom: -5%;
+    }
+    .parada-uno, .parada-dos, .parada-tres, parada-cuatro{
+        display:none;
     }
 }
