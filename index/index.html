@@ -47,9 +47,13 @@
         <span class="tapador_uno"></span>
         <div class="contenedor_parametros">
 
+            <!-- TODO-->
+
             <form method="post" id="form_r_cotas">
                 <span class="radios">
-                    <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="COTAS" checked>
+                <input type="hidden" name='"mis_datos".paradas' value="0"
+                       id="parada_cota">
+                    <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="0">
                     <label for="r-cotas">Cotas:</label>
                 </span>
             </form>
@@ -71,10 +75,12 @@
                     </div>
                 </div>
             </form>
-
+            <!-- TODO-->
             <form method="post" id="form_r_paradas">
                 <span class="radios">
-                    <input type="radio" id="r-paradas" name="type" value="PARADAS"/>
+                    <input type="hidden" name='"mis_datos".cotas' value="0"
+                                           id="cota_parada">
+                    <input type="radio" id="r-paradas" name='"mis_datos".paradas' value="0"/>
                     <label for="r-paradas">Paradas:</label>
                 </span>
             </form>

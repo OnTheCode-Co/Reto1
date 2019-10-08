@@ -2,13 +2,57 @@
 /**
  * MODO COTAS O PARADAS
  */
-/*$("#r-cotas").bind("focus", function () {
-    $("#form_r_cotas").submit();
-});*/
 
-/*$("#r-paradas").focus( function () {
-    $("#form_r_paradas").submit();
-});*/
+/**
+ * Comprobar y poner el modo cota
+ */
+
+
+$("#r-cotas").click(function () {
+
+    var origen = coger("./variables/origen.html").responseText;
+
+
+    if (origen != "1") {
+        // no esta seleccionado y cambia el modo
+        if (!$("#r-cotas").checked()) {
+            $("#r-cotas").val("1");
+            $("#parada_cota").val("0");
+            $("#form_r_cotas").submit();
+        }
+    }
+});
+
+/**
+ * Comprobar y poner el modo parada
+ */
+
+$("#r-paradas").click(function () {
+    var origen = coger("./variables/origen.html").responseText;
+    if (origen != "1") {
+        // no esta seleccionado y cambia el modo
+        if (!$("#r-paradas").checked()) {
+            $("#r-paradas").val("1");
+            $("#cota_parada").val("0");
+            $("#form_r_paradas").submit();
+        }
+    }
+
+    /*var origen = coger("./variables/origen.html").responseText;
+    var cotas = coger("./variables/cotas.html").responseText;
+    var paradas = coger("./variables/paradas.html").responseText;
+
+    if (origen != "1") {
+
+    } else {
+        if (paradas != "1") {
+            $("#r-paradas").prop("checked", true);
+        } else {
+            $("#r-cotas").prop("checked", true);
+        }
+    }*/
+    //$("#form_r_paradas").submit();
+});
 
 /**
  * intervalo de refresco de lo que se quiera ejecutar en la función
@@ -31,6 +75,7 @@ $("#boton_reset").click(function () {
     }
     $("#reset_form").submit();
 });
+
 
 function refrescoDeLecturas() {
     // if pa porsi no hay conexion con el server no haga llamadas toodo el rato
