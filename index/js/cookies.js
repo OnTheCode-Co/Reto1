@@ -70,21 +70,21 @@ $(document).ready(function (event) {
      * @returns {string}
      */
     function getCookie(nombre) {
-        var c_value = document.cookie;
-        var c_start = c_value.indexOf(" " + nombre + "=");
-        if (c_start == -1) {
-            c_start = c_value.indexOf(nombre + "=");
+        var valorCookie = document.cookie;
+        var cookie = valorCookie.indexOf(" " + nombre + "=");
+        if (cookie == -1) {
+            cookie = valorCookie.indexOf(nombre + "=");
         }
-        if (c_start == -1) {
-            c_value = null;
+        if (cookie == -1) {
+            valorCookie = null;
         } else {
-            c_start = c_value.indexOf("=", c_start) + 1;
-            var c_end = c_value.indexOf(";", c_start);
+            cookie = valorCookie.indexOf("=", cookie) + 1;
+            var c_end = valorCookie.indexOf(";", cookie);
             if (c_end == -1) {
-                c_end = c_value.length;
+                c_end = valorCookie.length;
             }
-            c_value = unescape(c_value.substring(c_start, c_end));
+            valorCookie = unescape(valorCookie.substring(cookie, c_end));
         }
-        return c_value;
+        return valorCookie;
     }
 });
