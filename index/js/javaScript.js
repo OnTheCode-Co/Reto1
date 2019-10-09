@@ -68,6 +68,7 @@ window.onload = function() {
         });
         // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
         //radioCotas.dispatchEvent(new Event("change"));
+
         //por defecto disabled hasta que se de a origen
 
         function inicio() {
@@ -117,13 +118,13 @@ window.onload = function() {
             document.getElementById("r-paradas").disabled = false;
         });
 
-        btnReset.addEventListener("click", function() {
+        btnReset.addEventListener("click", function () {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
-            if (cogerVariable("./variables/reset.html") == 1){
+            if (cogerVariable("./variables/reset.html") == 1) {
                 $("#boton_intro_reset").val("0")
-            }else {
+            } else {
                 $("#boton_intro_reset").val("1")
             }
             $("#reset_form").submit();
@@ -446,7 +447,9 @@ window.onload = function() {
                 rButton.disabled = true;
             }
         }
+
+        /* Inicio de funciones al cargar el documento------------------------------------------------------------------- */
         inicio();
-        /* ---------------------------------------------------------------------------------------------------------- */
+        leerSiPulsadoresActivados();
     });
 };
