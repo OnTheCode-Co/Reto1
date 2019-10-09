@@ -82,7 +82,7 @@ window.onload = function() {
             deshabilitar($("#slider_cota"), btnCota, inputCota);
             habilitar($("#slider_parada"), btnParada, inputParada, radioCotas);
             //todo
-            if (cogerVariable("./variables/cotas.html") == 1){
+            if (cogerVariable("./variables/paradas.html") == 0){
                 // aliado
                 $("#r-cotas").val("0");
                 $("#parada_boolean").val("1");
@@ -122,12 +122,6 @@ window.onload = function() {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
-            if (cogerVariable("./variables/reset.html") == 1) {
-                $("#boton_intro_reset").val("0")
-            } else {
-                $("#boton_intro_reset").val("1")
-            }
-            $("#reset_form").submit();
         });
 
 

@@ -1,5 +1,5 @@
 /* Declaración de variables globales ------------------------------------------------------------------------ */
-var tasaDeRefresco = 1500;
+var tasaDeRefresco = 200;
 
 /**
  * Inicio del javaScript de la base de datos
@@ -86,4 +86,19 @@ function leerSiPulsadoresActivados() {
         $("#boton_intro_paradas").val("0");
         $("#form_paradas").submit();
     }
+
+    let b_i_o = cogerVariable("./variables/origen.html");
+    if (b_i_o == 1) {
+        //volver a poner el boton en false porque es un pulsador
+        $("#boton_intro_origen").val("0");
+        $("#origen_form").submit();
+    }
+
+    let b_i_r = cogerVariable("./variables/reset.html");
+    if (b_i_r == 1) {
+        //volver a poner el boton en false porque es un pulsador
+        $("#boton_intro_reset").val("0");
+        $("#reset_form").submit();
+    }
+
 }
