@@ -46,23 +46,17 @@
     <section class="seccion_parametros">
         <span class="tapador_uno"></span>
         <div class="contenedor_parametros">
-
-            <!-- TODO-->
-
             <form method="post" id="form_r_cotas" target="foo">
                 <span class="radios">
                 <input type="hidden" name='"mis_datos".paradas' value="0"
-                       id="parada_cota">
+                       id="parada_boolean">
                     <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="0">
                     <label for="r-cotas">Cotas:</label>
                 </span>
             </form>
-
-
             <form method="post" target="foo">
                 <div class="parametro_uno">
                     <div class="div_pr">
-
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm"
                                maxlength="3" required/>
@@ -76,22 +70,17 @@
                     </div>
                 </div>
             </form>
-
-            <!-- TODO-->
             <form method="post" id="form_r_paradas" target="foo">
                 <span class="radios">
                     <input type="hidden" name='"mis_datos".cotas' value="0"
-                           id="cota_parada">
+                           id="cota_boolean">
                     <input type="radio" id="r-paradas" name='"mis_datos".paradas' value="0"/>
                     <label for="r-paradas">Paradas:</label>
                 </span>
             </form>
-
-
             <form method="post" target="foo">
                 <div class="parametro_dos">
                     <div class="div_pr">
-
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
                         <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
                                placeholder="0-4" required>
@@ -108,14 +97,14 @@
             <div class="parametro_tres">
                 <div class="div_pr">
                     <div class="area-reset-origen">
-                        <form method="post">
+                        <form method="post" target="foo">
                             <!-- el origen resetea los modos segun ARI-->
                             <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
                             <input type="hidden" name='"mis_datos".cotas' value="0" id="reset_cota">
                             <input type="hidden" name='"mis_datos".paradas' value="0" id="reset_parada">
                             <button class="botones" type="submit" id="boton_origen">ORIGEN</button>
                         </form>
-                        <form method="post" id="reset_form">
+                        <form method="post" id="reset_form" target="foo">
                             <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
                             <input type="hidden" name='"mis_datos".error' value="0" id="quitar_error">
                             <!-- TODO comprobar boton reset en JS-->
@@ -124,7 +113,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <span class="tapador_dos"></span>
         <div class="contenedor_informacion">

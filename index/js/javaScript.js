@@ -52,18 +52,41 @@ window.onload = function() {
             console.log("Radio cotas cambia de valor");
             deshabilitar($("#slider_parada"), btnParada, inputParada);
             habilitar($("#slider_cota"), btnCota, inputCota, radioParadas);
-            //todo
-          //  $("#form_r_cotas").submit();
+            //todo que cambie los valores del modo a cota
+            if (cogerVariable("./variables/cotas.html") == 0){
+                // aliado
+                $("#r-cotas").val("1");
+                $("#parada_boolean").val("0");
+                // enemigo
+                $("#r-paradas").val("0");
+                $("#cota_boolean").val("1");
+                $("#form_r_cotas").submit();
+            }
         });
         // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
-        radioCotas.dispatchEvent(new Event("change"));
+        //radioCotas.dispatchEvent(new Event("change"));
+        //por defecto disabled hasta que se de a origen
+        inicio();
+        function inicio() {
+            deshabilitar($("#slider_cota"), btnCota, inputCota,radioCotas);
+            deshabilitar($("#slider_parada"), btnParada, inputParada,radioParadas);
+            btnOrigen.style.background = "#FFA693";
+        }
 
         radioParadas.addEventListener("change", function() {
             console.log("Radio paradas cambia de valor");
             deshabilitar($("#slider_cota"), btnCota, inputCota);
             habilitar($("#slider_parada"), btnParada, inputParada, radioCotas);
             //todo
-          //  $("#form_r_paradas").submit();
+            if (cogerVariable("./variables/cotas.html") == 1){
+                // aliado
+                $("#r-cotas").val("0");
+                $("#parada_boolean").val("1");
+                //enemigo
+                $("#r-paradas").val("1");
+                $("#cota_boolean").val("0");
+                $("#form_r_paradas").submit();
+            }
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
@@ -81,13 +104,24 @@ window.onload = function() {
 
         btnOrigen.addEventListener("click", function() {
             aOrigen();
+            deshabilitar($("#slider_cota"), btnCota, inputCota,radioCotas);
+            deshabilitar($("#slider_parada"), btnParada, inputParada,radioParadas);
+            btnOrigen.style.background = "white";
         });
 
         btnReset.addEventListener("click", function() {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
+            if (cogerVariable("./variables/reset.html") == 1){
+                $("#boton_intro_reset").val("0")
+            }else {
+                $("#boton_intro_reset").val("1")
+            }
+            $("#reset_form").submit();
         });
+
+
         /* ---------------------------------------------------------------------------------------------------------- */
 
         /* Eventos 'input' en los input de tipo texto --------------------------------------------------------------- */
@@ -393,12 +427,16 @@ window.onload = function() {
          * @param slider
          * @param boton
          * @param input
+         * @param rButton
          */
         function deshabilitar(slider, boton, input, rButton) {
             input.readOnly = true;
             boton.disabled = true;
             boton.style.backgroundColor = "E7E6E6";
             slider.slider('disable');
+            if (rButton != undefined) {
+                rButton.checked = false;
+            }
         }
 
         /* ---------------------------------------------------------------------------------------------------------- */
