@@ -4,7 +4,6 @@ var tasaDeRefresco = 1500;
 /**
  * Inicio del javaScript de la base de datos
  */
-leerSiPulsadoresActivados();
 refrescoDeLecturas();
 
 /**
@@ -76,7 +75,7 @@ function leerSiPulsadoresActivados() {
     if (b_i_c == 1) {
         //volver a poner el boton en false porque es un pulsador
         $("#boton_intro_cotas").val("0");
-        $("#boton_cota").trigger("click");
+        $("#form_cotas").submit();
     }
     /**
      * Simular pulsador en intro_paradas
@@ -85,7 +84,6 @@ function leerSiPulsadoresActivados() {
     if (b_i_p == 1) {
         //volver a poner el boton en false porque es un pulsador
         $("#boton_intro_paradas").val("0");
-        $("#boton_parada").trigger("click");
+        $("#form_paradas").submit();
     }
-
 }

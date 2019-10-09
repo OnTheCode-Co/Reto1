@@ -65,8 +65,8 @@ window.onload = function() {
         });
         // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
         //radioCotas.dispatchEvent(new Event("change"));
+
         //por defecto disabled hasta que se de a origen
-        inicio();
         function inicio() {
             deshabilitar($("#slider_cota"), btnCota, inputCota,radioCotas);
             deshabilitar($("#slider_parada"), btnParada, inputParada,radioParadas);
@@ -439,6 +439,8 @@ window.onload = function() {
             }
         }
 
-        /* ---------------------------------------------------------------------------------------------------------- */
+        /* Inicio de funciones al cargar el documento------------------------------------------------------------------- */
+        inicio();
+        leerSiPulsadoresActivados();
     });
 };

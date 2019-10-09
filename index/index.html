@@ -54,7 +54,7 @@
                     <label for="r-cotas">Cotas:</label>
                 </span>
             </form>
-            <form method="post" target="foo">
+            <form method="post" target="foo" id="form_cotas">
                 <div class="parametro_uno">
                     <div class="div_pr">
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
@@ -78,11 +78,11 @@
                     <label for="r-paradas">Paradas:</label>
                 </span>
             </form>
-            <form method="post" target="foo">
+            <form method="post" target="foo" id="form_paradas">
                 <div class="parametro_dos">
                     <div class="div_pr">
                         <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                        <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1"
+                        <input type="text" name='"mis_datos".parada_in' id="propiedad_parada" maxlength="1"
                                placeholder="0-4" required>
                         <div id="slider_parada" class="slider_nuevo"></div>
                     </div>
