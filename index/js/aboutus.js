@@ -45,6 +45,7 @@ window.onload = function() {
 
 
 
+
     })
 
 
@@ -59,10 +60,11 @@ window.onload = function() {
         csd.style.width = "700px";
         csd.style.height = "700px";
         csd.style.borderRadius = "100%";
-        csd.style.backgroundColor = "#333333"
+        csd.style.backgroundColor = "black"
         sevron.style.opacity = "0";
         csd.style.color = "transparent";
         csd.style.borderColor = "transparent";
+
 
     })
 
@@ -78,7 +80,7 @@ window.onload = function() {
         cii.style.width = "700px";
         cii.style.height = "700px";
         cii.style.borderRadius = "100%";
-        cii.style.backgroundColor = "#333333";
+        cii.style.backgroundColor = "black";
         daw.style.opacity = "0";
         cii.style.color = "transparent";
 
