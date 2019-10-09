@@ -1,5 +1,22 @@
 # Reto1
-## On the Code / Sevron
+## On the Code <img src="https://raw.githubusercontent.com/OnTheCode-Co/Reto1/development/index/multimedia/logo.png" width="50px"/>
+## Sevron <img src="https://raw.githubusercontent.com/OnTheCode-Co/Reto1/development/index/multimedia/logoari.png" width="75px"/>
+![HTML: ](https://img.shields.io/badge/HTML-5-red)
+![CSS: ](https://img.shields.io/badge/CSS-3-orange)
+![JS: ](https://img.shields.io/badge/JavaScript-Last-yellow)
+![JQuery: ](https://img.shields.io/badge/JQuery-3.4.1-blue)
+<table>
+  <tr>
+    <th>
+      <img src="https://raw.githubusercontent.com/OnTheCode-Co/Reto1/development/captura_p.png"/>
+    </th>
+  </tr>
+  <tr>
+    <th>
+       <img src="https://raw.githubusercontent.com/OnTheCode-Co/Reto1/development/captura_f.png"/>
+    </th>    
+  </tr>
+</table>
 
 ### La estructura de ficheros y carpetas esta distribuida de la siguiente manera, bajo la carpeta raiz 'index' se encuentra lo siguiente:
 #### Ficheros:
