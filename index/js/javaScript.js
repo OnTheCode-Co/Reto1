@@ -62,11 +62,15 @@ window.onload = function() {
                 $("#cota_boolean").val("1");
                 $("#form_r_cotas").submit();
             }
+            inputParada.value = 0;
+            //$("#propiedad_parada").trigger("input");
+            inputParada.dispatchEvent(new Event("input"));
         });
         // Esto lo hace una vez para seleccionar el r-button de cotas cuando carga la página
         //radioCotas.dispatchEvent(new Event("change"));
+
         //por defecto disabled hasta que se de a origen
-        inicio();
+
         function inicio() {
             deshabilitar($("#slider_cota"), btnCota, inputCota,radioCotas);
             deshabilitar($("#slider_parada"), btnParada, inputParada,radioParadas);
@@ -87,6 +91,9 @@ window.onload = function() {
                 $("#cota_boolean").val("0");
                 $("#form_r_paradas").submit();
             }
+            inputCota.value = 1;
+            //$("#propiedad_cota").trigger("input");
+            inputCota.dispatchEvent(new Event("input"));
         });
         /* ---------------------------------------------------------------------------------------------------------- */
 
@@ -107,15 +114,17 @@ window.onload = function() {
             deshabilitar($("#slider_cota"), btnCota, inputCota,radioCotas);
             deshabilitar($("#slider_parada"), btnParada, inputParada,radioParadas);
             btnOrigen.style.background = "white";
+            document.getElementById("r-cotas").disabled = false;
+            document.getElementById("r-paradas").disabled = false;
         });
 
-        btnReset.addEventListener("click", function() {
+        btnReset.addEventListener("click", function () {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
-            if (cogerVariable("./variables/reset.html") == 1){
+            if (cogerVariable("./variables/reset.html") == 1) {
                 $("#boton_intro_reset").val("0")
-            }else {
+            } else {
                 $("#boton_intro_reset").val("1")
             }
             $("#reset_form").submit();
@@ -435,10 +444,12 @@ window.onload = function() {
             boton.style.backgroundColor = "E7E6E6";
             slider.slider('disable');
             if (rButton != undefined) {
-                rButton.checked = false;
+                rButton.disabled = true;
             }
         }
 
-        /* ---------------------------------------------------------------------------------------------------------- */
+        /* Inicio de funciones al cargar el documento------------------------------------------------------------------- */
+        inicio();
+        leerSiPulsadoresActivados();
     });
 };

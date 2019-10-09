@@ -1,11 +1,12 @@
-<!-- AWP_In_Variable Name='"mis_datos".parada_in' -->
-<!-- AWP_In_Variable Name='"mis_datos".cotas_in' -->
-<!-- AWP_In_Variable Name='"mis_datos".intro_cotas' -->
-<!-- AWP_In_Variable Name='"mis_datos".intro_paradas' -->
-<!-- AWP_In_Variable Name='"mis_datos".cotas' -->
-<!-- AWP_In_Variable Name='"mis_datos".paradas' -->
-<!-- AWP_In_Variable Name='"mis_datos".origen' -->
-<!-- AWP_In_Variable Name='"mis_datos".reset' -->
+<!-- AWP_In_Variable Name='"web_erronka".parada_in' -->
+<!-- AWP_In_Variable Name='"web_erronka".cotas_in' -->
+<!-- AWP_In_Variable Name='"web_erronka".intro_cotas' -->
+<!-- AWP_In_Variable Name='"web_erronka".intro_paradas' -->
+<!-- AWP_In_Variable Name='"web_erronka".cotas' -->
+<!-- AWP_In_Variable Name='"web_erronka".paradas' -->
+<!-- AWP_In_Variable Name='"web_erronka".origen' -->
+<!-- AWP_In_Variable Name='"web_erronka".reset' -->
+<!-- AWP_In_Variable Name='"web_erronka".error' -->
 <html>
 
 <head>
@@ -30,85 +31,87 @@
 </head>
 
 <body>
-    <div class="contenedor">
-        <div class="linea-izquierda anim"></div>
-        <div class="cortina-izquierda anim"></div>
-        <div class="linea-derecha anim"></div>
-        <div class="cortina-derecha anim"></div>
-        <div class="divisor anim">
-            <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
-            <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
-        </div>
-        <header>
-            <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span>
-            </h1>
-        </header>
-        <section class="seccion_parametros">
-            <span class="tapador_uno"></span>
-            <div class="contenedor_parametros">
-                <form method="post" id="form_r_cotas" target="foo">
-                    <span class="radios">
-                <input type="hidden" name='"mis_datos".paradas' value="0"
+<div class="contenedor">
+    <div class="linea-izquierda anim"></div>
+    <div class="cortina-izquierda anim"></div>
+    <div class="linea-derecha anim"></div>
+    <div class="cortina-derecha anim"></div>
+    <div class="divisor anim">
+        <div class="imagen1 anim"><img src="multimedia/onthecode-face-one.png"></div>
+        <div class="imagen2 anim"><img src="multimedia/onthecode-face-two.png"></div>
+    </div>
+    <header>
+        <h1 id="titulo">GESTIÓN DEL AUTÓMATA<span class="tablet">Tablet version</span> <span class="movil">Mobile version</span>
+        </h1>
+    </header>
+    <section class="seccion_parametros">
+        <span class="tapador_uno"></span>
+        <div class="contenedor_parametros">
+            <form method="post" id="form_r_cotas" target="foo">
+                <span class="radios">
+                <input type="hidden" name='"web_erronka".paradas' value="0"
                        id="parada_boolean">
-                    <input type="radio" id="r-cotas" name='"mis_datos".cotas' value="0">
+                    <input type="radio" id="r-cotas" name='"web_erronka".cotas' value="0">
                     <label for="r-cotas">Cotas:</label>
                 </span>
-                </form>
-                <form method="post" target="foo">
-                    <div class="parametro_uno">
-                        <div class="div_pr">
-                            <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                            <input type="text" name='"mis_datos".cotas_in' id="propiedad_cota" placeholder="1-500mm" maxlength="3" required/>
-                            <div id="slider_cota" class="slider_nuevo"></div>
-                        </div>
-                        <div class="div_btn">
-                            <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
-                            <input type="hidden" name='"mis_datos".intro_cotas' value="1" id="boton_intro_cotas">
-                            <button type="submit" class="botones" id="boton_cota">GO
+            </form>
+            <form method="post" target="foo" id="form_cotas">
+                <div class="parametro_uno">
+                    <div class="div_pr">
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"web_erronka".cotas_in' id="propiedad_cota" placeholder="1-500mm"
+                               maxlength="3" required/>
+                        <div id="slider_cota" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"web_erronka".intro_cotas' value="1" id="boton_intro_cotas">
+                        <button type="submit" class="botones" id="boton_cota">GO
                         </button>
                         </div>
                     </div>
-                </form>
-                <form method="post" id="form_r_paradas" target="foo">
-                    <span class="radios">
-                    <input type="hidden" name='"mis_datos".cotas' value="0"
+                </div>
+            </form>
+            <form method="post" id="form_r_paradas" target="foo">
+                <span class="radios">
+                    <input type="hidden" name='"web_erronka".cotas' value="0"
                            id="cota_boolean">
-                    <input type="radio" id="r-paradas" name='"mis_datos".paradas' value="0"/>
+                    <input type="radio" id="r-paradas" name='"web_erronka".paradas' value="0"/>
                     <label for="r-paradas">Paradas:</label>
                 </span>
-                </form>
-                <form method="post" target="foo">
-                    <div class="parametro_dos">
-                        <div class="div_pr">
-                            <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
-                            <input type="text" name='"mis_datos".paradas_in' id="propiedad_parada" maxlength="1" placeholder="0-4" required>
-                            <div id="slider_parada" class="slider_nuevo"></div>
-                        </div>
-                        <div class="div_btn">
-                            <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
-                            <input type="hidden" name='"mis_datos".intro_paradas' value="1" id="boton_intro_paradas">
-                            <button class="botones" id="boton_parada">GO</button>
-                        </div>
-                    </div>
-                </form>
-                <iframe name="foo" style="display: none"></iframe>
-                <div class="parametro_tres">
+            </form>
+            <form method="post" target="foo" id="form_paradas">
+                <div class="parametro_dos">
                     <div class="div_pr">
-                        <div class="area-reset-origen">
-                            <form method="post" target="foo">
-                                <!-- el origen resetea los modos segun ARI-->
-                                <input type="hidden" name='"mis_datos".origen' value="1" id="boton_intro_origen">
-                                <input type="hidden" name='"mis_datos".cotas' value="0" id="reset_cota">
-                                <input type="hidden" name='"mis_datos".paradas' value="0" id="reset_parada">
-                                <button class="botones" type="submit" id="boton_origen">ORIGEN</button>
-                            </form>
-                            <form method="post" id="reset_form" target="foo">
-                                <input type="hidden" name='"mis_datos".reset' value="1" id="boton_intro_reset">
-                                <input type="hidden" name='"mis_datos".error' value="0" id="quitar_error">
-                                <!-- TODO comprobar boton reset en JS-->
-                                <button class="botones" id="boton_reset">RESET</button>
-                            </form>
-                        </div>
+                        <!-- la propiedad name sirve para comunicar con la variable de la base de datos -->
+                        <input type="text" name='"web_erronka".parada_in' id="propiedad_parada" maxlength="1"
+                               placeholder="0-4" required>
+                        <div id="slider_parada" class="slider_nuevo"></div>
+                    </div>
+                    <div class="div_btn">
+                        <!-- este input es simular el pulsador del button en la base de datos (junto a código JS)-->
+                        <input type="hidden" name='"web_erronka".intro_paradas' value="1" id="boton_intro_paradas">
+                        <button class="botones" id="boton_parada">GO</button>
+                    </div>
+                </div>
+            </form>
+            <iframe name="foo" style="display: none"></iframe>
+            <div class="parametro_tres">
+                <div class="div_pr">
+                    <div class="area-reset-origen">
+                        <form method="post" target="foo">
+                            <!-- el origen resetea los modos segun ARI-->
+                            <input type="hidden" name='"web_erronka".origen' value="1" id="boton_intro_origen">
+                            <input type="hidden" name='"web_erronka".cotas' value="0" id="reset_cota">
+                            <input type="hidden" name='"web_erronka".paradas' value="0" id="reset_parada">
+                            <button class="botones" type="submit" id="boton_origen">ORIGEN</button>
+                        </form>
+                        <form method="post" id="reset_form" target="foo">
+                            <input type="hidden" name='"web_erronka".reset' value="1" id="boton_intro_reset">
+                            <input type="hidden" name='"web_erronka".error' value="0" id="quitar_error">
+                            <!-- TODO comprobar boton reset en JS-->
+                            <button class="botones" id="boton_reset">RESET</button>
+                        </form>
                     </div>
                 </div>
             </div>
