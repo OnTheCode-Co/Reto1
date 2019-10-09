@@ -118,7 +118,6 @@ window.onload = function() {
             } else {
                 $("#boton_intro_reset").val("1")
             }
-            $("#quitar_error").val("0")
             $("#reset_form").submit();
         });
 
