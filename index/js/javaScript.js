@@ -109,15 +109,16 @@ window.onload = function() {
             btnOrigen.style.background = "white";
         });
 
-        btnReset.addEventListener("click", function() {
+        btnReset.addEventListener("click", function () {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
-            if (cogerVariable("./variables/reset.html") == 1){
+            if (cogerVariable("./variables/reset.html") == 1) {
                 $("#boton_intro_reset").val("0")
-            }else {
+            } else {
                 $("#boton_intro_reset").val("1")
             }
+            $("#quitar_error").val("0")
             $("#reset_form").submit();
         });
 
