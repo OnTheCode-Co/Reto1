@@ -67,3 +67,28 @@
   - target_pos.html
 
 ###### -----------------------------------------------------------------------------------------------------------------------
+
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars3.githubusercontent.com/u/23460143?    s=400&v=4" width="100px;" alt="inakicl"/><br /><sub><b>Iñaki Caballero</b></sub></a><br />
+    </a><br /><a href="https://github.com/OnTheCode-Co/Reto1/commits?author=inakicl" title="Commits">📖</a>
+  👀
+    </td>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars2.githubusercontent.com/u/43949070?s=400&v=4" width="100px;" alt="julen-C"/><br /><sub><b>Julen Castillo</b></sub></a><br/>
+      </a><br /><a href="https://github.com/OnTheCode-Co/Reto1/commits?author=Julen-Castillo" title="Commits">📖</a>
+  👀
+    </td>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars2.githubusercontent.com/u/26585134?s=400&v=4" width="100px;" alt="jon-S"/><br /><sub><b>Jon Santos</b></sub></a><br />
+      </a><br /><a href="https://github.com/OnTheCode-Co/Reto1/commits?author=Santoxjon" title="Commits">📖</a>   
+      👀
+    </td>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars1.githubusercontent.com/u/43949220?s=400&v=4" width="100px;" alt="julen-P"/><br /><sub><b>Julen Prieto</b></sub></a><br />
+      </a><br /><a href="https://github.com/OnTheCode-Co/Reto1/commits?author=prietojulen" title="Commits">📖</a>
+      👀
+    </td>
+       
+    
+  </tr>
+</table>
