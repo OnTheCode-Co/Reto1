@@ -603,7 +603,7 @@
         background-color: #25daa5;
         width: 2px;
         height: 0px;
-        position: relative;
+        position: absolute;
     }
     
     .parada-uno h3,
@@ -612,46 +612,44 @@
     .parada-cuatro h3 {
         color: transparent;
         transition: all 1s ease-in-out;
-        position: relative;
+        position: absolute;
     }
     
     .parada-uno h3,
     .parada-tres h3 {
-        top: -30;
-        left: -25;
+        top: 80%;
+        left: -25%;
     }
     
     .parada-dos h3,
     .parada-cuatro h3 {
-        top: 78;
-        left: -25;
+        top: 80%;
+        left: -25%;
     }
     
     .parada-uno h3 {
-        left: -30;
+        left: -30%;
     }
     
     .parada-cuatro {
         left: 99.5%;
-        top: -210;
         transition: all 1s ease-in;
     }
     
     .parada-tres {
         left: 79.6%;
-        top: -210;
         transition: all 1s ease-in;
     }
     
     .parada-dos {
         left: 49.6%;
-        top: -70;
+        top: -80%;
         transition: all 1s ease-in;
     }
     
     .parada-uno {
         left: 29.6%;
-        top: -80;
+        top: -80%;
         transition: all 1s ease-in;
     }
     
