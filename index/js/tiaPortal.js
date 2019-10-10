@@ -14,6 +14,22 @@ function refrescoDeLecturas() {
     // if pa porsi no hay conexion con el server no haga llamadas toodo el rato
     if (cogerVariable("./variables/current_speed.html")[2] != '"') {
         setInterval(function () {
+
+            // Deshabilitar botones cuando la BBDD detecta que todavia no ha terminado la instruccion de moverse
+            if(cogerVariable("./variables/intro_cotas.html") == 1 || cogerVariable("./variables/intro_paradas.html") == 1){
+                console.log("ey ey ey");
+                $('#boton_cota').attr("disabled", true);
+                $('#boton_cota').css("background-color","gray");
+                $('#boton_parada').css("background-color","gray");
+                $('#boton_parada').attr("disabled", true);
+            }
+            else{
+                $('#boton_cota').css("background-color","white");
+                $('#boton_parada').css("background-color","white");
+                $('#boton_cota').removeAttr("disabled");
+                $('#boton_parada').removeAttr("disabled");
+            }
+
             //lecturas de variables
             $('#infor1').val(cogerVariable("./variables/target_pos.html"));
             $('#infor2').val(cogerVariable("./variables/current_pos.html"));
