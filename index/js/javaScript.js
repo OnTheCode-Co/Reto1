@@ -439,6 +439,7 @@ window.onload = function() {
             slider.slider('disable');
             if (rButton != undefined) {
                 rButton.disabled = true;
+                rButton.checked = false;
             }
         }
 
