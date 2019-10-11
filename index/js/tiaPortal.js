@@ -16,6 +16,9 @@ function refrescoDeLecturas() {
         setInterval(function () {
 
             // Deshabilitar botones cuando la BBDD detecta que todavia no ha terminado la instruccion de moverse
+
+            leerSiPulsadoresActivados();
+            /*
             if(cogerVariable("./variables/intro_cotas.html") == 1 || cogerVariable("./variables/intro_paradas.html") == 1){
                 console.log("ey ey ey");
                 $('#boton_cota').attr("disabled", true);
@@ -29,7 +32,7 @@ function refrescoDeLecturas() {
                 $('#boton_cota').removeAttr("disabled");
                 $('#boton_parada').removeAttr("disabled");
             }
-
+            */
             //lecturas de variables
             $('#infor1').val(cogerVariable("./variables/target_pos.html"));
             $('#infor2').val(cogerVariable("./variables/current_pos.html"));
@@ -91,6 +94,12 @@ function leerSiPulsadoresActivados() {
     if (b_i_c == 1) {
         //volver a poner el boton en false porque es un pulsador
         $("#boton_intro_cotas").val("0");
+
+        $('#boton_cota').css("background-color","white");
+        $('#boton_parada').css("background-color","white");
+        $('#boton_cota').removeAttr("disabled");
+        $('#boton_parada').removeAttr("disabled");
+
         $("#form_cotas").submit();
     }
     /**
@@ -100,6 +109,12 @@ function leerSiPulsadoresActivados() {
     if (b_i_p == 1) {
         //volver a poner el boton en false porque es un pulsador
         $("#boton_intro_paradas").val("0");
+
+        $('#boton_cota').css("background-color","white");
+        $('#boton_parada').css("background-color","white");
+        $('#boton_cota').removeAttr("disabled");
+        $('#boton_parada').removeAttr("disabled");
+
         $("#form_paradas").submit();
     }
 
