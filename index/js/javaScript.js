@@ -39,9 +39,9 @@ window.onload = function() {
         });
         $("#slider_parada").slider({
             max: 4,
-            min: 0,
+            min: 1,
             range: "min",
-            value: 0
+            value: 1
         }).slider("pips", {
             rest: "pip"
         });
@@ -62,7 +62,7 @@ window.onload = function() {
                 $("#cota_boolean").val("1");
                 $("#form_r_cotas").submit();
             }
-            inputParada.value = 0;
+            inputParada.value = 1;
             //$("#propiedad_parada").trigger("input");
             inputParada.dispatchEvent(new Event("input"));
         });
@@ -91,7 +91,7 @@ window.onload = function() {
                 $("#cota_boolean").val("0");
                 $("#form_r_paradas").submit();
             }
-            inputCota.value = 1;
+            inputCota.value = 150;
             //$("#propiedad_cota").trigger("input");
             inputCota.dispatchEvent(new Event("input"));
         });
@@ -101,12 +101,27 @@ window.onload = function() {
         btnCota.addEventListener("click", function() {
             let posicion = (inputCota.value * 0.2);
             avanzarBarraProgreso(posicion);
+
+            $('#boton_cota').attr("disabled", true);
+            $('#boton_cota').css("background-color","gray");
+            $('#boton_parada').css("background-color","gray");
+            $('#boton_parada').attr("disabled", true);
+
+            $("#boton_intro_cotas").val("1");
+            $("#form_cotas").submit();
         });
 
         btnParada.addEventListener("click", function() {
             let posicion = arrayCotas[inputParada.value];
             avanzarBarraProgreso(posicion * 0.2);
 
+            $('#boton_cota').attr("disabled", true);
+            $('#boton_cota').css("background-color","gray");
+            $('#boton_parada').css("background-color","gray");
+            $('#boton_parada').attr("disabled", true);
+
+            $("#boton_intro_paradas").val("1");
+            $("#form_paradas").submit();
         });
 
         btnOrigen.addEventListener("click", function() {
@@ -116,12 +131,18 @@ window.onload = function() {
             btnOrigen.style.background = "white";
             document.getElementById("r-cotas").disabled = false;
             document.getElementById("r-paradas").disabled = false;
+
+            $("#boton_intro_origen").val("1");
+            $("#origen_form").submit();
         });
 
         btnReset.addEventListener("click", function () {
             aOrigen();
             let luz_error = document.getElementById("luz_error");
             luz_error.src = "multimedia/alarma-grey.png";
+
+            $("#boton_intro_reset").val("1");
+            $("#reset_form").submit();
         });
 
 
@@ -145,8 +166,8 @@ window.onload = function() {
             let parada = inputParada.value;
             if (parada > 4) {
                 inputParada.value = 4;
-            } else if (parada < 0) {
-                inputParada.value = 0;
+            } else if (parada < 1) {
+                inputParada.value = "";
             } else if (isNaN(parada)) {
                 inputParada.value = 0;
             }
@@ -218,9 +239,9 @@ window.onload = function() {
          */
         function calibrarSliderParada(val) {
             switch (val) {
-                case 1:
-                    calibrarSlider($("#slider_parada"), 0, inputParada);
-                    break;
+                //case 1:
+                //  calibrarSlider($("#slider_parada"), 0, inputParada);
+                //    break;
                 case 150:
                     calibrarSlider($("#slider_parada"), 1, inputParada);
                     break;
@@ -245,9 +266,9 @@ window.onload = function() {
          */
         function calibrarSliderCota(val) {
             switch (val) {
-                case 0:
-                    calibrarSlider($("#slider_cota"), 1, inputCota);
-                    break;
+//                case 0:
+                //                  calibrarSlider($("#slider_cota"), 1, inputCota);
+                //                break;
                 case 1:
                     calibrarSlider($("#slider_cota"), 150, inputCota);
                     break;
@@ -270,13 +291,13 @@ window.onload = function() {
          * Reinicia todos los valores que puede cambiar el usuario y pone la barra de progreso en su posición inicial
          */
         function aOrigen() {
-            inputCota.value = "";
-            inputParada.value = "";
+            inputCota.value = 150;
+            inputParada.value = 1;
             $("#slider_cota").slider({
-                value: 1
+                value: 150
             });
             $("#slider_parada").slider({
-                value: 0
+                value: 1
             });
             avanzarBarraProgreso(0);
         }
